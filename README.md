@@ -1,7 +1,7 @@
 X3 Core XDK
 ===========
 
-The X3 Core XDK is a cross-platform 3D graphics engine for the Xojo programming language. The XDK consists of two modules, X3Core and X3IO. X3Core contains all the core objects and methods needed for rendering, while X3IO provides routines to save and load 3D assets.
+The X3 Core XDK is a cross-platform 3D graphics development kit for the Xojo programming language. The XDK consists of two modules, X3Core and X3IO. X3Core contains all the core objects and methods needed for rendering, while X3IO provides routines to save and load 3D assets.
 
 Usage
 -----
