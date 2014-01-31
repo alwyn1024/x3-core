@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2013r4.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1386340351">
+<block type="Module" ID="25939967">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -203,9 +203,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1732009983">
+<block type="Module" ID="460976127">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -399,9 +399,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="674822143">
+<block type="Module" ID="1481691135">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1013,9 +1013,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2080915455">
+<block type="Module" ID="1105526783">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1139,9 +1139,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1838479359">
+<block type="Module" ID="1874911231">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1642,9 +1642,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="238944255">
+<block type="Module" ID="1362034687">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1903,9 +1903,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1167400959">
+<block type="Module" ID="459096063">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2030,9 +2030,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="331718655">
+<block type="Module" ID="686778367">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2404,9 +2404,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1439299583">
+<block type="Module" ID="967061503">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2558,9 +2558,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1976344575">
+<block type="Module" ID="141633535">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2749,9 +2749,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1516978175">
+<block type="Module" ID="1848647679">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>2031818751</ObjContainerID>
+ <ObjContainerID>1937391615</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2915,7 +2915,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2031818751">
+<block type="Module" ID="1937391615">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -5261,7 +5261,7 @@
    <SourceLine>modelJSON = tin.ReadAll() ' load X3DF JSON from file</SourceLine>
    <SourceLine>tin.Close ' close file</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Model = ModelFromX3DF(modelJSON) ' parse data and create X3Model from JSON</SourceLine>
+   <SourceLine>Model = ModelFromJSON(modelJSON) ' parse data and create X3Model from JSON</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return model</SourceLine>
    <SourceLine></SourceLine>
@@ -5276,12 +5276,12 @@
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Method>
-  <ItemName>ModelFromX3DF</ItemName>
+  <ItemName>ModelFromJSON</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function ModelFromX3DF(modelJSON As String) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function ModelFromJSON(modelJSON As String) As X3Core.X3Model</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
@@ -5321,7 +5321,7 @@
    <SourceLine>Dim json as String</SourceLine>
    <SourceLine>Dim tout As TextOutputStream</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>json = X3DFFromModel(model) ' generate X3 Data Format JSON from X3Model</SourceLine>
+   <SourceLine>json = ModelToJSON(model) ' generate X3 Data Format JSON from X3Model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>tout = TextOutputStream.Create(modelFile) ' open file for output</SourceLine>
    <SourceLine>tout.WriteLine json ' write X3DF JASON to file</SourceLine>
@@ -5337,12 +5337,12 @@
   <ItemResult></ItemResult>
  </Method>
  <Method>
-  <ItemName>X3DFFromModel</ItemName>
+  <ItemName>ModelToJSON</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function X3DFFromModel(model As X3Core.X3Model) As String</SourceLine>
+   <SourceLine>Function ModelToJSON(model As X3Core.X3Model) As String</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim addedChild As Boolean</SourceLine>
