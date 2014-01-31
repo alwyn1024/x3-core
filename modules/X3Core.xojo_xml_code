@@ -1292,6 +1292,127 @@
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>Center</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Center(pos As X3Core.X3Vector = nil)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim centPos As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
+   <SourceLine>Dim midZ As Double</SourceLine>
+   <SourceLine>Dim xStep As Double</SourceLine>
+   <SourceLine>Dim yStep As Double</SourceLine>
+   <SourceLine>Dim zStep As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if pos = nil then</SourceLine>
+   <SourceLine>centPos = new X3Core.X3Vector(0, 0, 0)</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>centPos = pos</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>midX = 0</SourceLine>
+   <SourceLine>midY = 0</SourceLine>
+   <SourceLine>midZ = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = 0 to Vertex.Ubound</SourceLine>
+   <SourceLine>midX = midX + Vertex(i).X</SourceLine>
+   <SourceLine>midY = midY + Vertex(i).Y</SourceLine>
+   <SourceLine>midZ = midZ + Vertex(i).Z</SourceLine>
+   <SourceLine>next i</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>midX = midX / (Vertex.Ubound + 1)</SourceLine>
+   <SourceLine>midY = midY / (Vertex.Ubound + 1)</SourceLine>
+   <SourceLine>midZ = midZ / (Vertex.Ubound + 1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>xStep = centPos.X - midX</SourceLine>
+   <SourceLine>yStep = centPos.Y - midY</SourceLine>
+   <SourceLine>zStep = centPos.Z - midZ</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = 0 to Vertex.Ubound</SourceLine>
+   <SourceLine>Vertex(i).X = Vertex(i).X + xStep</SourceLine>
+   <SourceLine>Vertex(i).Y = Vertex(i).Y + yStep</SourceLine>
+   <SourceLine>Vertex(i).Z = Vertex(i).Z + zStep</SourceLine>
+   <SourceLine>next i</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>pos As X3Core.X3Vector = nil</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Unitize</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Unitize(pos As X3Core.X3Vector = nil)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim centPos As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
+   <SourceLine>Dim midZ As Double</SourceLine>
+   <SourceLine>Dim vertLen As Double</SourceLine>
+   <SourceLine>Dim maxLen As Double</SourceLine>
+   <SourceLine>Dim scale As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if pos = nil then</SourceLine>
+   <SourceLine>centPos = new X3Core.X3Vector(0, 0, 0)</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>centPos = pos</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>midX = 0</SourceLine>
+   <SourceLine>midY = 0</SourceLine>
+   <SourceLine>midZ = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = 0 to Vertex.Ubound</SourceLine>
+   <SourceLine>midX = midX + Vertex(i).X</SourceLine>
+   <SourceLine>midY = midY + Vertex(i).Y</SourceLine>
+   <SourceLine>midZ = midZ + Vertex(i).Z</SourceLine>
+   <SourceLine>next i</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>midX = midX / (Vertex.Ubound + 1)</SourceLine>
+   <SourceLine>midY = midY / (Vertex.Ubound + 1)</SourceLine>
+   <SourceLine>midZ = midZ / (Vertex.Ubound + 1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>maxLen = 0</SourceLine>
+   <SourceLine>for i = 0 to Vertex.Ubound</SourceLine>
+   <SourceLine>vertLen = Sqrt((Vertex(i).X - midX)^2 + (Vertex(i).Y - midY)^2 + (Vertex(i).Z - midZ)^2)</SourceLine>
+   <SourceLine>if vertLen &gt; maxLen then</SourceLine>
+   <SourceLine>maxLen = vertLen</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next i</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' scale model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>scale = 1 / maxLen</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = 0 to Vertex.Ubound</SourceLine>
+   <SourceLine>Vertex(i).X = Vertex(i).X / maxLen</SourceLine>
+   <SourceLine>Vertex(i).Y = Vertex(i).Y / maxLen</SourceLine>
+   <SourceLine>Vertex(i).Z = Vertex(i).Z / maxLen</SourceLine>
+   <SourceLine>next i</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>pos As X3Core.X3Vector = nil</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
  <Property>
   <ItemName>ColorPal()</ItemName>
   <Compatibility></Compatibility>
@@ -5535,127 +5656,6 @@
   <IsShared>0</IsShared>
   <ItemParams>model As X3Core.X3Model</ItemParams>
   <ItemResult>String</ItemResult>
- </Method>
- <Method>
-  <ItemName>X3E_UnitizeModel</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub X3E_UnitizeModel(ByRef model As X3Core.X3Model, pos As X3Core.X3Vector = nil)</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim centPos As X3Core.X3Vector</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
-   <SourceLine>Dim midZ As Double</SourceLine>
-   <SourceLine>Dim vertLen As Double</SourceLine>
-   <SourceLine>Dim maxLen As Double</SourceLine>
-   <SourceLine>Dim scale As Double</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if pos = nil then</SourceLine>
-   <SourceLine>centPos = new X3Core.X3Vector(0, 0, 0)</SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine>centPos = pos</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>midX = 0</SourceLine>
-   <SourceLine>midY = 0</SourceLine>
-   <SourceLine>midZ = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>for i = 0 to model.Vertex.Ubound</SourceLine>
-   <SourceLine>midX = midX + model.Vertex(i).X</SourceLine>
-   <SourceLine>midY = midY + model.Vertex(i).Y</SourceLine>
-   <SourceLine>midZ = midZ + model.Vertex(i).Z</SourceLine>
-   <SourceLine>next i</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>midX = midX / (model.Vertex.Ubound + 1)</SourceLine>
-   <SourceLine>midY = midY / (model.Vertex.Ubound + 1)</SourceLine>
-   <SourceLine>midZ = midZ / (model.Vertex.Ubound + 1)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>maxLen = 0</SourceLine>
-   <SourceLine>for i = 0 to model.Vertex.Ubound</SourceLine>
-   <SourceLine>vertLen = Sqrt((model.Vertex(i).X - midX)^2 + (model.Vertex(i).Y - midY)^2 + (model.Vertex(i).Z - midZ)^2)</SourceLine>
-   <SourceLine>if vertLen &gt; maxLen then</SourceLine>
-   <SourceLine>maxLen = vertLen</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>next i</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' scale model</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>scale = 1 / maxLen</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>for i = 0 to model.Vertex.Ubound</SourceLine>
-   <SourceLine>model.Vertex(i).X = model.Vertex(i).X / maxLen</SourceLine>
-   <SourceLine>model.Vertex(i).Y = model.Vertex(i).Y / maxLen</SourceLine>
-   <SourceLine>model.Vertex(i).Z = model.Vertex(i).Z / maxLen</SourceLine>
-   <SourceLine>next i</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>ByRef model As X3Core.X3Model, pos As X3Core.X3Vector = nil</ItemParams>
-  <ItemResult></ItemResult>
- </Method>
- <Method>
-  <ItemName>X3E_CenterModel</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub X3E_CenterModel(ByRef model As X3Core.X3Model, pos As X3Core.X3Vector = nil)</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim centPos As X3Core.X3Vector</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
-   <SourceLine>Dim midZ As Double</SourceLine>
-   <SourceLine>Dim xStep As Double</SourceLine>
-   <SourceLine>Dim yStep As Double</SourceLine>
-   <SourceLine>Dim zStep As Double</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if pos = nil then</SourceLine>
-   <SourceLine>centPos = new X3Core.X3Vector(0, 0, 0)</SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine>centPos = pos</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>midX = 0</SourceLine>
-   <SourceLine>midY = 0</SourceLine>
-   <SourceLine>midZ = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>for i = 0 to model.Vertex.Ubound</SourceLine>
-   <SourceLine>midX = midX + model.Vertex(i).X</SourceLine>
-   <SourceLine>midY = midY + model.Vertex(i).Y</SourceLine>
-   <SourceLine>midZ = midZ + model.Vertex(i).Z</SourceLine>
-   <SourceLine>next i</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>midX = midX / (model.Vertex.Ubound + 1)</SourceLine>
-   <SourceLine>midY = midY / (model.Vertex.Ubound + 1)</SourceLine>
-   <SourceLine>midZ = midZ / (model.Vertex.Ubound + 1)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>xStep = centPos.X - midX</SourceLine>
-   <SourceLine>yStep = centPos.Y - midY</SourceLine>
-   <SourceLine>zStep = centPos.Z - midZ</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>for i = 0 to model.Vertex.Ubound</SourceLine>
-   <SourceLine>model.Vertex(i).X = model.Vertex(i).X + xStep</SourceLine>
-   <SourceLine>model.Vertex(i).Y = model.Vertex(i).Y + yStep</SourceLine>
-   <SourceLine>model.Vertex(i).Z = model.Vertex(i).Z + zStep</SourceLine>
-   <SourceLine>next i</SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>ByRef model As X3Core.X3Model, pos As X3Core.X3Vector = nil</ItemParams>
-  <ItemResult></ItemResult>
  </Method>
  <Method>
   <ItemName>matchDouble</ItemName>
