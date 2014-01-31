@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2013r4.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="25939967">
+<block type="Module" ID="166889471">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -203,9 +203,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="460976127">
+<block type="Module" ID="679059455">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -399,9 +399,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1481691135">
+<block type="Module" ID="1423618047">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1013,9 +1013,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1105526783">
+<block type="Module" ID="1659863039">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1139,9 +1139,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1874911231">
+<block type="Module" ID="607508479">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1642,9 +1642,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1362034687">
+<block type="Module" ID="1324380159">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1903,9 +1903,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="459096063">
+<block type="Module" ID="221951999">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2030,9 +2030,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="686778367">
+<block type="Module" ID="794232831">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2404,9 +2404,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="967061503">
+<block type="Module" ID="1482893311">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2558,9 +2558,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="141633535">
+<block type="Module" ID="1340250111">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2749,9 +2749,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1848647679">
+<block type="Module" ID="1367908351">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1937391615</ObjContainerID>
+ <ObjContainerID>1566537727</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2915,7 +2915,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1937391615">
+<block type="Module" ID="1566537727">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -3096,8 +3096,6 @@
    <SourceLine>Model.Sprite.Append new X3Core.X3Sprite(initSheet, spriteWidth, spriteHeight, imageCount)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' add vertices to the model</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' TODO: determine dimensions correctly based on spriteWidth and Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Model.Vertex.Append new X3Core.X3Vector(-1, 1, 0)</SourceLine>
    <SourceLine>Model.Vertex.Append new X3Core.X3Vector(-1, -1, 0)</SourceLine>
