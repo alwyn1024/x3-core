@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2013r4.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="166889471">
+<block type="Module" ID="1242669055">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -203,9 +203,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="679059455">
+<block type="Module" ID="164638719">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -399,9 +399,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1423618047">
+<block type="Module" ID="1428400127">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1013,9 +1013,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1659863039">
+<block type="Module" ID="149833727">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1139,9 +1139,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="607508479">
+<block type="Module" ID="517304319">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1642,9 +1642,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1324380159">
+<block type="Module" ID="1326753791">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1674,7 +1674,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub Constructor(texture As Picture)</SourceLine>
+   <SourceLine>Sub Constructor(texture As Picture, loadOpenGL As Boolean = true)</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim x As Integer</SourceLine>
@@ -1735,7 +1735,9 @@
    <SourceLine></SourceLine>
    <SourceLine>' load texture into OpenGL</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>if loadOpenGL then</SourceLine>
    <SourceLine>OGLName = X3_LoadRGBATexture(RGBABitmap, Width, Height)</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
@@ -1745,7 +1747,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>texture As Picture</ItemParams>
+  <ItemParams>texture As Picture, loadOpenGL As Boolean = true</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Method>
@@ -1903,9 +1905,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="221951999">
+<block type="Module" ID="1596246015">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2030,9 +2032,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="794232831">
+<block type="Module" ID="2000015359">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2404,9 +2406,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1482893311">
+<block type="Module" ID="767789055">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2558,9 +2560,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1340250111">
+<block type="Module" ID="117932031">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2749,9 +2751,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1367908351">
+<block type="Module" ID="1761300479">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1566537727</ObjContainerID>
+ <ObjContainerID>1473306623</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2915,7 +2917,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1566537727">
+<block type="Module" ID="1473306623">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
