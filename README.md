@@ -1,7 +1,7 @@
 X3 Core XDK
 ===========
 
-The X3 Core XDK is a cross-platform 3D graphics development kit for the Xojo programming language. The XDK consists of two modules, X3Core and X3IO. X3Core contains all the core objects and methods needed for rendering, while X3IO provides routines to save and load 3D assets.
+The X3 Core XDK is a cross-platform 3D graphics development kit for the Xojo programming language. X3Core contains all the classes and methods needed to render, load and save 3D assets.
 
 Usage
 -----
@@ -9,7 +9,7 @@ Usage
 Here are the basic steps to start a new X3 project:
 
 1. Create a new Xojo desktop project.
-2. Import the X3Core and X3IO modules into the project.
+2. Import the X3Core module into the project.
 3. Add an OpenGLSurface control to your window.
 4. Call X3_Initialize from the OpenGLSurface.Open event.
 5. Call X3_SetPerspective from the OpenGLSurface.Resized event.
