@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2013r4.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1242669055">
+<block type="Module" ID="525105151">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -203,9 +203,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="164638719">
+<block type="Module" ID="1707122687">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -399,9 +399,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1428400127">
+<block type="Module" ID="1931612159">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1013,9 +1013,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="149833727">
+<block type="Module" ID="1342109695">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1139,9 +1139,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="517304319">
+<block type="Module" ID="1606270975">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1642,9 +1642,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1326753791">
+<block type="Module" ID="557795327">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1905,9 +1905,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1596246015">
+<block type="Module" ID="620310527">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2032,9 +2032,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2000015359">
+<block type="Module" ID="1740036095">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2406,9 +2406,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="767789055">
+<block type="Module" ID="668082175">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2560,9 +2560,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="117932031">
+<block type="Module" ID="698437631">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2751,9 +2751,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1761300479">
+<block type="Module" ID="1225230335">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1473306623</ObjContainerID>
+ <ObjContainerID>2018328575</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2917,7 +2917,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1473306623">
+<block type="Module" ID="2018328575">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -5241,12 +5241,12 @@
   <ItemResult></ItemResult>
  </Method>
  <Method>
-  <ItemName>LoadModel</ItemName>
+  <ItemName>X3_LoadModel</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function LoadModel(modelFile As FolderItem, surface As OpenGLSurface) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function X3_LoadModel(modelFile As FolderItem, surface As OpenGLSurface) As X3Core.X3Model</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim model As X3Core.X3Model</SourceLine>
@@ -5261,7 +5261,7 @@
    <SourceLine>modelJSON = tin.ReadAll() ' load X3DF JSON from file</SourceLine>
    <SourceLine>tin.Close ' close file</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Model = ModelFromJSON(modelJSON) ' parse data and create X3Model from JSON</SourceLine>
+   <SourceLine>Model = X3_ModelFromJSON(modelJSON) ' parse data and create X3Model from JSON</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return model</SourceLine>
    <SourceLine></SourceLine>
@@ -5276,12 +5276,12 @@
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Method>
-  <ItemName>ModelFromJSON</ItemName>
+  <ItemName>X3_ModelFromJSON</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function ModelFromJSON(modelJSON As String) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function X3_ModelFromJSON(modelJSON As String) As X3Core.X3Model</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
@@ -5310,18 +5310,18 @@
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Method>
-  <ItemName>SaveModel</ItemName>
+  <ItemName>X3_SaveModel</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub SaveModel(model As X3Core.X3Model, modelFile As FolderItem, saveNormals As Boolean = True)</SourceLine>
+   <SourceLine>Sub X3_SaveModel(model As X3Core.X3Model, modelFile As FolderItem, saveNormals As Boolean = True)</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim json as String</SourceLine>
    <SourceLine>Dim tout As TextOutputStream</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>json = ModelToJSON(model) ' generate X3 Data Format JSON from X3Model</SourceLine>
+   <SourceLine>json = X3_ModelToJSON(model) ' generate X3 Data Format JSON from X3Model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>tout = TextOutputStream.Create(modelFile) ' open file for output</SourceLine>
    <SourceLine>tout.WriteLine json ' write X3DF JASON to file</SourceLine>
@@ -5337,12 +5337,12 @@
   <ItemResult></ItemResult>
  </Method>
  <Method>
-  <ItemName>ModelToJSON</ItemName>
+  <ItemName>X3_ModelToJSON</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function ModelToJSON(model As X3Core.X3Model) As String</SourceLine>
+   <SourceLine>Function X3_ModelToJSON(model As X3Core.X3Model) As String</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim addedChild As Boolean</SourceLine>
