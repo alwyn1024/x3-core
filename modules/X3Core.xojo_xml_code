@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2013r4.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1845923839">
+<block type="Module" ID="1711667199">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -203,9 +203,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1259859967">
+<block type="Module" ID="2053255167">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -399,9 +399,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1408909311">
+<block type="Module" ID="757526527">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1013,9 +1013,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1161148415">
+<block type="Module" ID="130711551">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1139,9 +1139,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2086825983">
+<block type="Module" ID="1417267199">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1642,9 +1642,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1576947711">
+<block type="Module" ID="989403135">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1925,9 +1925,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="832299007">
+<block type="Module" ID="559020031">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2052,9 +2052,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1724327935">
+<block type="Module" ID="1593597951">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2426,9 +2426,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="268957695">
+<block type="Module" ID="313200639">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2580,9 +2580,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1418807295">
+<block type="Module" ID="1666758655">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2771,9 +2771,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="961290239">
+<block type="Module" ID="2007777279">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2937,9 +2937,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1252976639">
+<block type="Module" ID="1870721023">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1549565951</ObjContainerID>
+ <ObjContainerID>1446678527</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2957,15 +2957,11 @@
    <SourceLine>Dim tin As TextInputStream</SourceLine>
    <SourceLine>Dim modelJSON As String</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>'if surface &lt;&gt; nil then</SourceLine>
-   <SourceLine>'surface.MakeCurrent()</SourceLine>
-   <SourceLine>'end if</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>tin = TextInputStream.Open(modelFile) ' open file</SourceLine>
    <SourceLine>modelJSON = tin.ReadAll() ' load X3DF JSON from file</SourceLine>
    <SourceLine>tin.Close ' close file</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Model = X3_ModelFromJSON(modelJSON) ' parse data and create X3Model from JSON</SourceLine>
+   <SourceLine>Model = modelFromJSON(modelJSON) ' parse data and create X3Model from JSON</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return model</SourceLine>
    <SourceLine></SourceLine>
@@ -3006,6 +3002,1495 @@
   <ItemParams>modelFile As FolderItem, model As X3Core.X3Model</ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>modelFromJSON</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function modelFromJSON(modelJSON As String) As X3Core.X3Model</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
+   <SourceLine>Dim pos As Integer</SourceLine>
+   <SourceLine>Dim jsonMB As MemoryBlock</SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim mp As Ptr</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' this method renders X3 Data Format JSON into an X3Model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>jsonMB = modelJSON</SourceLine>
+   <SourceLine>pos = 0</SourceLine>
+   <SourceLine>mp = jsonMB</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result =matchX3Model(mp, pos, model) ' parse the JSON</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>modelJSON As String</ItemParams>
+  <ItemResult>X3Core.X3Model</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchX3Model</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchX3Model(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpStr As String</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = new X3Core.X3Model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if tmpStr = "x3model" then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>select case tmpStr</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "colorpal"</SourceLine>
+   <SourceLine>result = matchColorPal(mp, pos, model)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "material"</SourceLine>
+   <SourceLine>result = matchMaterial(mp, pos, model)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "normal"</SourceLine>
+   <SourceLine>result = matchNormal(mp, pos, model)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "polygon"</SourceLine>
+   <SourceLine>result = matchPolygon(mp, pos, model)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "vertex"</SourceLine>
+   <SourceLine>result = matchVertex(mp, pos, model)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "texture"</SourceLine>
+   <SourceLine>result = matchTexture(mp, pos, model)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "uvmap"</SourceLine>
+   <SourceLine>result = matchUVMap(mp, pos, model)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case else ' unknown tag</SourceLine>
+   <SourceLine>skipValue(mp, pos)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end select</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false ' malformed JSON</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 125) or not result ' }</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchString</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchString(mp As Ptr, ByRef pos As Integer, ByRef value As String) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim sPos As Integer</SourceLine>
+   <SourceLine>Dim ePos As Integer</SourceLine>
+   <SourceLine>Dim valueMB As MemoryBlock</SourceLine>
+   <SourceLine>Dim valuePtr As Ptr</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim idx As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine>value = ""</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 34 then ' "</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>sPos = pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;&gt; 34</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>ePos = pos - 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if ePos &gt;= sPos then</SourceLine>
+   <SourceLine>valueMB = new MemoryBlock(ePos - sPos + 1)</SourceLine>
+   <SourceLine>valuePtr = valueMB</SourceLine>
+   <SourceLine>idx = 0</SourceLine>
+   <SourceLine>for i = sPos to ePos</SourceLine>
+   <SourceLine>valuePtr.Byte(idx) = mp.Byte(i)</SourceLine>
+   <SourceLine>idx = idx + 1</SourceLine>
+   <SourceLine>next i</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>value = valueMB</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef value As String</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchPolygon</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchPolygon(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim p As X3Core.X3Polygon</SourceLine>
+   <SourceLine>Dim tmpStr As String</SourceLine>
+   <SourceLine>Dim bLoadedNormal As Boolean</SourceLine>
+   <SourceLine>Dim tmpInt As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>p = new X3Core.X3Polygon()</SourceLine>
+   <SourceLine>bLoadedNormal = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>select case tmpStr</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "ci"</SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
+   <SourceLine>p.CIndex = tmpInt</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "mi"</SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
+   <SourceLine>p.MIndex = tmpInt</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "ni"</SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
+   <SourceLine>p.NIndex = tmpInt</SourceLine>
+   <SourceLine>bLoadedNormal = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "ti"</SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
+   <SourceLine>p.TIndex = tmpInt</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "uvi"</SourceLine>
+   <SourceLine>result = matchUVIndex(mp, pos, p)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "vi"</SourceLine>
+   <SourceLine>result = matchVIndex(mp, pos, p)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "vni"</SourceLine>
+   <SourceLine>result = matchVNIndex(mp, pos, p)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case else ' unknown tag</SourceLine>
+   <SourceLine>skipValue(mp, pos)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end select</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false ' malformed JSON</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 125) or not result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>model.AppendPolygon p</SourceLine>
+   <SourceLine>if not bLoadedNormal then</SourceLine>
+   <SourceLine>p.CalculateNormal()</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchTexture</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchTexture(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpStr As String</SourceLine>
+   <SourceLine>Dim t As X3Core.X3Texture</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>t = new X3Core.X3Texture(Picture.FromData(DecodeBase64(tmpStr)))</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Texture.Append t</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchDouble</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchDouble(mp As Ptr, ByRef pos As Integer, ByRef value As Double) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim sPosInt As Integer</SourceLine>
+   <SourceLine>Dim ePosInt As Integer</SourceLine>
+   <SourceLine>Dim sPosFrac As Integer</SourceLine>
+   <SourceLine>Dim ePosFrac As Integer</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim exp As Integer</SourceLine>
+   <SourceLine>Dim minus As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>value = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 45 then ' minus</SourceLine>
+   <SourceLine>pos = pos + 1 ' skip sign</SourceLine>
+   <SourceLine>minus = -1</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>minus = 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>sPosInt = pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57))</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>ePosInt = pos - 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 46 then ' .</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>sPosFrac = pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57))</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>ePosFrac = pos - 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>sPosFrac = -1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' integer part</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if ePosInt &gt;= sPosInt then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>exp = ePosInt - sPosInt</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = sPosInt to ePosInt</SourceLine>
+   <SourceLine>value = value + (mp.Byte(i) - 48) * 10^exp</SourceLine>
+   <SourceLine>exp = exp - 1</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' fraction part</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if sPosFrac &gt;= 0 then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>exp = 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = sPosFrac to ePosFrac</SourceLine>
+   <SourceLine>value = value + (mp.Byte(i) - 48) / 10^exp</SourceLine>
+   <SourceLine>exp = exp + 1</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>value = value * minus</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef value As Double</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchInteger</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchInteger(mp As Ptr, ByRef pos As Integer, ByRef value As Integer) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim sPos As Integer</SourceLine>
+   <SourceLine>Dim ePos As Integer</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim exp As Integer</SourceLine>
+   <SourceLine>Dim minus As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>value = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 45 then ' minus</SourceLine>
+   <SourceLine>pos = pos + 1 ' skip sign</SourceLine>
+   <SourceLine>minus = -1</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>minus = 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>sPos = pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip first digit or sign symbol</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while (mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57)</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>ePos = pos - 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if ePos &gt;= sPos then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>exp = ePos - sPos</SourceLine>
+   <SourceLine>for i = sPos to ePos</SourceLine>
+   <SourceLine>value = value + (mp.Byte(i) - 48) * 10^exp</SourceLine>
+   <SourceLine>exp = exp - 1</SourceLine>
+   <SourceLine>next</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>value = value * minus</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return true</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef value As Integer</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchUVIndex</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchUVIndex(mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpInt As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly.UVIndex.Append tmpInt</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchColorPal</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchColorPal(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpR As Double</SourceLine>
+   <SourceLine>Dim tmpG As Double</SourceLine>
+   <SourceLine>Dim tmpB As Double</SourceLine>
+   <SourceLine>Dim tmpA As Double</SourceLine>
+   <SourceLine>Dim c As X3Core.X3Color</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>c = new X3Core.X3Color(tmpR, tmpG, tmpB, tmpA)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.ColorPal.Append c</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchMaterial</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchMaterial(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpR As Double</SourceLine>
+   <SourceLine>Dim tmpG As Double</SourceLine>
+   <SourceLine>Dim tmpB As Double</SourceLine>
+   <SourceLine>Dim tmpA As Double</SourceLine>
+   <SourceLine>Dim c As X3Core.X3Color</SourceLine>
+   <SourceLine>Dim m As X3Core.X3Material</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>m = new X3Core.X3Material</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ===== AMBIENT =====================================</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>m.Ambient.Red = tmpR</SourceLine>
+   <SourceLine>m.Ambient.Green = tmpG</SourceLine>
+   <SourceLine>m.Ambient.Blue = tmpB</SourceLine>
+   <SourceLine>m.Ambient.Alpha = tmpA</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ===== DIFFUSE =====================================</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>m.Diffuse.Red = tmpR</SourceLine>
+   <SourceLine>m.Diffuse.Green = tmpG</SourceLine>
+   <SourceLine>m.Diffuse.Blue = tmpB</SourceLine>
+   <SourceLine>m.Diffuse.Alpha = tmpA</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ===== SPECULAR =====================================</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>m.Specular.Red = tmpR</SourceLine>
+   <SourceLine>m.Specular.Green = tmpG</SourceLine>
+   <SourceLine>m.Specular.Blue = tmpB</SourceLine>
+   <SourceLine>m.Specular.Alpha = tmpA</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
+   <SourceLine>m.Shininess = tmpR</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Material.Append m</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchVIndex</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchVIndex(mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpInt As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly.VIndex.Append tmpInt</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchNormal</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchNormal(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpX As Double</SourceLine>
+   <SourceLine>Dim tmpY As Double</SourceLine>
+   <SourceLine>Dim tmpZ As Double</SourceLine>
+   <SourceLine>Dim n As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>n = new X3Core.X3Vector(tmpX, tmpY, tmpZ)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Normal.Append n</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchUVMap</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchUVMap(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpU As Double</SourceLine>
+   <SourceLine>Dim tmpV As Double</SourceLine>
+   <SourceLine>Dim uv As X3Core.X3UVCoordinate</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpU)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpV)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>uv = new X3Core.X3UVCoordinate(tmpU, tmpV)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.UVMap.Append uv</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchVertex</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchVertex(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpX As Double</SourceLine>
+   <SourceLine>Dim tmpY As Double</SourceLine>
+   <SourceLine>Dim tmpZ As Double</SourceLine>
+   <SourceLine>Dim v As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>v = new X3Core.X3Vector(tmpX, tmpY, tmpZ)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Vertex.Append v</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchVNIndex</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchVNIndex(mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpInt As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly.VNIndex.Append tmpInt</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>skipValue</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub skipValue(mp As Ptr, ByRef pos As Integer)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim count As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ***** decimal value? *****</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57)) or (mp.Byte(pos) = 46)  or (mp.Byte(pos) = 45) then ' string value?</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57)) or (mp.Byte(pos) = 46)  or (mp.Byte(pos) = 45)</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ***** JSON object *****</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>elseif mp.Byte(pos) = 123 then ' {</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>count = 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if (mp.Byte(pos) = 123) then ' {</SourceLine>
+   <SourceLine>count = count + 1</SourceLine>
+   <SourceLine>elseif (mp.Byte(pos) = 125) then ' }</SourceLine>
+   <SourceLine>count = count - 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 125) and (count &lt;= 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ***** string value *****</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>elseif mp.Byte(pos) = 34 then ' "</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>loop until mp.Byte(pos) = 34</SourceLine>
+   <SourceLine>pos = pos  + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' ***** array *****</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>elseif mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>count = 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if (mp.Byte(pos) =  91) then ' [</SourceLine>
+   <SourceLine>count = count + 1</SourceLine>
+   <SourceLine>elseif (mp.Byte(pos) = 93) then ' ]</SourceLine>
+   <SourceLine>count = count - 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 93) and (count &lt;= 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>break ' shouldn't break here... what are we missing?</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Name</ObjName>
@@ -3042,7 +4527,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1549565951">
+<block type="Module" ID="1446678527">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -4025,1426 +5510,6 @@
   <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
-  <ItemName>matchUVIndex</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchUVIndex(mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpInt As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>poly.UVIndex.Append tmpInt</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchColorPal</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchColorPal(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpR As Double</SourceLine>
-   <SourceLine>Dim tmpG As Double</SourceLine>
-   <SourceLine>Dim tmpB As Double</SourceLine>
-   <SourceLine>Dim tmpA As Double</SourceLine>
-   <SourceLine>Dim c As X3Core.X3Color</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>c = new X3Core.X3Color(tmpR, tmpG, tmpB, tmpA)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.ColorPal.Append c</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchInteger</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchInteger(mp As Ptr, ByRef pos As Integer, ByRef value As Integer) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim sPos As Integer</SourceLine>
-   <SourceLine>Dim ePos As Integer</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim exp As Integer</SourceLine>
-   <SourceLine>Dim minus As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>value = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 45 then ' minus</SourceLine>
-   <SourceLine>pos = pos + 1 ' skip sign</SourceLine>
-   <SourceLine>minus = -1</SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine>minus = 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>sPos = pos</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip first digit or sign symbol</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>while (mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57)</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>ePos = pos - 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if ePos &gt;= sPos then</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>exp = ePos - sPos</SourceLine>
-   <SourceLine>for i = sPos to ePos</SourceLine>
-   <SourceLine>value = value + (mp.Byte(i) - 48) * 10^exp</SourceLine>
-   <SourceLine>exp = exp - 1</SourceLine>
-   <SourceLine>next</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>value = value * minus</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return true</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef value As Integer</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchMaterial</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchMaterial(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpR As Double</SourceLine>
-   <SourceLine>Dim tmpG As Double</SourceLine>
-   <SourceLine>Dim tmpB As Double</SourceLine>
-   <SourceLine>Dim tmpA As Double</SourceLine>
-   <SourceLine>Dim c As X3Core.X3Color</SourceLine>
-   <SourceLine>Dim m As X3Core.X3Material</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>m = new X3Core.X3Material</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ===== AMBIENT =====================================</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>m.Ambient.Red = tmpR</SourceLine>
-   <SourceLine>m.Ambient.Green = tmpG</SourceLine>
-   <SourceLine>m.Ambient.Blue = tmpB</SourceLine>
-   <SourceLine>m.Ambient.Alpha = tmpA</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ===== DIFFUSE =====================================</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>m.Diffuse.Red = tmpR</SourceLine>
-   <SourceLine>m.Diffuse.Green = tmpG</SourceLine>
-   <SourceLine>m.Diffuse.Blue = tmpB</SourceLine>
-   <SourceLine>m.Diffuse.Alpha = tmpA</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ===== SPECULAR =====================================</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>m.Specular.Red = tmpR</SourceLine>
-   <SourceLine>m.Specular.Green = tmpG</SourceLine>
-   <SourceLine>m.Specular.Blue = tmpB</SourceLine>
-   <SourceLine>m.Specular.Alpha = tmpA</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
-   <SourceLine>m.Shininess = tmpR</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Material.Append m</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchNormal</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchNormal(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpX As Double</SourceLine>
-   <SourceLine>Dim tmpY As Double</SourceLine>
-   <SourceLine>Dim tmpZ As Double</SourceLine>
-   <SourceLine>Dim n As X3Core.X3Vector</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>n = new X3Core.X3Vector(tmpX, tmpY, tmpZ)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Normal.Append n</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchPolygon</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchPolygon(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim p As X3Core.X3Polygon</SourceLine>
-   <SourceLine>Dim tmpStr As String</SourceLine>
-   <SourceLine>Dim bLoadedNormal As Boolean</SourceLine>
-   <SourceLine>Dim tmpInt As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>p = new X3Core.X3Polygon()</SourceLine>
-   <SourceLine>bLoadedNormal = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>select case tmpStr</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "ci"</SourceLine>
-   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
-   <SourceLine>p.CIndex = tmpInt</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "mi"</SourceLine>
-   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
-   <SourceLine>p.MIndex = tmpInt</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "ni"</SourceLine>
-   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
-   <SourceLine>p.NIndex = tmpInt</SourceLine>
-   <SourceLine>bLoadedNormal = true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "ti"</SourceLine>
-   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
-   <SourceLine>p.TIndex = tmpInt</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "uvi"</SourceLine>
-   <SourceLine>result = matchUVIndex(mp, pos, p)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "vi"</SourceLine>
-   <SourceLine>result = matchVIndex(mp, pos, p)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "vni"</SourceLine>
-   <SourceLine>result = matchVNIndex(mp, pos, p)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case else ' unknown tag</SourceLine>
-   <SourceLine>skipValue(mp, pos)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end select</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false ' malformed JSON</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 125) or not result</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if result then</SourceLine>
-   <SourceLine>model.AppendPolygon p</SourceLine>
-   <SourceLine>if not bLoadedNormal then</SourceLine>
-   <SourceLine>p.CalculateNormal()</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchString</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchString(mp As Ptr, ByRef pos As Integer, ByRef value As String) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim sPos As Integer</SourceLine>
-   <SourceLine>Dim ePos As Integer</SourceLine>
-   <SourceLine>Dim valueMB As MemoryBlock</SourceLine>
-   <SourceLine>Dim valuePtr As Ptr</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim idx As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine>value = ""</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 34 then ' "</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>sPos = pos</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;&gt; 34</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>ePos = pos - 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if ePos &gt;= sPos then</SourceLine>
-   <SourceLine>valueMB = new MemoryBlock(ePos - sPos + 1)</SourceLine>
-   <SourceLine>valuePtr = valueMB</SourceLine>
-   <SourceLine>idx = 0</SourceLine>
-   <SourceLine>for i = sPos to ePos</SourceLine>
-   <SourceLine>valuePtr.Byte(idx) = mp.Byte(i)</SourceLine>
-   <SourceLine>idx = idx + 1</SourceLine>
-   <SourceLine>next i</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>value = valueMB</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef value As String</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchTexture</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchTexture(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpStr As String</SourceLine>
-   <SourceLine>Dim t As X3Core.X3Texture</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>t = new X3Core.X3Texture(Picture.FromData(DecodeBase64(tmpStr)))</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Texture.Append t</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchUVMap</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchUVMap(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpU As Double</SourceLine>
-   <SourceLine>Dim tmpV As Double</SourceLine>
-   <SourceLine>Dim uv As X3Core.X3UVCoordinate</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpU)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpV)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>uv = new X3Core.X3UVCoordinate(tmpU, tmpV)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.UVMap.Append uv</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchVertex</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchVertex(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpX As Double</SourceLine>
-   <SourceLine>Dim tmpY As Double</SourceLine>
-   <SourceLine>Dim tmpZ As Double</SourceLine>
-   <SourceLine>Dim v As X3Core.X3Vector</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>v = new X3Core.X3Vector(tmpX, tmpY, tmpZ)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Vertex.Append v</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchVIndex</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchVIndex(mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpInt As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>poly.VIndex.Append tmpInt</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchVNIndex</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchVNIndex(mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpInt As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>poly.VNIndex.Append tmpInt</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) or not result ' ]</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef poly As X3Core.X3Polygon</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchX3Model</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchX3Model(mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim tmpStr As String</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model = new X3Core.X3Model</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if tmpStr = "x3model" then</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>select case tmpStr</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "colorpal"</SourceLine>
-   <SourceLine>result = matchColorPal(mp, pos, model)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "material"</SourceLine>
-   <SourceLine>result = matchMaterial(mp, pos, model)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "normal"</SourceLine>
-   <SourceLine>result = matchNormal(mp, pos, model)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "polygon"</SourceLine>
-   <SourceLine>result = matchPolygon(mp, pos, model)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "vertex"</SourceLine>
-   <SourceLine>result = matchVertex(mp, pos, model)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "texture"</SourceLine>
-   <SourceLine>result = matchTexture(mp, pos, model)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case "uvmap"</SourceLine>
-   <SourceLine>result = matchUVMap(mp, pos, model)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>case else ' unknown tag</SourceLine>
-   <SourceLine>skipValue(mp, pos)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end select</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = false ' malformed JSON</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 125) or not result ' }</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
-  <ItemResult>Boolean</ItemResult>
- </Method>
- <Method>
-  <ItemName>skipValue</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub skipValue(mp As Ptr, ByRef pos As Integer)</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim count As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ***** decimal value? *****</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57)) or (mp.Byte(pos) = 46)  or (mp.Byte(pos) = 45) then ' string value?</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>while ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57)) or (mp.Byte(pos) = 46)  or (mp.Byte(pos) = 45)</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ***** JSON object *****</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>elseif mp.Byte(pos) = 123 then ' {</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>count = 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if (mp.Byte(pos) = 123) then ' {</SourceLine>
-   <SourceLine>count = count + 1</SourceLine>
-   <SourceLine>elseif (mp.Byte(pos) = 125) then ' }</SourceLine>
-   <SourceLine>count = count - 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 125) and (count &lt;= 0)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ***** string value *****</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>elseif mp.Byte(pos) = 34 then ' "</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>loop until mp.Byte(pos) = 34</SourceLine>
-   <SourceLine>pos = pos  + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' ***** array *****</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>elseif mp.Byte(pos) = 91 then ' [</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>count = 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>do</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if (mp.Byte(pos) =  91) then ' [</SourceLine>
-   <SourceLine>count = count + 1</SourceLine>
-   <SourceLine>elseif (mp.Byte(pos) = 93) then ' ]</SourceLine>
-   <SourceLine>count = count - 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>loop until (mp.Byte(pos) = 93) and (count &lt;= 0)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>break ' shouldn't break here... what are we missing?</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer</ItemParams>
-  <ItemResult></ItemResult>
- </Method>
- <Method>
-  <ItemName>X3_ModelFromJSON</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function X3_ModelFromJSON(modelJSON As String) As X3Core.X3Model</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
-   <SourceLine>Dim pos As Integer</SourceLine>
-   <SourceLine>Dim jsonMB As MemoryBlock</SourceLine>
-   <SourceLine>Dim result As Boolean</SourceLine>
-   <SourceLine>Dim mp As Ptr</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' this method renders X3 Data Format JSON into an X3Model</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>jsonMB = modelJSON</SourceLine>
-   <SourceLine>pos = 0</SourceLine>
-   <SourceLine>mp = jsonMB</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result =matchX3Model(mp, pos, model) ' parse the JSON</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return model</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>modelJSON As String</ItemParams>
-  <ItemResult>X3Core.X3Model</ItemResult>
- </Method>
- <Method>
-  <ItemName>X3_SaveModelDEP</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub X3_SaveModelDEP(model As X3Core.X3Model, modelFile As FolderItem, saveNormals As Boolean = True)</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim json as String</SourceLine>
-   <SourceLine>Dim tout As TextOutputStream</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>json = X3_ModelToJSON(model) ' generate X3 Data Format JSON from X3Model</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>tout = TextOutputStream.Create(modelFile) ' open file for output</SourceLine>
-   <SourceLine>tout.WriteLine json ' write X3DF JASON to file</SourceLine>
-   <SourceLine>tout.Close ' close file</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>model As X3Core.X3Model, modelFile As FolderItem, saveNormals As Boolean = True</ItemParams>
-  <ItemResult></ItemResult>
- </Method>
- <Method>
   <ItemName>X3_ModelToJSON</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
@@ -5764,102 +5829,6 @@
   <IsShared>0</IsShared>
   <ItemParams>model As X3Core.X3Model</ItemParams>
   <ItemResult>String</ItemResult>
- </Method>
- <Method>
-  <ItemName>matchDouble</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchDouble(mp As Ptr, ByRef pos As Integer, ByRef value As Double) As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim sPosInt As Integer</SourceLine>
-   <SourceLine>Dim ePosInt As Integer</SourceLine>
-   <SourceLine>Dim sPosFrac As Integer</SourceLine>
-   <SourceLine>Dim ePosFrac As Integer</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim exp As Integer</SourceLine>
-   <SourceLine>Dim minus As Double</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>value = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 45 then ' minus</SourceLine>
-   <SourceLine>pos = pos + 1 ' skip sign</SourceLine>
-   <SourceLine>minus = -1</SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine>minus = 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>sPosInt = pos</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>while ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57))</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>ePosInt = pos - 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if mp.Byte(pos) = 46 then ' .</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>sPosFrac = pos</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>while ((mp.Byte(pos) &gt;= 48) and (mp.Byte(pos) &lt;= 57))</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>ePosFrac = pos - 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>sPosFrac = -1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' integer part</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if ePosInt &gt;= sPosInt then</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>exp = ePosInt - sPosInt</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>for i = sPosInt to ePosInt</SourceLine>
-   <SourceLine>value = value + (mp.Byte(i) - 48) * 10^exp</SourceLine>
-   <SourceLine>exp = exp - 1</SourceLine>
-   <SourceLine>next</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' fraction part</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if sPosFrac &gt;= 0 then</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>exp = 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>for i = sPosFrac to ePosFrac</SourceLine>
-   <SourceLine>value = value + (mp.Byte(i) - 48) / 10^exp</SourceLine>
-   <SourceLine>exp = exp + 1</SourceLine>
-   <SourceLine>next</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>value = value * minus</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return true</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef value As Double</ItemParams>
-  <ItemResult>Boolean</ItemResult>
  </Method>
  <ViewBehavior>
   <ViewProperty>
