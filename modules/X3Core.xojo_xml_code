@@ -1,8 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RBProject version="2013r4.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="39086079">
+<RBProject version="2014r1.1" FormatVersion="2" MinIDEVersion="20070100">
+<block type="Module" ID="625401855">
+ <ObjName>X3Camera</ObjName>
+ <ObjContainerID>1275043839</ObjContainerID>
+ <IsClass>1</IsClass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Property>
+  <ItemName>Position</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Position As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Position As X3Core.X3Vector</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Rotation</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Rotation As X3Core.X3Quaternion</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Rotation As X3Core.X3Quaternion</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
+<block type="Module" ID="1454919679">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -203,9 +274,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1244735487">
+<block type="Module" ID="1316149247">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -399,9 +470,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="21440511">
+<block type="Module" ID="2027589631">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1013,9 +1084,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="220225535">
+<block type="Module" ID="1274544127">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1139,9 +1210,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1466152959">
+<block type="Module" ID="733429759">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1642,9 +1713,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="158414847">
+<block type="Module" ID="1772863487">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1925,9 +1996,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="819073023">
+<block type="Module" ID="788971519">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2052,9 +2123,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2053642239">
+<block type="Module" ID="369190911">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2426,9 +2497,94 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1533130751">
+<block type="Module" ID="388931583">
+ <ObjName>X3Scene</ObjName>
+ <ObjContainerID>1275043839</ObjContainerID>
+ <IsClass>1</IsClass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Property>
+  <ItemName>Model()</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Model() As X3Core.X3Model</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Model() As X3Core.X3Model</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Camera()</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Camera() As X3Core.X3Camera</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Camera() As X3Core.X3Camera</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>CameraIndex</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>CameraIndex As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>CameraIndex As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
+<block type="Module" ID="641349631">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2580,9 +2736,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1436776447">
+<block type="Module" ID="943728639">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2771,9 +2927,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1984657407">
+<block type="Module" ID="1912895487">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2937,9 +3093,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="482539519">
+<block type="Module" ID="1878820863">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1809442815</ObjContainerID>
+ <ObjContainerID>1275043839</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4491,6 +4647,31 @@
   <ItemParams>mp As Ptr, ByRef pos As Integer</ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>LoadModel</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function LoadModel(modelJSON As String) As X3Core.X3Model</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Model = modelFromJSON(modelJSON) ' parse data and create X3Model from JSON</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>modelJSON As String</ItemParams>
+  <ItemResult>X3Core.X3Model</ItemResult>
+ </Method>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Name</ObjName>
@@ -4527,7 +4708,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1809442815">
+<block type="Module" ID="1275043839">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -4910,7 +5091,6 @@
    <SourceLine>Dim currIndex As Integer = -1 ' current material index</SourceLine>
    <SourceLine>Dim texture As X3Core.X3Texture</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>'OpenGL.glDisable OpenGL.GL_COLOR_MATERIAL ' disable overwriting of material properties with vertex colors</SourceLine>
    <SourceLine>OpenGL.glEnable OpenGL.GL_COLOR_MATERIAL ' enable use vertex colors</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
@@ -5831,6 +6011,24 @@
   <IsShared>0</IsShared>
   <ItemParams>model As X3Core.X3Model</ItemParams>
   <ItemResult>String</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>X3_RenderScene</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub X3_RenderScene(scene As X3Core.X3Scene)</SourceLine>
+   <SourceLine>// TODO</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>scene As X3Core.X3Scene</ItemParams>
+  <ItemResult></ItemResult>
  </Method>
  <ViewBehavior>
   <ViewProperty>
