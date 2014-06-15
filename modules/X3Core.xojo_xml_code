@@ -1373,13 +1373,40 @@
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim centPos As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim maxX As Double</SourceLine>
+   <SourceLine>Dim minX As Double</SourceLine>
+   <SourceLine>Dim maxY As Double</SourceLine>
+   <SourceLine>Dim minY As Double</SourceLine>
+   <SourceLine>Dim maxZ As Double</SourceLine>
+   <SourceLine>Dim minZ As Double</SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
-   <SourceLine>Dim midZ As Double</SourceLine>
-   <SourceLine>Dim xStep As Double</SourceLine>
-   <SourceLine>Dim yStep As Double</SourceLine>
-   <SourceLine>Dim zStep As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>maxX = Vertex(i).X</SourceLine>
+   <SourceLine>minX = Vertex(i).X</SourceLine>
+   <SourceLine>maxY = Vertex(i).Y</SourceLine>
+   <SourceLine>minY = Vertex(i).Y</SourceLine>
+   <SourceLine>maxZ = Vertex(i).Z</SourceLine>
+   <SourceLine>minZ = Vertex(i).Z</SourceLine>
+   <SourceLine>for i = 1 to Vertex.Ubound</SourceLine>
+   <SourceLine>if Vertex(i).X &gt; maxX then</SourceLine>
+   <SourceLine>maxX = Vertex(i).X</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).X &lt; minX then</SourceLine>
+   <SourceLine>minX = Vertex(i).X</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Y &gt; maxY then</SourceLine>
+   <SourceLine>maxY = Vertex(i).Y</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Y &lt; minY then</SourceLine>
+   <SourceLine>minY = Vertex(i).Y</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Z &gt; maxZ then</SourceLine>
+   <SourceLine>maxZ = Vertex(i).Z</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Z &lt; minZ then</SourceLine>
+   <SourceLine>minZ = Vertex(i).Z</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next i</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if pos = nil then</SourceLine>
    <SourceLine>centPos = new X3Core.X3Vector(0, 0, 0)</SourceLine>
@@ -1387,29 +1414,16 @@
    <SourceLine>centPos = pos</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>midX = 0</SourceLine>
-   <SourceLine>midY = 0</SourceLine>
-   <SourceLine>midZ = 0</SourceLine>
+   <SourceLine>MaxX = centPos.X - (MaxX + MinX) / 2</SourceLine>
+   <SourceLine>MaxY = centPos.Y - (MaxY + MinY) / 2</SourceLine>
+   <SourceLine>MaxZ = centPos.Z - (MaxZ + MinZ) / 2</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>for i = 0 to Vertex.Ubound</SourceLine>
-   <SourceLine>midX = midX + Vertex(i).X</SourceLine>
-   <SourceLine>midY = midY + Vertex(i).Y</SourceLine>
-   <SourceLine>midZ = midZ + Vertex(i).Z</SourceLine>
+   <SourceLine>Vertex(i).X = Vertex(i).X + MaxX</SourceLine>
+   <SourceLine>Vertex(i).Y = Vertex(i).Y + MaxY</SourceLine>
+   <SourceLine>Vertex(i).Z = Vertex(i).Z + MaxZ</SourceLine>
    <SourceLine>next i</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>midX = midX / (Vertex.Ubound + 1)</SourceLine>
-   <SourceLine>midY = midY / (Vertex.Ubound + 1)</SourceLine>
-   <SourceLine>midZ = midZ / (Vertex.Ubound + 1)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>xStep = centPos.X - midX</SourceLine>
-   <SourceLine>yStep = centPos.Y - midY</SourceLine>
-   <SourceLine>zStep = centPos.Z - midZ</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>for i = 0 to Vertex.Ubound</SourceLine>
-   <SourceLine>Vertex(i).X = Vertex(i).X + xStep</SourceLine>
-   <SourceLine>Vertex(i).Y = Vertex(i).Y + yStep</SourceLine>
-   <SourceLine>Vertex(i).Z = Vertex(i).Z + zStep</SourceLine>
-   <SourceLine>next i</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
