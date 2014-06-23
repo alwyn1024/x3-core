@@ -1829,12 +1829,14 @@
    <SourceLine>Dim minZ As Double</SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>maxX = Vertex(i).X</SourceLine>
-   <SourceLine>minX = Vertex(i).X</SourceLine>
-   <SourceLine>maxY = Vertex(i).Y</SourceLine>
-   <SourceLine>minY = Vertex(i).Y</SourceLine>
-   <SourceLine>maxZ = Vertex(i).Z</SourceLine>
-   <SourceLine>minZ = Vertex(i).Z</SourceLine>
+   <SourceLine>if Vertex.Ubound &gt;= 0 then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>maxX = Vertex(0).X</SourceLine>
+   <SourceLine>minX = Vertex(0).X</SourceLine>
+   <SourceLine>maxY = Vertex(0).Y</SourceLine>
+   <SourceLine>minY = Vertex(0).Y</SourceLine>
+   <SourceLine>maxZ = Vertex(0).Z</SourceLine>
+   <SourceLine>minZ = Vertex(0).Z</SourceLine>
    <SourceLine>for i = 1 to Vertex.Ubound</SourceLine>
    <SourceLine>if Vertex(i).X &gt; maxX then</SourceLine>
    <SourceLine>maxX = Vertex(i).X</SourceLine>
@@ -1872,6 +1874,7 @@
    <SourceLine>Vertex(i).Z = Vertex(i).Z + MaxZ</SourceLine>
    <SourceLine>next i</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -4815,7 +4818,6 @@
    <SourceLine>Dim tmpG As Double</SourceLine>
    <SourceLine>Dim tmpB As Double</SourceLine>
    <SourceLine>Dim tmpA As Double</SourceLine>
-   <SourceLine>Dim c As X3Core.X3Color</SourceLine>
    <SourceLine>Dim m As X3Core.X3Material</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = false</SourceLine>
