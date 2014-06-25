@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RBProject version="2014r1.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="625401855">
+<RBProject version="2014r2" FormatVersion="2" MinIDEVersion="20070100">
+<block type="Module" ID="467773439">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -405,6 +405,104 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
+ <Property>
+  <ItemName>FieldOfView</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>FieldOfView As Double = 60.0</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>FieldOfView As Double = 60.0</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>zNear</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>zNear As Double = 1.0</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>zNear As Double = 1.0</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>zFar</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>zFar As Double = 100.0</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>zFar As Double = 100.0</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>ViewportX</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>ViewportX As Double = 0</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>ViewportX As Double = 0</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>ViewportY</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>ViewportY As Double = 0</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>ViewportY As Double = 0</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>ViewportWidth</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>ViewportWidth As Double = 0</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>ViewportWidth As Double = 0</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>ViewportHeight</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>ViewportHeight As Double = 0</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>ViewportHeight As Double = 0</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Name</ObjName>
@@ -441,9 +539,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1454919679">
+<block type="Module" ID="540704767">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -720,9 +818,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1316149247">
+<block type="Module" ID="2114097151">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -916,9 +1014,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2027589631">
+<block type="Module" ID="277561343">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1530,9 +1628,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1274544127">
+<block type="Module" ID="2078078975">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1656,9 +1754,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="733429759">
+<block type="Module" ID="1013198847">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2192,9 +2290,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1772863487">
+<block type="Module" ID="1038022655">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2285,12 +2383,6 @@
    <SourceLine></SourceLine>
    <SourceLine>TextureImage = texture</SourceLine>
    <SourceLine>OGLName = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>'' load texture into OpenGL</SourceLine>
-   <SourceLine>'</SourceLine>
-   <SourceLine>'if loadOpenGL then</SourceLine>
-   <SourceLine>'OGLName = X3_LoadRGBATexture(RGBABitmap, Width, Height)</SourceLine>
-   <SourceLine>'end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -2475,9 +2567,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="788971519">
+<block type="Module" ID="877813759">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2602,9 +2694,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="369190911">
+<block type="Module" ID="826169343">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3059,9 +3151,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="388931583">
+<block type="Module" ID="884885503">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3397,6 +3489,34 @@
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>SetViewport</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub SetViewport(x As Double, y As Double, width As Double, height As Double)</SourceLine>
+   <SourceLine>Dim i as Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' loop through all cameras and configure them with the given viewport settings</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = 0 to Camera.Ubound</SourceLine>
+   <SourceLine>Camera(i).ViewportX = x</SourceLine>
+   <SourceLine>Camera(i).ViewportY = y</SourceLine>
+   <SourceLine>Camera(i).ViewportWidth = width</SourceLine>
+   <SourceLine>Camera(i).ViewportHeight = height</SourceLine>
+   <SourceLine>next i </SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>x As Double, y As Double, width As Double, height As Double</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
  <Property>
   <ItemName>Model()</ItemName>
   <Compatibility></Compatibility>
@@ -3526,9 +3646,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="641349631">
+<block type="Module" ID="2120617983">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3680,9 +3800,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="943728639">
+<block type="Module" ID="447174655">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3871,9 +3991,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1912895487">
+<block type="Module" ID="1318109183">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4037,9 +4157,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1878820863">
+<block type="Module" ID="1421578239">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1275043839</ObjContainerID>
+ <ObjContainerID>1524205567</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6361,7 +6481,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1275043839">
+<block type="Module" ID="1524205567">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -6630,6 +6750,7 @@
    <SourceLine>' set the blending function for alpha colors</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glBlendFunc OpenGL.GL_SRC_ALPHA, OpenGL.GL_ONE_MINUS_SRC_ALPHA</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -7157,16 +7278,16 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub X3_SetPerspective(Surface As OpenGLSurface, fov As Double = 60.0, zNear As Double = 1, zFar As Double = 100)</SourceLine>
+   <SourceLine>Sub X3_SetPerspective(x As Double, y As Double, width As Double, height As Double, fov As Double = 60.0, zNear As Double = 1, zFar As Double = 100)</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glViewport 0, 0, Surface.Width, Surface.Height ' set the viewport rectangle</SourceLine>
+   <SourceLine>OpenGL.glViewport x, y, width, height ' set the viewport rectangle</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' set up the perspective projection settings</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glMatrixMode OpenGL.GL_PROJECTION ' select the projection matrix</SourceLine>
    <SourceLine>OpenGL.glLoadIdentity ' clear the projection matrix</SourceLine>
-   <SourceLine>OpenGL.gluPerspective fov, Surface.Width / Surface.Height, zNear, zFar ' set up our own custom projection matrix</SourceLine>
+   <SourceLine>OpenGL.gluPerspective fov, width / height, zNear, zFar ' set up our own custom projection matrix</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' select and reset the modelview matrix</SourceLine>
    <SourceLine></SourceLine>
@@ -7180,7 +7301,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>Surface As OpenGLSurface, fov As Double = 60.0, zNear As Double = 1, zFar As Double = 100</ItemParams>
+  <ItemParams>x As Double, y As Double, width As Double, height As Double, fov As Double = 60.0, zNear As Double = 1, zFar As Double = 100</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Method>
@@ -7685,8 +7806,6 @@
    <SourceLine>activeCam = scene.Camera(scene.CameraIndex)</SourceLine>
    <SourceLine>X3_SetCamera activeCam</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>'OpenGL.glTranslatef 0, 0, -10</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>// render all the models in the scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>for i = 0 to scene.Model.Ubound</SourceLine>
@@ -7710,6 +7829,10 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Sub X3_SetCamera(camera As X3Core.X3Camera)</SourceLine>
+   <SourceLine>' apply the perspective settings of the camera</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X3_SetPerspective camera.ViewportX, camera.ViewportY, camera.ViewportWidth, camera.ViewportHeight, 60.0, 0.01</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>' set the orientation of the camera</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>X3_SetRotation camera.CameraRotation</SourceLine>
@@ -7726,6 +7849,48 @@
   <IsShared>0</IsShared>
   <ItemParams>camera As X3Core.X3Camera</ItemParams>
   <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>X3_Snapshot</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function X3_Snapshot(x As Integer, y As Integer, width As Integer, height As Integer) As Picture</SourceLine>
+   <SourceLine>Dim pixelData As New MemoryBlock(width * height * 4)</SourceLine>
+   <SourceLine>Dim result As Picture</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim j As Integer</SourceLine>
+   <SourceLine>Dim heightMinOne As Integer</SourceLine>
+   <SourceLine>Dim rgbMain As RGBSurface</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glReadPixels(x, y, width, height, OpenGL.GL_RGBA, OpenGL.GL_UNSIGNED_BYTE, pixelData)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = new Picture(width, height)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>rgbMain = result.RGBSurface</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>heightMinOne = height - 1</SourceLine>
+   <SourceLine>j = 0</SourceLine>
+   <SourceLine>while j &lt; height</SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while i &lt; width</SourceLine>
+   <SourceLine>rgbMain.Pixel(i, j) = pixelData.ColorValue(((heightMinOne - j) * width + i) * 4, 32)</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine>j = j + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>x As Integer, y As Integer, width As Integer, height As Integer</ItemParams>
+  <ItemResult>Picture</ItemResult>
  </Method>
  <ViewBehavior>
   <ViewProperty>
