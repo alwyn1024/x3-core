@@ -411,7 +411,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>FieldOfView As Double = 60.0</SourceLine>
+   <SourceLine>FieldOfView As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -425,7 +425,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>zNear As Double = 1.0</SourceLine>
+   <SourceLine>zNear As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -439,7 +439,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>zFar As Double = 100.0</SourceLine>
+   <SourceLine>zFar As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -453,7 +453,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>ViewportX As Double = 0</SourceLine>
+   <SourceLine>ViewportX As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -467,7 +467,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>ViewportY As Double = 0</SourceLine>
+   <SourceLine>ViewportY As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -481,7 +481,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>ViewportWidth As Double = 0</SourceLine>
+   <SourceLine>ViewportWidth As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -495,7 +495,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>ViewportHeight As Double = 0</SourceLine>
+   <SourceLine>ViewportHeight As Double</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -536,6 +536,48 @@
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>FieldOfView</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>60.0</PropertyValue>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>zNear</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>1.0</PropertyValue>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>zFar</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>100.0</PropertyValue>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ViewportX</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ViewportY</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ViewportWidth</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ViewportHeight</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Double</ItemType>
   </ViewProperty>
  </ViewBehavior>
 </block>
@@ -3604,6 +3646,32 @@
   <ItemDeclaration>mActiveCamera As X3Core.X3Camera</ItemDeclaration>
   <ItemFlags>33</ItemFlags>
   <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>ActiveCamera</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>ActiveCamera As X3Core.X3Camera</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>ActiveCamera As X3Core.X3Camera</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <SetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Set</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Set</SourceLine>
+  </SetAccessor>
+  <GetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Get</SourceLine>
+   <SourceLine>return mActiveCamera</SourceLine>
+   <SourceLine>End Get</SourceLine>
+  </GetAccessor>
  </Property>
  <ViewBehavior>
   <ViewProperty>
@@ -7813,6 +7881,7 @@
    <SourceLine>next i </SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -7831,7 +7900,7 @@
    <SourceLine>Sub X3_SetCamera(camera As X3Core.X3Camera)</SourceLine>
    <SourceLine>' apply the perspective settings of the camera</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>X3_SetPerspective camera.ViewportX, camera.ViewportY, camera.ViewportWidth, camera.ViewportHeight, 60.0, 0.01</SourceLine>
+   <SourceLine>X3_SetPerspective camera.ViewportX, camera.ViewportY, camera.ViewportWidth, camera.ViewportHeight, camera.FieldOfView, camera.zNear, camera.zFar</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' set the orientation of the camera</SourceLine>
    <SourceLine></SourceLine>
