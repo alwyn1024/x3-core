@@ -6819,6 +6819,9 @@
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glBlendFunc OpenGL.GL_SRC_ALPHA, OpenGL.GL_ONE_MINUS_SRC_ALPHA</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>' render buffer storage</SourceLine>
+   <SourceLine>dim mb as new MemoryBlock(16)</SourceLine>
+   <SourceLine>OpenGL.glGetIntegerv OpenGL.GL_ALPHA_BITS, mb // shouldn't be zero</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -7932,19 +7935,23 @@
    <SourceLine>Dim j As Integer</SourceLine>
    <SourceLine>Dim heightMinOne As Integer</SourceLine>
    <SourceLine>Dim rgbMain As RGBSurface</SourceLine>
+   <SourceLine>Dim pixelOffset As Integer</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glReadPixels(x, y, width, height, OpenGL.GL_RGBA, OpenGL.GL_UNSIGNED_BYTE, pixelData)</SourceLine>
+   <SourceLine>pixelData.LittleEndian = True</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = new Picture(width, height)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>rgbMain = result.RGBSurface</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>heightMinOne = height - 1</SourceLine>
+   <SourceLineBreakpoint>16</SourceLineBreakpoint>
    <SourceLine>j = 0</SourceLine>
    <SourceLine>while j &lt; height</SourceLine>
    <SourceLine>i = 0</SourceLine>
    <SourceLine>while i &lt; width</SourceLine>
-   <SourceLine>rgbMain.Pixel(i, j) = pixelData.ColorValue(((heightMinOne - j) * width + i) * 4, 32)</SourceLine>
+   <SourceLine>pixelOffset = ((heightMinOne - j) * width + i) * 4</SourceLine>
+   <SourceLine>rgbMain.Pixel(i, j) = RGB(pixelData.Byte(pixelOffset), pixelData.Byte(pixelOffset +1), pixelData.Byte(pixelOffset +2))</SourceLine>
    <SourceLine>i = i + 1</SourceLine>
    <SourceLine>wend</SourceLine>
    <SourceLine>j = j + 1</SourceLine>
