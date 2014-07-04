@@ -463,7 +463,7 @@
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>FieldOfView As Double = 60.0</ItemDeclaration>
+  <ItemDeclaration>FieldOfView As Double = 45.0</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -477,7 +477,7 @@
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>zNear As Double = 1.0</ItemDeclaration>
+  <ItemDeclaration>zNear As Double = 0.01</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -4442,19 +4442,13 @@
    <SourceLine></SourceLine>
    <SourceLine>if tmpStr = "x3model" then</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchModelObject(mp, pos, model)</SourceLine>
    <SourceLine></SourceLine>
@@ -4494,10 +4488,7 @@
    <SourceLine>result = false</SourceLine>
    <SourceLine>value = ""</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 34 then ' "</SourceLine>
    <SourceLine></SourceLine>
@@ -4561,10 +4552,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
@@ -4575,10 +4563,7 @@
    <SourceLine>p = new X3Core.X3Polygon()</SourceLine>
    <SourceLine>bLoadedNormal = false</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = true</SourceLine>
    <SourceLine></SourceLine>
@@ -4586,19 +4571,13 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>select case tmpStr</SourceLine>
    <SourceLine></SourceLine>
@@ -4633,19 +4612,13 @@
    <SourceLine></SourceLine>
    <SourceLine>end select</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine></SourceLine>
@@ -4665,19 +4638,13 @@
    <SourceLine>end if</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine></SourceLine>
@@ -4720,28 +4687,19 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>t = new X3Core.X3Texture(Picture.FromData(DecodeBase64(tmpStr)))</SourceLine>
    <SourceLine></SourceLine>
@@ -4780,10 +4738,7 @@
    <SourceLine>Dim exp As Integer</SourceLine>
    <SourceLine>Dim minus As Double</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>value = 0</SourceLine>
    <SourceLine></SourceLine>
@@ -4874,10 +4829,7 @@
    <SourceLine>Dim exp As Integer</SourceLine>
    <SourceLine>Dim minus As Integer</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>value = 0</SourceLine>
    <SourceLine></SourceLine>
@@ -4938,28 +4890,19 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly.UVIndex.Append tmpInt</SourceLine>
    <SourceLine></SourceLine>
@@ -5001,70 +4944,31 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>c = new X3Core.X3Color(tmpR, tmpG, tmpB, tmpA)</SourceLine>
    <SourceLine></SourceLine>
@@ -5108,10 +5012,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
@@ -5121,54 +5022,19 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>m.Ambient.Red = tmpR</SourceLine>
    <SourceLine>m.Ambient.Green = tmpG</SourceLine>
@@ -5179,54 +5045,19 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>m.Diffuse.Red = tmpR</SourceLine>
    <SourceLine>m.Diffuse.Green = tmpG</SourceLine>
@@ -5237,54 +5068,19 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>m.Specular.Red = tmpR</SourceLine>
    <SourceLine>m.Specular.Green = tmpG</SourceLine>
@@ -5294,19 +5090,11 @@
    <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
    <SourceLine>m.Shininess = tmpR</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Material.Append m</SourceLine>
    <SourceLine></SourceLine>
@@ -5344,28 +5132,19 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly.VIndex.Append tmpInt</SourceLine>
    <SourceLine></SourceLine>
@@ -5406,56 +5185,27 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>n = new X3Core.X3Vector(tmpX, tmpY, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
@@ -5497,42 +5247,23 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpU)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpV)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>uv = new X3Core.X3UVCoordinate(tmpU, tmpV)</SourceLine>
    <SourceLine></SourceLine>
@@ -5575,56 +5306,27 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>v = new X3Core.X3Vector(tmpX, tmpY, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
@@ -5664,28 +5366,19 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>do</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchInteger(mp, pos, tmpInt)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly.VNIndex.Append tmpInt</SourceLine>
    <SourceLine></SourceLine>
@@ -5940,10 +5633,7 @@
    <SourceLine></SourceLine>
    <SourceLine>if tmpStr = "x3scene" then</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
    <SourceLine></SourceLine>
@@ -5953,10 +5643,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = true</SourceLine>
    <SourceLine></SourceLine>
@@ -5964,21 +5651,51 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>select case tmpStr</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "cameras"</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while (mp.Byte(pos) &lt;&gt; 93) and result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchCamera(mp, pos, scene)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "models"</SourceLine>
    <SourceLine></SourceLine>
@@ -5986,10 +5703,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = true</SourceLine>
    <SourceLine></SourceLine>
@@ -6002,10 +5716,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>models.Append tmpModel // add model to model templates that will be used to spawn objects</SourceLine>
    <SourceLine></SourceLine>
@@ -6013,10 +5724,7 @@
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -6024,10 +5732,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos _</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -6037,10 +5742,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = true</SourceLine>
    <SourceLine></SourceLine>
@@ -6052,19 +5754,13 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -6072,10 +5768,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -6084,19 +5777,13 @@
    <SourceLine></SourceLine>
    <SourceLine>end select</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine></SourceLine>
@@ -6114,13 +5801,14 @@
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>// if no cameras were defined for the scene, then we add a default one at position (0, 0, 10)</SourceLine>
+   <SourceLine>// if no cameras were defined for the scene, then we add a default one at position (0, 0, 0)</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>if scene.Camera.Ubound &lt; 0 then</SourceLine>
    <SourceLine>tmpCamera = new X3Core.X3Camera</SourceLine>
-   <SourceLine>tmpCamera.DollyPosition.Z = 10</SourceLine>
    <SourceLine>scene.Camera.Append tmpCamera</SourceLine>
-   <SourceLine>scene.CameraIndex = 0</SourceLine>
    <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>scene.CameraIndex = 0</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return result</SourceLine>
    <SourceLine>End Function</SourceLine>
@@ -6152,10 +5840,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = true</SourceLine>
    <SourceLine></SourceLine>
@@ -6163,19 +5848,13 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos _</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>select case tmpStr</SourceLine>
    <SourceLine></SourceLine>
@@ -6205,19 +5884,13 @@
    <SourceLine></SourceLine>
    <SourceLine>end select</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine></SourceLine>
@@ -6259,10 +5932,7 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = true</SourceLine>
    <SourceLine></SourceLine>
@@ -6270,19 +5940,13 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>select case tmpStr</SourceLine>
    <SourceLine></SourceLine>
@@ -6308,19 +5972,13 @@
    <SourceLine></SourceLine>
    <SourceLine>end select</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine></SourceLine>
@@ -6329,6 +5987,7 @@
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>loop until (mp.Byte(pos) = 125) or not result ' }</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -6362,52 +6021,21 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Position.X = tmpX</SourceLine>
    <SourceLine>model.Position.Y = tmpY</SourceLine>
@@ -6446,66 +6074,23 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpW)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Rotation.W = tmpW</SourceLine>
    <SourceLine>model.Rotation.X = tmpX</SourceLine>
@@ -6544,52 +6129,19 @@
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' skip white space</SourceLine>
-   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
-   <SourceLine>pos = pos + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Scale.X = tmpX</SourceLine>
    <SourceLine>model.Scale.Y = tmpY</SourceLine>
@@ -6606,6 +6158,305 @@
   <IsShared>0</IsShared>
   <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef model As X3Core.X3Model</ItemParams>
   <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchCamera</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchCamera(mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpStr As String</SourceLine>
+   <SourceLine>Dim tmpCam As X3Core.X3Camera</SourceLine>
+   <SourceLine>Dim tmpQuat As X3Core.X3Quaternion</SourceLine>
+   <SourceLine>Dim tmpVec As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim tmpDbl As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>tmpCam = new X3Core.X3Camera</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>select case tmpStr</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "crot" // camera rotation</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchQuaternion(mp, pos, tmpQuat)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpCam.CameraRotation = tmpQuat</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "dpos" // dolly position</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchVector(mp, pos, tmpVec)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpCam.DollyPosition = tmpVec</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "drot" // dolly rotation</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchQuaternion(mp, pos, tmpQuat)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpCam.DollyRotation = tmpQuat</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "fov" // field of view</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpDbl)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpCam.FieldOfView = tmpDbl</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "zfar" // z-far</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpDbl)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpCam.zFar = tmpDbl</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "znear" // z-near</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpDbl)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpCam.zNear = tmpDbl</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case else ' unknown tag</SourceLine>
+   <SourceLine>skipValue(mp, pos)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end select</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false ' malformed JSON</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 125) or not result ' }</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>scene.Camera.Append tmpCam</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchQuaternion</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchQuaternion(mp As Ptr, ByRef pos As Integer, ByRef quat As X3Core.X3Quaternion) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpW As Double</SourceLine>
+   <SourceLine>Dim tmpX As Double</SourceLine>
+   <SourceLine>Dim tmpY As Double</SourceLine>
+   <SourceLine>Dim tmpZ As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpW)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>quat = new X3Core.X3Quaternion</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>quat.W = tmpW</SourceLine>
+   <SourceLine>quat.X = tmpX</SourceLine>
+   <SourceLine>quat.Y = tmpY</SourceLine>
+   <SourceLine>quat.Z = tmpZ</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef quat As X3Core.X3Quaternion</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchVector</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchVector(mp As Ptr, ByRef pos As Integer, ByRef vec As X3Core.X3Vector) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpX As Double</SourceLine>
+   <SourceLine>Dim tmpY As Double</SourceLine>
+   <SourceLine>Dim tmpZ As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' skip white space</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past closing bracket</SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>vec = new X3Core.X3Vector(tmpX, tmpY, tmpZ)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef vec As X3Core.X3Vector</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>skipWhitespace</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub skipWhitespace(mp As Ptr, ByRef pos As Integer)</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>skipComma</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub skipComma(mp As Ptr, ByRef pos As Integer)</SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while mp.Byte(pos) &lt;= 32</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer</ItemParams>
+  <ItemResult></ItemResult>
  </Method>
  <ViewBehavior>
   <ViewProperty>
