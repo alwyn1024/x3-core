@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RBProject version="2014r2" FormatVersion="2" MinIDEVersion="20070100">
+<RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
 <block type="Module" ID="467773439">
  <ObjName>X3Camera</ObjName>
  <ObjContainerID>1524205567</ObjContainerID>
@@ -1750,6 +1750,32 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>xPos As Double, yPos As Double, zPos As Double</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Constructor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Constructor()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' intialize the light properties with default values</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Position = new X3Vector(0, 0, 0) ' initialize the light at the origin</SourceLine>
+   <SourceLine>Ambient = new X3Color(0.2, 0.2, 0.2, 1)</SourceLine>
+   <SourceLine>Diffuse = new X3Color(1, 1, 1, 1)</SourceLine>
+   <SourceLine>Specular = new X3Color(1, 1, 1, 1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
@@ -3767,6 +3793,20 @@
    <SourceLine>End Get</SourceLine>
   </GetAccessor>
  </Property>
+ <Property>
+  <ItemName>Light()</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Light() As X3Core.X3Light</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Light() As X3Core.X3Light</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Name</ObjName>
@@ -5697,6 +5737,42 @@
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>case "lights"</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while (mp.Byte(pos) &lt;&gt; 93) and result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchLight(mp, pos, scene)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>case "models"</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
@@ -6305,33 +6381,21 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpW)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>skipWhitespace mp, pos</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpX)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>skipWhitespace mp, pos</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpY)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>skipWhitespace mp, pos</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpZ)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>pos = pos + 1 ' skip past comma</SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past closing bracket</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
@@ -6457,6 +6521,170 @@
   <IsShared>0</IsShared>
   <ItemParams>mp As Ptr, ByRef pos As Integer</ItemParams>
   <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchLight</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchLight(mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpStr As String</SourceLine>
+   <SourceLine>Dim tmpLight As X3Core.X3Light</SourceLine>
+   <SourceLine>Dim tmpVec As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim tmpCol As X3Core.X3Color</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>tmpLight = new X3Core.X3Light</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = true</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>do</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchString(mp, pos, tmpStr)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 58 then ' :</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>select case tmpStr</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "ambient" // ambient color of light</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchColor(mp, pos, tmpCol)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpLight.Ambient = tmpCol</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "diffuse" // diffuse color of light</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchColor(mp, pos, tmpCol)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpLight.Diffuse = tmpCol</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "pos" // light position</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchVector(mp, pos, tmpVec)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpLight.Position = tmpVec</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "specular" // specular color of light</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchColor(mp, pos, tmpCol)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>tmpLight.Specular = tmpCol</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case else ' unknown tag</SourceLine>
+   <SourceLine>skipValue(mp, pos)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end select</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 44 then ' ,</SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false ' malformed JSON</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>loop until (mp.Byte(pos) = 125) or not result ' }</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>scene.Light.Append tmpLight</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>matchColor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function matchColor(mp As Ptr, ByRef pos As Integer, ByRef col As X3Core.X3Color) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Boolean</SourceLine>
+   <SourceLine>Dim tmpR As Double</SourceLine>
+   <SourceLine>Dim tmpG As Double</SourceLine>
+   <SourceLine>Dim tmpB As Double</SourceLine>
+   <SourceLine>Dim tmpA As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpR)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpG)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpB)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipComma mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchDouble(mp, pos, tmpA)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pos = pos + 1 ' skip past closing bracket</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>skipWhitespace mp, pos</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>col = new X3Core.X3Color(tmpR, tmpG, tmpB, tmpA)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef col As X3Core.X3Color</ItemParams>
+  <ItemResult>Boolean</ItemResult>
  </Method>
  <ViewBehavior>
   <ViewProperty>
@@ -7817,6 +8045,30 @@
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>' set up the lights</SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while i &lt;= scene.Light.Ubound</SourceLine>
+   <SourceLine>select case i </SourceLine>
+   <SourceLine>case 0</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 1</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 2</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 3</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 4</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 5</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 6</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>case 7</SourceLine>
+   <SourceLine>X3_EnableLight OpenGL.GL_LIGHT0, scene.Light(i)</SourceLine>
+   <SourceLine>end select</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>' select the active camera</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>activeCam = scene.Camera(scene.CameraIndex)</SourceLine>
@@ -7912,6 +8164,33 @@
   <IsShared>0</IsShared>
   <ItemParams>x As Integer, y As Integer, width As Integer, height As Integer</ItemParams>
   <ItemResult>Picture</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>X3_DisableAllLights</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub X3_DisableAllLights()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT0</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT1</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT2</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT3</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT4</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT5</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT6</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHT7</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
  </Method>
  <ViewBehavior>
   <ViewProperty>
