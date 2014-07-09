@@ -7,6 +7,14 @@
 				"dpos":[0, 0, 5]
 			}
 		],			
+		"lights":[
+			{
+				"pos":[0, 1, 1],
+				"ambient":[0.2, 0.2, 0.2, 1],
+				"diffuse":[1, 1, 1, 1],
+				"specular":[1, 1, 1, 1]
+			}
+		],
 		"models":[
 			{
 				"colorpal":[
