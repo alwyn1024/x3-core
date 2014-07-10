@@ -5660,6 +5660,8 @@
    <SourceLine>Dim tmpModel As X3Core.X3Model</SourceLine>
    <SourceLine>Dim models() As X3Core.X3Model</SourceLine>
    <SourceLine>Dim tmpCamera As X3Core.X3Camera</SourceLine>
+   <SourceLine>Dim tmpLight As X3Core.X3Light</SourceLine>
+   <SourceLine>Dim defaultCam As Integer = -1</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>scene = new X3Core.X3Scene</SourceLine>
    <SourceLine></SourceLine>
@@ -5713,9 +5715,11 @@
    <SourceLine></SourceLine>
    <SourceLine>while (mp.Byte(pos) &lt;&gt; 93) and result</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>result = matchCamera(mp, pos, scene)</SourceLine>
+   <SourceLine>result = matchCamera(mp, pos, tmpCamera)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if result then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>scene.Camera.Append tmpCamera</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
@@ -5737,6 +5741,10 @@
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>case "defaultcam"</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = matchInteger(mp, pos, defaultCam)</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>case "lights"</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 91 then ' [</SourceLine>
@@ -5749,9 +5757,11 @@
    <SourceLine></SourceLine>
    <SourceLine>while (mp.Byte(pos) &lt;&gt; 93) and result</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>result = matchLight(mp, pos, scene)</SourceLine>
+   <SourceLine>result = matchLight(mp, pos, tmpLight)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if result then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>scene.Light.Append tmpLight</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>pos = pos + 1</SourceLine>
    <SourceLine></SourceLine>
@@ -5884,7 +5894,11 @@
    <SourceLine>scene.Camera.Append tmpCamera</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>if defaultCam &gt;= 0 then</SourceLine>
+   <SourceLine>scene.CameraIndex = defaultCam</SourceLine>
+   <SourceLine>else</SourceLine>
    <SourceLine>scene.CameraIndex = 0</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return result</SourceLine>
    <SourceLine>End Function</SourceLine>
@@ -6241,19 +6255,18 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchCamera(mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene) As Boolean</SourceLine>
+   <SourceLine>Function matchCamera(mp As Ptr, ByRef pos As Integer, ByRef camera As X3Core.X3Camera) As Boolean</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim result As Boolean</SourceLine>
    <SourceLine>Dim tmpStr As String</SourceLine>
-   <SourceLine>Dim tmpCam As X3Core.X3Camera</SourceLine>
    <SourceLine>Dim tmpQuat As X3Core.X3Quaternion</SourceLine>
    <SourceLine>Dim tmpVec As X3Core.X3Vector</SourceLine>
    <SourceLine>Dim tmpDbl As Double</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = false</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>tmpCam = new X3Core.X3Camera</SourceLine>
+   <SourceLine>camera = new X3Core.X3Camera</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
    <SourceLine></SourceLine>
@@ -6281,42 +6294,42 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchQuaternion(mp, pos, tmpQuat)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpCam.CameraRotation = tmpQuat</SourceLine>
+   <SourceLine>camera.CameraRotation = tmpQuat</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "dpos" // dolly position</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchVector(mp, pos, tmpVec)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpCam.DollyPosition = tmpVec</SourceLine>
+   <SourceLine>camera.DollyPosition = tmpVec</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "drot" // dolly rotation</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchQuaternion(mp, pos, tmpQuat)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpCam.DollyRotation = tmpQuat</SourceLine>
+   <SourceLine>camera.DollyRotation = tmpQuat</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "fov" // field of view</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpDbl)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpCam.FieldOfView = tmpDbl</SourceLine>
+   <SourceLine>camera.FieldOfView = tmpDbl</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "zfar" // z-far</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpDbl)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpCam.zFar = tmpDbl</SourceLine>
+   <SourceLine>camera.zFar = tmpDbl</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "znear" // z-near</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchDouble(mp, pos, tmpDbl)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpCam.zNear = tmpDbl</SourceLine>
+   <SourceLine>camera.zNear = tmpDbl</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case else ' unknown tag</SourceLine>
@@ -6342,10 +6355,6 @@
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>if result then</SourceLine>
-   <SourceLine>scene.Camera.Append tmpCam</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>return result</SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -6353,7 +6362,7 @@
   <AliasName></AliasName>
   <ItemFlags>33</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene</ItemParams>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef camera As X3Core.X3Camera</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -6528,18 +6537,17 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function matchLight(mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene) As Boolean</SourceLine>
+   <SourceLine>Function matchLight(mp As Ptr, ByRef pos As Integer, ByRef light As X3Core.X3Light) As Boolean</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim result As Boolean</SourceLine>
    <SourceLine>Dim tmpStr As String</SourceLine>
-   <SourceLine>Dim tmpLight As X3Core.X3Light</SourceLine>
    <SourceLine>Dim tmpVec As X3Core.X3Vector</SourceLine>
    <SourceLine>Dim tmpCol As X3Core.X3Color</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = false</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>tmpLight = new X3Core.X3Light</SourceLine>
+   <SourceLine>light = new X3Core.X3Light</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if mp.Byte(pos) = 123 then ' {</SourceLine>
    <SourceLine></SourceLine>
@@ -6567,28 +6575,28 @@
    <SourceLine></SourceLine>
    <SourceLine>result = matchColor(mp, pos, tmpCol)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpLight.Ambient = tmpCol</SourceLine>
+   <SourceLine>light.Ambient = tmpCol</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "diffuse" // diffuse color of light</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchColor(mp, pos, tmpCol)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpLight.Diffuse = tmpCol</SourceLine>
+   <SourceLine>light.Diffuse = tmpCol</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "pos" // light position</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchVector(mp, pos, tmpVec)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpLight.Position = tmpVec</SourceLine>
+   <SourceLine>light.Position = tmpVec</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "specular" // specular color of light</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>result = matchColor(mp, pos, tmpCol)</SourceLine>
    <SourceLine>if result then</SourceLine>
-   <SourceLine>tmpLight.Specular = tmpCol</SourceLine>
+   <SourceLine>light.Specular = tmpCol</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case else ' unknown tag</SourceLine>
@@ -6614,10 +6622,6 @@
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>if result then</SourceLine>
-   <SourceLine>scene.Light.Append tmpLight</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>return result</SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -6625,7 +6629,7 @@
   <AliasName></AliasName>
   <ItemFlags>33</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef scene As X3Core.X3Scene</ItemParams>
+  <ItemParams>mp As Ptr, ByRef pos As Integer, ByRef light As X3Core.X3Light</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
