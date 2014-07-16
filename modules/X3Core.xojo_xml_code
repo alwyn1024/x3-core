@@ -2033,6 +2033,9 @@
    <SourceLine>model.Position = Position.Clone</SourceLine>
    <SourceLine>model.Rotation = Rotation.Clone</SourceLine>
    <SourceLine>model.Scale = Scale.Clone</SourceLine>
+   <SourceLine>if BoundingBox &lt;&gt; nil then</SourceLine>
+   <SourceLine>model.BoundingBox = BoundingBox.Clone</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>for i = 0 to Sprite.Ubound</SourceLine>
    <SourceLine>model.Sprite.Append Sprite(i).Clone</SourceLine>
@@ -2073,6 +2076,11 @@
    <SourceLine>Position = new X3Core.X3Vector(0, 0, 0) ' instantiate the default position at the origin</SourceLine>
    <SourceLine>Rotation = new X3Core.X3Quaternion() ' instantiate a default rotation quaternion</SourceLine>
    <SourceLine>Scale = new X3Core.X3Vector(1, 1, 1) ' instantiate the default scale</SourceLine>
+   <SourceLine>BoundingBox = new X3Core.X3BoundingBox() ' instantiate the bounding box object of the model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -2246,6 +2254,72 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>pos As X3Core.X3Vector = nil</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>UpdateBoundingBox</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub UpdateBoundingBox()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative. </SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if Vertex.Ubound &gt;= 0 then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).X =Vertex(0).X</SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).Y =Vertex(0).Y</SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).Z =Vertex(0).Z</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).X =Vertex(0).X</SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).Y =Vertex(0).Y</SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).Z =Vertex(0).Z</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>for i = 1 to Vertex.Ubound</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if Vertex(i).X &lt; BoundingBox.Vertex(0).X then</SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).X = Vertex(i).X</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Y &lt; BoundingBox.Vertex(0).Y then</SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).Y = Vertex(i).Y</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Z &lt; BoundingBox.Vertex(0).Z then</SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).Z = Vertex(i).Z</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).X &gt; BoundingBox.Vertex(1).X then</SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).X = Vertex(i).X</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Y &gt; BoundingBox.Vertex(1).Y then</SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).Y = Vertex(i).Y</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if Vertex(i).Z &gt; BoundingBox.Vertex(1).Z then</SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).Z = Vertex(i).Z</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>next i</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).X = 0</SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).Y = 0</SourceLine>
+   <SourceLine>BoundingBox.Vertex(0).Z = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).X = 0</SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).Y = 0</SourceLine>
+   <SourceLine>BoundingBox.Vertex(1).Z = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
@@ -2441,6 +2515,20 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <ItemDeclaration>Scale As X3Core.X3Vector</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>BoundingBox</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>BoundingBox As X3Core.X3Model</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>BoundingBox As X3Core.X3Model</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -6924,6 +7012,89 @@
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
+<block type="Module" ID="1873836031">
+ <ObjName>X3BoundingBox</ObjName>
+ <ObjContainerID>1595645951</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>X3Core.X3Model</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <Method>
+  <ItemName>Constructor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Constructor()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Position = new X3Core.X3Vector(0, 0, 0) ' instantiate the default position at the origin</SourceLine>
+   <SourceLine>Rotation = new X3Core.X3Quaternion() ' instantiate a default rotation quaternion</SourceLine>
+   <SourceLine>Scale = new X3Core.X3Vector(1, 1, 1) ' instantiate the default scale</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' bounding box vertices</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Vertex.Append new X3Core.X3Vector(0, 0, 0)</SourceLine>
+   <SourceLine>Vertex.Append new X3Core.X3Vector(0, 0, 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>4096</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <PropertyValue>-2147483648</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Invalidate</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>OGLName</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Top</ObjName>
