@@ -2270,45 +2270,20 @@
    <SourceLine></SourceLine>
    <SourceLine>if Vertex.Ubound &gt;= 0 then</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).X =Vertex(0).X</SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).Y =Vertex(0).Y</SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).Z =Vertex(0).Z</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).X =Vertex(0).X</SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).Y =Vertex(0).Y</SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).Z =Vertex(0).Z</SourceLine>
-   <SourceLine></SourceLine>
+   <SourceLine>BoundingBox.ApplyVertex Vertex(0)</SourceLine>
    <SourceLine>for i = 1 to Vertex.Ubound</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if Vertex(i).X &lt; BoundingBox.Vertex(0).X then</SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).X = Vertex(i).X</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>if Vertex(i).Y &lt; BoundingBox.Vertex(0).Y then</SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).Y = Vertex(i).Y</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>if Vertex(i).Z &lt; BoundingBox.Vertex(0).Z then</SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).Z = Vertex(i).Z</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>if Vertex(i).X &gt; BoundingBox.Vertex(1).X then</SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).X = Vertex(i).X</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>if Vertex(i).Y &gt; BoundingBox.Vertex(1).Y then</SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).Y = Vertex(i).Y</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>if Vertex(i).Z &gt; BoundingBox.Vertex(1).Z then</SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).Z = Vertex(i).Z</SourceLine>
-   <SourceLine>end if</SourceLine>
+   <SourceLine>BoundingBox.ApplyVertex Vertex(i)</SourceLine>
    <SourceLine>next i</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).X = 0</SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).Y = 0</SourceLine>
-   <SourceLine>BoundingBox.Vertex(0).Z = 0</SourceLine>
+   <SourceLine>BoundingBox.X1 = 0</SourceLine>
+   <SourceLine>BoundingBox.Y1 = 0</SourceLine>
+   <SourceLine>BoundingBox.Z1 = 0</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).X = 0</SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).Y = 0</SourceLine>
-   <SourceLine>BoundingBox.Vertex(1).Z = 0</SourceLine>
+   <SourceLine>BoundingBox.X2 = 0</SourceLine>
+   <SourceLine>BoundingBox.Y2 = 0</SourceLine>
+   <SourceLine>BoundingBox.Z2 = 0</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -2524,11 +2499,11 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>BoundingBox As X3Core.X3Model</SourceLine>
+   <SourceLine>BoundingBox As X3Core.X3BoundingBox</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>BoundingBox As X3Core.X3Model</ItemDeclaration>
+  <ItemDeclaration>BoundingBox As X3Core.X3BoundingBox</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -7026,7 +7001,6 @@
  <ObjName>X3BoundingBox</ObjName>
  <ObjContainerID>1595645951</ObjContainerID>
  <IsClass>1</IsClass>
- <Superclass>X3Core.X3Model</Superclass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
  <Compatibility></Compatibility>
@@ -7040,14 +7014,7 @@
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Position = new X3Core.X3Vector(0, 0, 0) ' instantiate the default position at the origin</SourceLine>
-   <SourceLine>Rotation = new X3Core.X3Quaternion() ' instantiate a default rotation quaternion</SourceLine>
-   <SourceLine>Scale = new X3Core.X3Vector(1, 1, 1) ' instantiate the default scale</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>' bounding box vertices</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Vertex.Append new X3Core.X3Vector(0, 0, 0)</SourceLine>
-   <SourceLine>Vertex.Append new X3Core.X3Vector(0, 0, 0)</SourceLine>
+   <SourceLine>Clear()</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -7058,6 +7025,221 @@
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>Clone</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Clone() As X3Core.X3BoundingBox</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim bb As new X3Core.X3BoundingBox</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>bb.X1 = X1</SourceLine>
+   <SourceLine>bb.Y1 = Y1</SourceLine>
+   <SourceLine>bb.Z1 = Z1</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>bb.X2 = X2</SourceLine>
+   <SourceLine>bb.Y2 = Y2</SourceLine>
+   <SourceLine>bb.Z2 = Z2</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return bb</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>X3Core.X3BoundingBox</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>ApplyVertex</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub ApplyVertex(vec As X3Core.X3Vector)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if mFirstApply then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X1 = vec.X</SourceLine>
+   <SourceLine>Y1 = vec.Y</SourceLine>
+   <SourceLine>Z1 = vec.Z</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X2 = vec.X</SourceLine>
+   <SourceLine>Y2 = vec.Y</SourceLine>
+   <SourceLine>Z2 = vec.Z</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>mFirstApply = False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if vec.X &lt; X1 then</SourceLine>
+   <SourceLine>X1 = vec.X</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if vec.Y &lt; Y1 then</SourceLine>
+   <SourceLine>Y1 = vec.Y</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if vec.Z &lt; Z1 then</SourceLine>
+   <SourceLine>Z1 = vec.Z</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if vec.X &gt; X2 then</SourceLine>
+   <SourceLine>X2 = vec.X</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if vec.Y &gt; Y2 then</SourceLine>
+   <SourceLine>Y2 = vec.Y</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if vec.Z &gt; Z2 then</SourceLine>
+   <SourceLine>Z2 = vec.Z</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>vec As X3Core.X3Vector</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Clear</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Clear()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X1 = 0</SourceLine>
+   <SourceLine>Y1 = 0</SourceLine>
+   <SourceLine>Z1 = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X2 = 0</SourceLine>
+   <SourceLine>Y2 = 0</SourceLine>
+   <SourceLine>Z2 = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>mFirstApply = True</SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Property>
+  <ItemName>X1</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>X1 As Double</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>X1 As Double</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Y1</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Y1 As Double</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Y1 As Double</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Z1</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Z1 As Double</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Z1 As Double</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>X2</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>X2 As Double</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>X2 As Double</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Y2</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Y2 As Double</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Y2 As Double</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Z2</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Z2 As Double</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Z2 As Double</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>mFirstApply</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>mFirstApply As Boolean = True</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>mFirstApply As Boolean = True</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Index</ObjName>
@@ -7065,12 +7247,6 @@
    <PropertyGroup>ID</PropertyGroup>
    <PropertyValue>-2147483648</PropertyValue>
    <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Invalidate</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
-   <PropertyValue>False</PropertyValue>
-   <ItemType>Boolean</ItemType>
   </ViewProperty>
   <ViewProperty>
    <ObjName>Left</ObjName>
@@ -7086,11 +7262,6 @@
    <ItemType>String</ItemType>
   </ViewProperty>
   <ViewProperty>
-   <ObjName>OGLName</ObjName>
-   <PropertyGroup>Behavior</PropertyGroup>
-   <ItemType>Integer</ItemType>
-  </ViewProperty>
-  <ViewProperty>
    <ObjName>Super</ObjName>
    <Visible>1</Visible>
    <PropertyGroup>ID</PropertyGroup>
@@ -7102,6 +7273,36 @@
    <PropertyGroup>Position</PropertyGroup>
    <PropertyValue>0</PropertyValue>
    <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>X1</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Y1</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Z1</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>X2</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Y2</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Z2</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Double</ItemType>
   </ViewProperty>
  </ViewBehavior>
 </block>
