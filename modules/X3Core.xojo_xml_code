@@ -882,6 +882,64 @@
   <ItemParams>vec As X3Core.X3Vector</ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>DotProduct</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function DotProduct(vec As X3Core.X3Vector) As Double</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim result As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>result = X * vec.X + Y * vec.Y + Z * vec.Z</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>vec As X3Core.X3Vector</ItemParams>
+  <ItemResult>Double</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>CrossProduct</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub CrossProduct(vec As X3Core.X3Vector)</SourceLine>
+   <SourceLine>Dim cpX As Double</SourceLine>
+   <SourceLine>Dim cpY As Double</SourceLine>
+   <SourceLine>Dim cpZ As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' calculate cross product</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>cpX = Y * vec.Z - Z * vec.Y</SourceLine>
+   <SourceLine>cpY = Z * vec.X - X * vec.Z</SourceLine>
+   <SourceLine>cpZ = X * vec.Y - Y * vec.X</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' assign result to values</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X = cpX</SourceLine>
+   <SourceLine>Y = cpY</SourceLine>
+   <SourceLine>Z = cpZ</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>vec As X3Core.X3Vector</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
  <Property>
   <ItemName>X</ItemName>
   <Compatibility></Compatibility>
@@ -1264,7 +1322,6 @@
    <SourceLine>poly.CIndex = CIndex</SourceLine>
    <SourceLine>poly.MIndex = MIndex</SourceLine>
    <SourceLine>poly.NIndex = NIndex</SourceLine>
-   <SourceLine>poly.ParentModel = ParentModel</SourceLine>
    <SourceLine>poly.Selected = Selected</SourceLine>
    <SourceLine>poly.SIndex = SIndex</SourceLine>
    <SourceLine>poly.SpriteImageIndex = mSpriteImageIndex</SourceLine>
@@ -1432,6 +1489,262 @@
   <IsShared>0</IsShared>
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Triangulate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Triangulate()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim foundEar As Boolean</SourceLine>
+   <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
+   <SourceLine>Dim coords2D() As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// triangulate the polygon using the ear clipping method</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while VIndex.Ubound &gt; 2 </SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// find the next ear</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>foundEar = false</SourceLine>
+   <SourceLine>while not foundEar</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// create a new polygon from p(i-1), p(i) and p(i+1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly = new X3Core.X3Polygon()</SourceLine>
+   <SourceLine>poly.ParentModel = ParentModel</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// vertex 1 : p(i - 1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if i &lt;= 0 then</SourceLine>
+   <SourceLine>poly.VIndex.Append VIndex(VIndex.Ubound)</SourceLine>
+   <SourceLine>if TIndex &gt;= 0 then</SourceLine>
+   <SourceLine>poly.UVIndex.Append UVIndex(VIndex.Ubound)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if VNIndex.Ubound &gt;= VIndex.Ubound then</SourceLine>
+   <SourceLine>poly.VNIndex.Append VNIndex(VIndex.Ubound)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>poly.VIndex.Append VIndex(i - 1)</SourceLine>
+   <SourceLine>if poly.TIndex &gt;= 0 then</SourceLine>
+   <SourceLine>poly.UVIndex.Append UVIndex(i - 1)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if poly.VNIndex.Ubound &gt;= poly.VIndex.Ubound then</SourceLine>
+   <SourceLine>poly.VNIndex.Append VNIndex(i - 1)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// vertex 2 : p(i)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly.VIndex.Append VIndex(i)</SourceLine>
+   <SourceLine>if TIndex &gt;= 0 then</SourceLine>
+   <SourceLine>poly.UVIndex.Append UVIndex(i)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if VNIndex.Ubound &gt;= VIndex.Ubound then</SourceLine>
+   <SourceLine>poly.VNIndex.Append VNIndex(i)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// vertex 3 : p(i + 1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if i &gt;= VIndex.Ubound then</SourceLine>
+   <SourceLine>poly.VIndex.Append VIndex(0)</SourceLine>
+   <SourceLine>if TIndex &gt;= 0 then</SourceLine>
+   <SourceLine>poly.UVIndex.Append UVIndex(0)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if VNIndex.Ubound &gt;=VIndex.Ubound then</SourceLine>
+   <SourceLine>poly.VNIndex.Append VNIndex(0)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>poly.VIndex.Append VIndex(i + 1)</SourceLine>
+   <SourceLine>if TIndex &gt;= 0 then</SourceLine>
+   <SourceLine>poly.UVIndex.Append UVIndex(i + 1)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>if VNIndex.Ubound &gt;= VIndex.Ubound then</SourceLine>
+   <SourceLine>poly.VNIndex.Append VNIndex(i + 1)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// reduce project 3D poloygon to a 2D polygon to simplify calculations</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>coords2D = poly.GetXYProjectionCoords()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// is p(i) convex?</SourceLine>
+   <SourceLine>// todo</SourceLine>
+   <SourceLine>if true then</SourceLine>
+   <SourceLine>' yes</SourceLine>
+   <SourceLine>// do  the triangle formed by pi-1, pi, and pi+1 contain no concave vertices</SourceLine>
+   <SourceLine>// todo</SourceLine>
+   <SourceLine>if true then</SourceLine>
+   <SourceLine>' yes, so we found an ear</SourceLine>
+   <SourceLine>foundEar = true</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not foundEar then</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// configure the visual properties of the ear polygon </SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly.CIndex = CIndex</SourceLine>
+   <SourceLine>poly.MIndex = MIndex</SourceLine>
+   <SourceLine>poly.NIndex = NIndex</SourceLine>
+   <SourceLine>poly.SIndex = SIndex</SourceLine>
+   <SourceLine>poly.SpriteImageIndex = SpriteImageIndex</SourceLine>
+   <SourceLine>poly.TIndex = TIndex</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>ParentModel.Polygon.Append poly // add the new polygon to the model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// remove principle vertex from this polygon</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if VNIndex.Ubound &gt;= VIndex.Ubound then</SourceLine>
+   <SourceLine>VNIndex.Remove(i)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>VIndex.Remove(i)</SourceLine>
+   <SourceLine>if poly.TIndex &gt;= 0 then</SourceLine>
+   <SourceLine>UVIndex.Remove(i)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>CalculateNormal</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function CalculateNormal() As X3Core.X3Vector</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim v1X As Double ' temporary value used during calculations</SourceLine>
+   <SourceLine>Dim v1Y As Double ' temporary value used during calculations</SourceLine>
+   <SourceLine>Dim v1Z As Double ' temporary value used during calculations</SourceLine>
+   <SourceLine>Dim v2X As Double ' temporary value used during calculations</SourceLine>
+   <SourceLine>Dim v2Y As Double ' temporary value used during calculations</SourceLine>
+   <SourceLine>Dim v2Z As Double ' temporary value used during calculations</SourceLine>
+   <SourceLine>Dim cpX As Double ' cross product x</SourceLine>
+   <SourceLine>Dim cpY As Double ' cross product y</SourceLine>
+   <SourceLine>Dim cpZ As Double ' cross product z</SourceLine>
+   <SourceLine>Dim m As Double ' magnitude of vector</SourceLine>
+   <SourceLine>Dim n As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' calculate polygon surface vectors</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>v1X = ParentModel.Vertex(VIndex(1)).X - ParentModel.Vertex(VIndex(0)).X</SourceLine>
+   <SourceLine>v1Y = ParentModel.Vertex(VIndex(1)).Y - ParentModel.Vertex(VIndex(0)).Y</SourceLine>
+   <SourceLine>v1Z = ParentModel.Vertex(VIndex(1)).Z - ParentModel.Vertex(VIndex(0)).Z</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>v2X = ParentModel.Vertex(VIndex(2)).X - ParentModel.Vertex(VIndex(1)).X</SourceLine>
+   <SourceLine>v2Y = ParentModel.Vertex(VIndex(2)).Y - ParentModel.Vertex(VIndex(1)).Y</SourceLine>
+   <SourceLine>v2Z = ParentModel.Vertex(VIndex(2)).Z - ParentModel.Vertex(VIndex(1)).Z</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' calculate cross product</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>cpX = v1Y * v2Z - v1Z * v2Y</SourceLine>
+   <SourceLine>cpY = v1Z * v2X - v1X * v2Z</SourceLine>
+   <SourceLine>cpZ = v1X * v2Y - v1Y * v2X</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' normalize</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>m =  Sqrt(cpX^2 + cpY^2 + cpZ^2)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' now calculate normalized values</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>n = new X3Core.X3Vector(0, 0, 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if m &gt; 0 then</SourceLine>
+   <SourceLine>n.X = cpX / m</SourceLine>
+   <SourceLine>n.Y = cpY / m</SourceLine>
+   <SourceLine>n.Z = cpZ / m</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return n</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>X3Core.X3Vector</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>GetXYProjectionCoords</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function GetXYProjectionCoords() As X3Core.X3Vector()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim coords() As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim polyNorm As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim xyNorm As new X3Core.X3Vector(0, 0, 1)</SourceLine>
+   <SourceLine>Dim angle As Double</SourceLine>
+   <SourceLine>Dim quat As X3Core.X3Quaternion</SourceLine>
+   <SourceLine>Dim tmpVec As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>polyNorm = CalculateNormal()</SourceLine>
+   <SourceLine>angle = ACos(polyNorm.DotProduct(xyNorm)) * X3_180OverPi</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if angle = 0 then ' polygon is facing us, so use XY coordinates as is?</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while i &lt;= VIndex.Ubound</SourceLine>
+   <SourceLine>coords.Append new X3Core.X3Vector(ParentModel.Vertex(VIndex(i)).X, ParentModel.Vertex(VIndex(i)).Y, 0)</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// polygon needs to be rotated to face us before its projected onto XY plane</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>quat = new X3Core.X3Quaternion(polyNorm, xyNorm) // calculate quaternion to use for vertex rotations</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while i &lt;= VIndex.Ubound</SourceLine>
+   <SourceLine>tmpVec = ParentModel.Vertex(VIndex(i)).Clone</SourceLine>
+   <SourceLine>tmpVec.Rotate quat</SourceLine>
+   <SourceLine>coords.Append new X3Core.X3Vector(tmpVec.X, tmpVec.Y, 0)</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return coords</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>X3Core.X3Vector()</ItemResult>
  </Method>
  <Property>
   <ItemName>CIndex</ItemName>
@@ -2287,6 +2600,33 @@
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Triangulate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Triangulate()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while i &lt;= Polygon.Ubound</SourceLine>
+   <SourceLine>Polygon(i).Triangulate()</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -3250,44 +3590,10 @@
    <SourceLine>' apply rotation around axis</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if angle &lt;&gt; 0 then</SourceLine>
-   <SourceLine>tmpQuat.SetEulerRotation(axis, angle)</SourceLine>
+   <SourceLine>tmpQuat.FromEulerRotation(axis, angle)</SourceLine>
    <SourceLine>Multiply tmpQuat</SourceLine>
    <SourceLine>Normalize</SourceLine>
    <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>axis As X3Core.X3Vector, angle As Double</ItemParams>
-  <ItemResult></ItemResult>
- </Method>
- <Method>
-  <ItemName>SetEulerRotation</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub SetEulerRotation(axis As X3Core.X3Vector, angle As Double)</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim norm As X3Core.X3Vector</SourceLine>
-   <SourceLine>Dim halfAngle As Double</SourceLine>
-   <SourceLine>Dim sinAng As Double</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>norm = axis.Clone ' first clone the given axis</SourceLine>
-   <SourceLine>norm.Normalize ' now normalize the axis</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>halfAngle = (angle * X3_PiOver180)  / 2 ' calculate the half angle (convert degrees to radians)</SourceLine>
-   <SourceLine>sinAng = sin(halfAngle) ' calculate sine of half angle</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>X = (norm.x * sinAng)</SourceLine>
-   <SourceLine>Y = (norm.y * sinAng)</SourceLine>
-   <SourceLine>Z = (norm.z * sinAng)</SourceLine>
-   <SourceLine>W = cos(halfAngle)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -3323,6 +3629,70 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>quat As X3Core.X3Quaternion</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Constructor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Constructor(fromVec As X3Core.X3Vector, toVec As X3Core.X3Vector)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim tmpFrom As X3Core.X3Vector ' temporary vector used in calculations</SourceLine>
+   <SourceLine>Dim tmpTo As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim axis As X3Core.X3Vector ' axis of rotation</SourceLine>
+   <SourceLine>Dim angle As Double ' angle of rotation</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>tmpFrom = fromVec.Clone()</SourceLine>
+   <SourceLine>tmpFrom.Normalize</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>tmpTo = toVec.Clone()</SourceLine>
+   <SourceLine>tmpTo.Normalize</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>axis = tmpTo.Clone()</SourceLine>
+   <SourceLine>axis.CrossProduct(tmpFrom) ' calculate the quaternion axis</SourceLine>
+   <SourceLine>axis.Normalize ' normalize the axis</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>angle = ACos(tmpFrom.DotProduct(tmpTo)) * X3_180OverPi ' quaternion angle of roration in degrees</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>FromEulerRotation(axis, angle) ' instantiate the quaterion with the calculate axis and angle</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Normalize ' normalize the quaternion</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>fromVec As X3Core.X3Vector, toVec As X3Core.X3Vector</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>FromEulerRotation</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub FromEulerRotation(axis As X3Core.X3Vector, angle As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' IMPORTANT: axis needs to be normalized prior to this call</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>FromEulerRotation axis.X, axis.Y, axis.Z, angle</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>axis As X3Core.X3Vector, angle As Double</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
