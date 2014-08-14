@@ -940,6 +940,33 @@
   <ItemParams>vec As X3Core.X3Vector</ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>PerpendicularVector</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function PerpendicularVector() As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim result As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if X &lt;&gt; 0 then</SourceLine>
+   <SourceLine>result = new X3Core.X3Vector(Y, -X, 0)</SourceLine>
+   <SourceLine>elseif Y &lt;&gt; 0 then</SourceLine>
+   <SourceLine>result = new X3Core.X3Vector(-Y, X, 0)</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>result = new X3Core.X3Vector(0, -Z, Y)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return result</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>X3Core.X3Vector</ItemResult>
+ </Method>
  <Property>
   <ItemName>X</ItemName>
   <Compatibility></Compatibility>
@@ -1501,9 +1528,32 @@
    <SourceLine>' X3 is a {Zoclee} initiative.</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim j As Integer</SourceLine>
    <SourceLine>Dim foundEar As Boolean</SourceLine>
    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
    <SourceLine>Dim coords2D() As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim convexArea As Double</SourceLine>
+   <SourceLine>Dim iMinusOne As Integer</SourceLine>
+   <SourceLine>Dim iPlusOne As Integer</SourceLine>
+   <SourceLine>Dim vertexInside As Boolean</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim v0 As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim v1 As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim v2 As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim dot00 As Double</SourceLine>
+   <SourceLine>Dim dot01 As Double</SourceLine>
+   <SourceLine>Dim dot02 As Double</SourceLine>
+   <SourceLine>Dim dot11 As Double</SourceLine>
+   <SourceLine>Dim dot12 As Double</SourceLine>
+   <SourceLine>Dim invDenom As Double</SourceLine>
+   <SourceLine>Dim u As Double</SourceLine>
+   <SourceLine>Dim v As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// reduce project 3D poloygon to a 2D polygon to simplify calculations</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if VIndex.Ubound &gt; 2 then</SourceLine>
+   <SourceLine>coords2D = GetXYProjectionCoords()</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// triangulate the polygon using the ear clipping method</SourceLine>
    <SourceLine></SourceLine>
@@ -1515,30 +1565,107 @@
    <SourceLine>foundEar = false</SourceLine>
    <SourceLine>while not foundEar</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>// create a new polygon from p(i-1), p(i) and p(i+1)</SourceLine>
+   <SourceLine>// determine index values of vertices</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if i &lt;= 0 then</SourceLine>
+   <SourceLine>iMinusOne = VIndex.Ubound</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>iMinusOne = i - 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if i &gt;= VIndex.Ubound then</SourceLine>
+   <SourceLine>iPlusOne = 0</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>iPlusOne = i + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>convexArea = coords2D(iMinusOne).X * (coords2D(iPlusOne).Y - coords2D(i).Y)</SourceLine>
+   <SourceLine>convexArea = convexArea + coords2D(i).X * (coords2D(iMinusOne).Y - coords2D(iPlusOne).Y)</SourceLine>
+   <SourceLine>convexArea = convexArea + coords2D(iPlusOne).X * (coords2D(i).Y - coords2D(iMinusOne).Y)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// is p(i) convex?</SourceLine>
+   <SourceLine>if convexArea &lt; 0 then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' yes, now see if the triangle formed by pi-1, pi, and pi+1 contain no concave vertices</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' if the vertex is only four vertices in size, the fourth point wont be inside the ear</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>vertexInside = false</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine> if VIndex.Ubound &gt; 3 then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// compute vectors for test</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>v0 = new X3Vector(coords2D(iPlusOne).X - coords2D(iMinusOne).X, coords2D(iPlusOne).Y - coords2D(iMinusOne).Y, 0)</SourceLine>
+   <SourceLine>v1 = new X3Vector(coords2D(i).X - coords2D(iMinusOne).X, coords2D(i).Y - coords2D(iMinusOne).Y, 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>j = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>while (j &lt;= VIndex.Ubound) and not vertexInside</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if (j &lt;&gt; iMinusOne) and (j &lt;&gt; i) and (j &lt;&gt; iPlusOne) then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// see if this point is inside the triangle</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>v2 = new X3Vector(coords2D(j).X - coords2D(iMinusOne).X, coords2D(j).Y - coords2D(iMinusOne).Y, 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Compute dot products</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>dot00 =  v0.DotProduct(v0)</SourceLine>
+   <SourceLine>dot01 = v0.DotProduct(v1)</SourceLine>
+   <SourceLine>dot02 = v0.DotProduct(v2)</SourceLine>
+   <SourceLine>dot11 = v1.DotProduct(v1)</SourceLine>
+   <SourceLine>dot12 = v1.DotProduct(v2)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Compute barycentric coordinates</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>invDenom = 1 / (dot00 * dot11 - dot01 * dot01)</SourceLine>
+   <SourceLine>u = (dot11 * dot02 - dot01 * dot12) * invDenom</SourceLine>
+   <SourceLine>v = (dot00 * dot12 - dot01 * dot02) * invDenom</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Check if point is in triangle</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>vertexInside = ((u &gt;= 0) and (v &gt;= 0) and ((u + v) &lt; 1))</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// todo: see if vertex is concave</SourceLine>
+   <SourceLine>// note: not sure if this is required?</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>j = j + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not vertexInside then</SourceLine>
+   <SourceLine>' yes, so we found an ear</SourceLine>
+   <SourceLine>foundEar = true</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not foundEar then</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// create the ear polygon from p(i-1), p(i) and p(i+1)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly = new X3Core.X3Polygon()</SourceLine>
    <SourceLine>poly.ParentModel = ParentModel</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// vertex 1 : p(i - 1)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>if i &lt;= 0 then</SourceLine>
-   <SourceLine>poly.VIndex.Append VIndex(VIndex.Ubound)</SourceLine>
-   <SourceLine>if TIndex &gt;= 0 then</SourceLine>
-   <SourceLine>poly.UVIndex.Append UVIndex(VIndex.Ubound)</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>if VNIndex.Ubound &gt;= VIndex.Ubound then</SourceLine>
-   <SourceLine>poly.VNIndex.Append VNIndex(VIndex.Ubound)</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine>poly.VIndex.Append VIndex(i - 1)</SourceLine>
+   <SourceLine>poly.VIndex.Append VIndex(iMinusOne)</SourceLine>
    <SourceLine>if poly.TIndex &gt;= 0 then</SourceLine>
-   <SourceLine>poly.UVIndex.Append UVIndex(i - 1)</SourceLine>
+   <SourceLine>poly.UVIndex.Append UVIndex(iMinusOne)</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine>if poly.VNIndex.Ubound &gt;= poly.VIndex.Ubound then</SourceLine>
-   <SourceLine>poly.VNIndex.Append VNIndex(i - 1)</SourceLine>
+   <SourceLine>poly.VNIndex.Append VNIndex(iMinusOne)</SourceLine>
    <SourceLine>end if</SourceLine>
-   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// vertex 2 : p(i)</SourceLine>
    <SourceLine></SourceLine>
@@ -1552,46 +1679,13 @@
    <SourceLine></SourceLine>
    <SourceLine>// vertex 3 : p(i + 1)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>if i &gt;= VIndex.Ubound then</SourceLine>
-   <SourceLine>poly.VIndex.Append VIndex(0)</SourceLine>
+   <SourceLine>poly.VIndex.Append VIndex(iPlusOne)</SourceLine>
    <SourceLine>if TIndex &gt;= 0 then</SourceLine>
-   <SourceLine>poly.UVIndex.Append UVIndex(0)</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>if VNIndex.Ubound &gt;=VIndex.Ubound then</SourceLine>
-   <SourceLine>poly.VNIndex.Append VNIndex(0)</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine>else</SourceLine>
-   <SourceLine>poly.VIndex.Append VIndex(i + 1)</SourceLine>
-   <SourceLine>if TIndex &gt;= 0 then</SourceLine>
-   <SourceLine>poly.UVIndex.Append UVIndex(i + 1)</SourceLine>
+   <SourceLine>poly.UVIndex.Append UVIndex(iPlusOne)</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine>if VNIndex.Ubound &gt;= VIndex.Ubound then</SourceLine>
-   <SourceLine>poly.VNIndex.Append VNIndex(i + 1)</SourceLine>
+   <SourceLine>poly.VNIndex.Append VNIndex(iPlusOne)</SourceLine>
    <SourceLine>end if</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>// reduce project 3D poloygon to a 2D polygon to simplify calculations</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>coords2D = poly.GetXYProjectionCoords()</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>// is p(i) convex?</SourceLine>
-   <SourceLine>// todo</SourceLine>
-   <SourceLine>if true then</SourceLine>
-   <SourceLine>' yes</SourceLine>
-   <SourceLine>// do  the triangle formed by pi-1, pi, and pi+1 contain no concave vertices</SourceLine>
-   <SourceLine>// todo</SourceLine>
-   <SourceLine>if true then</SourceLine>
-   <SourceLine>' yes, so we found an ear</SourceLine>
-   <SourceLine>foundEar = true</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>if not foundEar then</SourceLine>
-   <SourceLine>i = i + 1</SourceLine>
-   <SourceLine>end if</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// configure the visual properties of the ear polygon </SourceLine>
    <SourceLine></SourceLine>
@@ -1613,6 +1707,7 @@
    <SourceLine>if poly.TIndex &gt;= 0 then</SourceLine>
    <SourceLine>UVIndex.Remove(i)</SourceLine>
    <SourceLine>end if</SourceLine>
+   <SourceLine>coords2D.Remove(i)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
@@ -1723,7 +1818,12 @@
    <SourceLine></SourceLine>
    <SourceLine>// polygon needs to be rotated to face us before its projected onto XY plane</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>if angle = 180 then</SourceLine>
+   <SourceLine>tmpVec = polyNorm.PerpendicularVector()</SourceLine>
+   <SourceLine>quat = new X3Core.X3Quaternion(tmpVec, 180) // generate a quaternion to use for vertex rotations</SourceLine>
+   <SourceLine>else</SourceLine>
    <SourceLine>quat = new X3Core.X3Quaternion(polyNorm, xyNorm) // calculate quaternion to use for vertex rotations</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>i = 0</SourceLine>
    <SourceLine>while i &lt;= VIndex.Ubound</SourceLine>
@@ -3406,6 +3506,8 @@
    <SourceLine>Me.Z = (z * sinAng)</SourceLine>
    <SourceLine>Me.W = cos(halfAngle)</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>Normalize()</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -3685,6 +3787,24 @@
    <SourceLine>' IMPORTANT: axis needs to be normalized prior to this call</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>FromEulerRotation axis.X, axis.Y, axis.Z, angle</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>axis As X3Core.X3Vector, angle As Double</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Constructor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Constructor(axis As X3Core.X3Vector, angle As Double)</SourceLine>
+   <SourceLine>FromEulerRotation axis, angle</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
