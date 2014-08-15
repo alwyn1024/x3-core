@@ -23,7 +23,6 @@
    <SourceLine>X3_Initialize</SourceLine>
    <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHTING</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>RaiseEvent Paint(mGraphics)</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -60,6 +59,9 @@
    <SourceLine>Me.MakeCurrent()</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>mGraphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Redim mGraphics.Scene.Model(-1)</SourceLine>
+   <SourceLine>RaiseEvent Paint(mGraphics)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
