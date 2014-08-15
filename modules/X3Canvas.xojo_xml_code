@@ -41,7 +41,7 @@
    <SourceLine>OpenGL.glClearColor(1, 1, 1, 1) ' set the background color</SourceLine>
    <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>X3_RenderScene mGraphics.Scene</SourceLine>
+   <SourceLine>X3_RenderScene Graphics.Scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -58,10 +58,10 @@
    <SourceLine></SourceLine>
    <SourceLine>Me.MakeCurrent()</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>mGraphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
+   <SourceLine>Graphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Redim mGraphics.Scene.Model(-1)</SourceLine>
-   <SourceLine>RaiseEvent Paint(mGraphics)</SourceLine>
+   <SourceLine>Redim Graphics.Scene.Model(-1)</SourceLine>
+   <SourceLine>RaiseEvent Paint(Graphics)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -79,7 +79,7 @@
    <SourceLine>// Calling the overridden superclass constructor.</SourceLine>
    <SourceLine>Super.Constructor</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>mGraphics = new X3Core.X3Graphics(Me)</SourceLine>
+   <SourceLine>Graphics = new X3Core.X3Graphics(Me)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -99,17 +99,17 @@
   <ItemResult></ItemResult>
  </Hook>
  <Property>
-  <ItemName>mGraphics</ItemName>
+  <ItemName>Graphics</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>mGraphics As X3Core.X3Graphics</SourceLine>
+   <SourceLine>Graphics As X3Core.X3Graphics</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>mGraphics As X3Core.X3Graphics</ItemDeclaration>
-  <ItemFlags>33</ItemFlags>
+  <ItemDeclaration>Graphics As X3Core.X3Graphics</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
  <ViewBehavior>
