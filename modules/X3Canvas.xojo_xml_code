@@ -61,8 +61,6 @@
    <SourceLine></SourceLine>
    <SourceLine>mGraphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>RaiseEvent Paint(mGraphics)</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -80,10 +78,6 @@
    <SourceLine>Super.Constructor</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>mGraphics = new X3Core.X3Graphics(Me)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
