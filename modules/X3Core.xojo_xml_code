@@ -1,280 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1052608511">
- <ObjName>X3Canvas</ObjName>
- <ObjContainerID>1548079103</ObjContainerID>
- <IsClass>1</IsClass>
- <Superclass>OpenGLSurface</Superclass>
- <ItemFlags>1</ItemFlags>
- <IsInterface>0</IsInterface>
- <Compatibility></Compatibility>
- <HookInstance>
-  <ItemName>Open</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub Open()</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Me.MakeCurrent()</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>X3_Initialize</SourceLine>
-   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHTING</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
- </HookInstance>
- <HookInstance>
-  <ItemName>Render</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function Render() As Boolean</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Me.MakeCurrent()</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glClearColor(1, 1, 1, 1) ' set the background color</SourceLine>
-   <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>X3_RenderScene Graphics.Scene</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
- </HookInstance>
- <HookInstance>
-  <ItemName>Resized</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub Resized()</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Me.MakeCurrent()</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Graphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Redim Graphics.Scene.Model(-1)</SourceLine>
-   <SourceLine>RaiseEvent Paint(Graphics)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
- </HookInstance>
- <Method>
-  <ItemName>Constructor</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub Constructor()</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>// Calling the overridden superclass constructor.</SourceLine>
-   <SourceLine>Super.Constructor</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Graphics = new X3Core.X3Graphics(Me)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>4096</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams></ItemParams>
-  <ItemResult></ItemResult>
- </Method>
- <Hook>
-  <ItemName>Paint</ItemName>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemFlags>33</ItemFlags>
-  <SystemFlags>0</SystemFlags>
-  <ItemParams>g As X3Core.X3Graphics</ItemParams>
-  <ItemResult></ItemResult>
- </Hook>
- <Property>
-  <ItemName>Graphics</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Graphics As X3Core.X3Graphics</SourceLine>
-   <SourceLine></SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>Graphics As X3Core.X3Graphics</ItemDeclaration>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
- </Property>
- <ViewBehavior>
-  <ViewProperty>
-   <ObjName>Name</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-   <EditorType>String</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Index</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Super</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>ID</PropertyGroup>
-   <ItemType>String</ItemType>
-   <EditorType>String</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Left</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Top</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Width</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>128</PropertyValue>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Height</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>128</PropertyValue>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>LockLeft</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>LockTop</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>LockRight</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>LockBottom</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>TabPanelIndex</ObjName>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>0</PropertyValue>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>TabIndex</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>0</PropertyValue>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>TabStop</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Position</PropertyGroup>
-   <PropertyValue>True</PropertyValue>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>InitialParent</ObjName>
-   <PropertyGroup>Position</PropertyGroup>
-   <ItemType>String</ItemType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Visible</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Appearance</PropertyGroup>
-   <PropertyValue>True</PropertyValue>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>HelpTag</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Appearance</PropertyGroup>
-   <ItemType>String</ItemType>
-   <EditorType>MultiLineEditor</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>AutoDeactivate</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Appearance</PropertyGroup>
-   <PropertyValue>True</PropertyValue>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>Enabled</ObjName>
-   <Visible>1</Visible>
-   <PropertyGroup>Appearance</PropertyGroup>
-   <PropertyValue>True</PropertyValue>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>ColorBits</ObjName>
-   <Visible>1</Visible>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>DepthBits</ObjName>
-   <Visible>1</Visible>
-   <ItemType>Integer</ItemType>
-   <EditorType>Integer</EditorType>
-  </ViewProperty>
-  <ViewProperty>
-   <ObjName>DoubleBuffer</ObjName>
-   <Visible>1</Visible>
-   <ItemType>Boolean</ItemType>
-   <EditorType>Boolean</EditorType>
-  </ViewProperty>
- </ViewBehavior>
-</block>
 <block type="Module" ID="1296461823">
  <ObjName>X3Camera</ObjName>
  <ObjContainerID>1548079103</ObjContainerID>
@@ -976,6 +701,281 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
+<block type="Module" ID="1052608511">
+ <ObjName>X3Canvas</ObjName>
+ <ObjContainerID>1548079103</ObjContainerID>
+ <IsClass>1</IsClass>
+ <Superclass>OpenGLSurface</Superclass>
+ <ItemFlags>1</ItemFlags>
+ <IsInterface>0</IsInterface>
+ <Compatibility></Compatibility>
+ <HookInstance>
+  <ItemName>Open</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Open()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Me.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X3_Initialize</SourceLine>
+   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHTING</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <HookInstance>
+  <ItemName>Render</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Render() As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Me.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glClearColor(1, 1, 1, 1) ' set the background color</SourceLine>
+   <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X3_RenderScene Graphics.Scene</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <HookInstance>
+  <ItemName>Resized</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Resized()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Me.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Graphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Redim Graphics.Scene.Model(-1)</SourceLine>
+   <SourceLine>RaiseEvent Paint(Graphics)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
+ <Method>
+  <ItemName>Constructor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Constructor()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Calling the overridden superclass constructor.</SourceLine>
+   <SourceLine>Super.Constructor</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Graphics = new X3Core.X3Graphics(Me)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>4096</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Hook>
+  <ItemName>Paint</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>g As X3Core.X3Graphics</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Property>
+  <ItemName>Graphics</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Graphics As X3Core.X3Graphics</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Graphics As X3Core.X3Graphics</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <ViewBehavior>
+  <ViewProperty>
+   <ObjName>Name</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>String</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Index</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Super</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>ID</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>String</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Left</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Top</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Width</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>128</PropertyValue>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Height</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>128</PropertyValue>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockLeft</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockTop</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockRight</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LockBottom</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TabPanelIndex</ObjName>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TabIndex</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>0</PropertyValue>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TabStop</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Position</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>InitialParent</ObjName>
+   <PropertyGroup>Position</PropertyGroup>
+   <ItemType>String</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Visible</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Appearance</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>HelpTag</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Appearance</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>AutoDeactivate</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Appearance</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Enabled</ObjName>
+   <Visible>1</Visible>
+   <PropertyGroup>Appearance</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>ColorBits</ObjName>
+   <Visible>1</Visible>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>DepthBits</ObjName>
+   <Visible>1</Visible>
+   <ItemType>Integer</ItemType>
+   <EditorType>Integer</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>DoubleBuffer</ObjName>
+   <Visible>1</Visible>
+   <ItemType>Boolean</ItemType>
+   <EditorType>Boolean</EditorType>
+  </ViewProperty>
+ </ViewBehavior>
+</block>
 <block type="Module" ID="995852287">
  <ObjName>X3Vector</ObjName>
  <ObjContainerID>1548079103</ObjContainerID>
@@ -1627,11 +1627,15 @@
    <SourceLine>mCanvas = canvas // store reference to X3Canvas control</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// intialize scene object</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Scene = new X3Core.X3Scene()</SourceLine>
    <SourceLine>Scene.Camera.Append new X3Camera()</SourceLine>
    <SourceLine>Scene.CameraIndex = 0</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Scene.ActiveCamera.DollyOut 1.2</SourceLine>
+   <SourceLine>Scene.ActiveCamera.DollyOut 1.2 // dolly the camare out a bit so that we can see the drawing</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>calcPic = new Picture(1, 1, 24) // Picture object used for calculations</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -2051,6 +2055,156 @@
   <ItemParams>points() As Integer</ItemParams>
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
+ <Method>
+  <ItemName>DrawString</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub DrawString(str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
+   <SourceLine>model = DrawString(str, x, y, width, condense)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>DrawString</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function DrawString(str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False) As X3Core.X3Model</SourceLine>
+   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
+   <SourceLine>Dim poly As new X3Core.X3Polygon</SourceLine>
+   <SourceLine>Dim image As Picture</SourceLine>
+   <SourceLine>Dim mask As Picture</SourceLine>
+   <SourceLine>Dim x1 As Double</SourceLine>
+   <SourceLine>Dim y1 As Double</SourceLine>
+   <SourceLine>Dim x2 As Double</SourceLine>
+   <SourceLine>Dim y2 As Double</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>calcPic.Graphics.Bold = Bold</SourceLine>
+   <SourceLine>calcPic.Graphics.Italic = Italic</SourceLine>
+   <SourceLine>calcPic.Graphics.TextFont = TextFont</SourceLine>
+   <SourceLine>calcPic.Graphics.TextSize = TextSize</SourceLine>
+   <SourceLine>calcPic.Graphics.TextUnit = TextUnit</SourceLine>
+   <SourceLine>calcPic.Graphics.Underline = Underline</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if width &gt; 0 then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if calcPic.Graphics.StringWidth(str) &gt; width then</SourceLine>
+   <SourceLine>if condense then</SourceLine>
+   <SourceLine>image = new Picture(width, calcPic.Graphics.StringHeight("Ay", width), 24)</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>image = new Picture(width, calcPic.Graphics.StringHeight(str, width), 24)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>image = new Picture(calcPic.Graphics.StringWidth(str), calcPic.Graphics.StringHeight(str, width), 24)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>image = new Picture(calcPic.Graphics.StringWidth(str), calcPic.Graphics.StringHeight(str, width), 24)</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>mask = new Picture(image.Width, image.Height, 24)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>image.Graphics.Bold = Bold</SourceLine>
+   <SourceLine>image.Graphics.Italic = Italic</SourceLine>
+   <SourceLine>image.Graphics.TextFont = TextFont</SourceLine>
+   <SourceLine>image.Graphics.TextSize = TextSize</SourceLine>
+   <SourceLine>image.Graphics.TextUnit = TextUnit</SourceLine>
+   <SourceLine>image.Graphics.Underline = Underline</SourceLine>
+   <SourceLine>image.Graphics.ForeColor = ForeColor</SourceLine>
+   <SourceLine>image.Graphics.DrawString str, 0, calcPic.Graphics.TextAscent, width, condense</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>mask.Graphics.Bold = Bold</SourceLine>
+   <SourceLine>mask.Graphics.Italic = Italic</SourceLine>
+   <SourceLine>mask.Graphics.TextFont = TextFont</SourceLine>
+   <SourceLine>mask.Graphics.TextSize = TextSize</SourceLine>
+   <SourceLine>mask.Graphics.TextUnit = TextUnit</SourceLine>
+   <SourceLine>mask.Graphics.Underline = Underline</SourceLine>
+   <SourceLine>mask.Graphics.ForeColor = rgb(0, 0, 0, ForeColor.Alpha)</SourceLine>
+   <SourceLine>mask.Graphics.DrawString str, 0, calcPic.Graphics.TextAscent, width, condense</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>image.Mask = mask</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// add vertices</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>x1 = MapX(x)</SourceLine>
+   <SourceLine>y1 = MapY(y - calcPic.Graphics.TextAscent)</SourceLine>
+   <SourceLine>x2 = MapX(x + image.Width)</SourceLine>
+   <SourceLine>y2 = MapY(y - calcPic.Graphics.TextAscent + image.Height)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>midX = (x2 - x1) / 2</SourceLine>
+   <SourceLine>midY = (y2 - y1) / 2</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Position.X = x1 + midX</SourceLine>
+   <SourceLine>model.Position.Y = y1 + midY</SourceLine>
+   <SourceLine>model.Position.Z = 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>x1 = x1 - model.Position.X</SourceLine>
+   <SourceLine>y1 = y1 - model.Position.Y</SourceLine>
+   <SourceLine>x2 = x2 - model.Position.X</SourceLine>
+   <SourceLine>y2 = y2 - model.Position.Y</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y1, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y2, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y2, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y1, 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// add uv-coordinates</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.UVMap.Append new X3Core.X3UVCoordinate(0, 0)</SourceLine>
+   <SourceLine>model.UVMap.Append new X3Core.X3UVCoordinate(0, 1)</SourceLine>
+   <SourceLine>model.UVMap.Append new X3Core.X3UVCoordinate(1, 1)</SourceLine>
+   <SourceLine>model.UVMap.Append new X3Core.X3UVCoordinate(1, 0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// add texture (created from image)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Texture.Append new X3Core.X3Texture(image)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// create polygon</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly.VIndex.Append 0</SourceLine>
+   <SourceLine>poly.VIndex.Append 1</SourceLine>
+   <SourceLine>poly.VIndex.Append 2</SourceLine>
+   <SourceLine>poly.VIndex.Append 3</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly.TIndex = 0 // point to image texture</SourceLine>
+   <SourceLine>poly.UVIndex.Append 0</SourceLine>
+   <SourceLine>poly.UVIndex.Append 1</SourceLine>
+   <SourceLine>poly.UVIndex.Append 2</SourceLine>
+   <SourceLine>poly.UVIndex.Append 3</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.AppendPolygon poly</SourceLine>
+   <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False</ItemParams>
+  <ItemResult>X3Core.X3Model</ItemResult>
+ </Method>
  <Property>
   <ItemName>mCanvas</ItemName>
   <Compatibility></Compatibility>
@@ -2154,6 +2308,328 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
+ <Property>
+  <ItemName>TextFont</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>TextFont As String</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>TextFont As String</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Bold</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Bold As Boolean</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Bold As Boolean = False</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Italic</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Italic As Boolean</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Italic As Boolean = False</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Underline</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Underline As Boolean</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Underline As Boolean = False</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>TextSize</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>TextSize As Single</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>TextSize As Single</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>TextUnit</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>TextUnit As FontUnits</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>TextUnit As FontUnits</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>calcPic</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>calcPic As Picture</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>calcPic As Picture</ItemDeclaration>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>TextAscent</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>TextAscent As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>TextAscent As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <SetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Set</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Set</SourceLine>
+  </SetAccessor>
+  <GetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Get</SourceLine>
+   <SourceLine>Dim g As Graphics</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>g = calcPic.Graphics</SourceLine>
+   <SourceLine>g.Bold = Bold</SourceLine>
+   <SourceLine>g.Italic = Italic</SourceLine>
+   <SourceLine>g.TextFont = TextFont</SourceLine>
+   <SourceLine>g.TextSize = TextSize</SourceLine>
+   <SourceLine>g.TextUnit = TextUnit</SourceLine>
+   <SourceLine>g.Underline = Underline</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return g.TextAscent</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Get</SourceLine>
+  </GetAccessor>
+ </Property>
+ <Property>
+  <ItemName>AntiAlias</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>AntiAlias As Boolean</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>AntiAlias As Boolean = True</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Copies</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Copies As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Copies As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <SetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Set</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Set</SourceLine>
+  </SetAccessor>
+  <GetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Get</SourceLine>
+   <SourceLine>return 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Get</SourceLine>
+  </GetAccessor>
+ </Property>
+ <Property>
+  <ItemName>FirstPage</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>FirstPage As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>FirstPage As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <SetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Set</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Set</SourceLine>
+  </SetAccessor>
+  <GetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Get</SourceLine>
+   <SourceLine>return 0</SourceLine>
+   <SourceLine>End Get</SourceLine>
+  </GetAccessor>
+ </Property>
+ <Property>
+  <ItemName>LastPage</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>LastPage As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>LastPage As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <SetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Set</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Set</SourceLine>
+  </SetAccessor>
+  <GetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Get</SourceLine>
+   <SourceLine>return 0</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Get</SourceLine>
+  </GetAccessor>
+ </Property>
+ <Property>
+  <ItemName>PenHeight</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>PenHeight As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>PenHeight As Integer = 1</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>PenWidth</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>PenWidth As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>PenWidth As Integer = 1</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>PrintingCancelled</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>PrintingCancelled As Boolean</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>PrintingCancelled As Boolean</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <SetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Set</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Set</SourceLine>
+  </SetAccessor>
+  <GetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Get</SourceLine>
+   <SourceLine>return False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Get</SourceLine>
+  </GetAccessor>
+ </Property>
+ <Property>
+  <ItemName>TextHeight</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>TextHeight As Integer</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>TextHeight As Integer</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <SetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Set</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Set</SourceLine>
+  </SetAccessor>
+  <GetAccessor>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Get</SourceLine>
+   <SourceLine>Dim g As Graphics</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>g = calcPic.Graphics</SourceLine>
+   <SourceLine>g.Bold = Bold</SourceLine>
+   <SourceLine>g.Italic = Italic</SourceLine>
+   <SourceLine>g.TextFont = TextFont</SourceLine>
+   <SourceLine>g.TextSize = TextSize</SourceLine>
+   <SourceLine>g.TextUnit = TextUnit</SourceLine>
+   <SourceLine>g.Underline = Underline</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return g.TextHeight</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Get</SourceLine>
+  </GetAccessor>
+ </Property>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Name</ObjName>
@@ -2203,6 +2679,83 @@
    <PropertyGroup>Behavior</PropertyGroup>
    <PropertyValue>&amp;c000000</PropertyValue>
    <ItemType>Color</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TextFont</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>String</ItemType>
+   <EditorType>MultiLineEditor</EditorType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Bold</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Italic</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Underline</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>False</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TextSize</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Single</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TextAscent</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>AntiAlias</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>Copies</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>FirstPage</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>LastPage</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>PenHeight</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>1</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>PenWidth</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>1</PropertyValue>
+   <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>PrintingCancelled</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Boolean</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>TextHeight</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <ItemType>Integer</ItemType>
   </ViewProperty>
  </ViewBehavior>
 </block>
