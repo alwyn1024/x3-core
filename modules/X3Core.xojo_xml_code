@@ -1596,13 +1596,13 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xtiles As Integer = 0, ytiles As Integer = 0)</SourceLine>
+   <SourceLine>Sub DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0)</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = DrawPicture(image, x, y, w1, h1, sx, sy, w2, h2, xtiles, ytiles)</SourceLine>
+   <SourceLine>model = DrawPicture(image, x, y, w1, h1, sx, sy, w2, h2, xrepeat, yrepeat)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1610,7 +1610,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xtiles As Integer = 0, ytiles As Integer = 0</ItemParams>
+  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Method>
@@ -1728,7 +1728,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xtiles As Integer = 0, ytiles As Integer = 0) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0) As X3Core.X3Model</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -1791,7 +1791,7 @@
    <SourceLine></SourceLine>
    <SourceLine>v1 =  sy / image.Width</SourceLine>
    <SourceLine>if h2 &gt; 0 then</SourceLine>
-   <SourceLine>v2 = (sy + h2) / image.Width</SourceLine>
+   <SourceLine>v2 = (sy + h2) / image.Height</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>if h1 &gt; 0 Then</SourceLine>
    <SourceLine>v2 = (sy + h1) / image.Height</SourceLine>
@@ -1822,7 +1822,7 @@
    <SourceLine></SourceLine>
    <SourceLine>mappedWidth = x2 - x1</SourceLine>
    <SourceLine>i = 1</SourceLine>
-   <SourceLine>while i &lt; xtiles</SourceLine>
+   <SourceLine>while i &lt; xrepeat</SourceLine>
    <SourceLine>x2 = x2 + mappedWidth</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y1, 0)</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y2, 0)</SourceLine>
@@ -1850,7 +1850,7 @@
    <SourceLine>// create polygons for additional tiles</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>i = 1</SourceLine>
-   <SourceLine>while i &lt; xtiles</SourceLine>
+   <SourceLine>while i &lt; xrepeat</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly = new X3Core.X3Polygon()</SourceLine>
    <SourceLine></SourceLine>
@@ -1871,7 +1871,6 @@
    <SourceLine>i = i + 1</SourceLine>
    <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return model</SourceLine>
@@ -1882,7 +1881,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xtiles As Integer = 0, ytiles As Integer = 0</ItemParams>
+  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0</ItemParams>
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Method>
