@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1672415231">
+<block type="Module" ID="1540493311">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -701,9 +701,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1394425855">
+<block type="Module" ID="620380159">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -723,7 +723,7 @@
    <SourceLine>Me.MakeCurrent()</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>X3_Initialize</SourceLine>
-   <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHTING</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -976,9 +976,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2010935295">
+<block type="Module" ID="1022246911">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1353,9 +1353,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="926390271">
+<block type="Module" ID="1709967359">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1583,9 +1583,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="20035583">
+<block type="Module" ID="667670527">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1629,12 +1629,16 @@
    <SourceLine>// intialize scene object</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Scene = new X3Core.X3Scene()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Scene.Light.Append new X3Light(0, 0, 100)</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Scene.Camera.Append new X3Camera()</SourceLine>
    <SourceLine>Scene.CameraIndex = 0</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>Scene.ActiveCamera.DollyOut 1.2 // dolly the camare out a bit so that we can see the drawing</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>calcPic = new Picture(1, 1, 24) // Picture object used for calculations</SourceLine>
+   <SourceLine>// Instantiate picture object used for calculations</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>calcPic = new Picture(1, 1, 24) </SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -2840,9 +2844,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="229920767">
+<block type="Module" ID="360132607">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3789,9 +3793,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1980977151">
+<block type="Module" ID="453892095">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3945,9 +3949,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="868237311">
+<block type="Module" ID="1632899071">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4577,9 +4581,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1947811839">
+<block type="Module" ID="204337151">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4856,9 +4860,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="776716287">
+<block type="Module" ID="1660145663">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4985,9 +4989,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1568112639">
+<block type="Module" ID="1990021119">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5510,9 +5514,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1496971263">
+<block type="Module" ID="2125580287">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6145,9 +6149,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="851269631">
+<block type="Module" ID="1092251647">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6301,9 +6305,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1669912575">
+<block type="Module" ID="1231417343">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6496,9 +6500,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="632223743">
+<block type="Module" ID="596705279">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6664,9 +6668,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="875366399">
+<block type="Module" ID="741918719">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9105,9 +9109,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1502418943">
+<block type="Module" ID="1645217791">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>608534527</ObjContainerID>
+ <ObjContainerID>1619202047</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9418,7 +9422,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="608534527">
+<block type="Module" ID="1619202047">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
