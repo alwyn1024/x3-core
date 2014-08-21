@@ -724,6 +724,9 @@
    <SourceLine></SourceLine>
    <SourceLine>X3_Initialize</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>Graphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>RaiseEvent Paint(Graphics)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -747,27 +750,6 @@
    <SourceLine>X3_RenderScene Graphics.Scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
-  </ItemSource>
- </HookInstance>
- <HookInstance>
-  <ItemName>Resized</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub Resized()</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Me.MakeCurrent()</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Graphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Redim Graphics.Scene.Model(-1)</SourceLine>
-   <SourceLine>RaiseEvent Paint(Graphics)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
  <Method>
