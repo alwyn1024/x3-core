@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="402972671">
+<block type="Module" ID="1184202751">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -701,9 +701,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="334968831">
+<block type="Module" ID="1938982911">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -965,9 +965,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="50464767">
+<block type="Module" ID="1719728127">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1358,9 +1358,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="65609727">
+<block type="Module" ID="91873279">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1588,9 +1588,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="152440831">
+<block type="Module" ID="1581864959">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1601,13 +1601,13 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0)</SourceLine>
+   <SourceLine>Sub DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000)</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = DrawPicture(image, x, y, w1, h1, sx, sy, w2, h2, xrepeat, yrepeat)</SourceLine>
+   <SourceLine>model = DrawPicture(image, x, y, w1, h1, sx, sy, w2, h2)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1615,7 +1615,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0</ItemParams>
+  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Method>
@@ -1738,7 +1738,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000) As X3Core.X3Model</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -1775,8 +1775,8 @@
    <SourceLine>y2 = MapY(y + image.Height)</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>midX = (x2 - x1) * (xrepeat + 1) / 2</SourceLine>
-   <SourceLine>midY = (y2 - y1) * (yrepeat + 1) / 2</SourceLine>
+   <SourceLine>midX = (x2 - x1) / 2</SourceLine>
+   <SourceLine>midY = (y2 - y1) / 2</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Position.X = x1 + midX</SourceLine>
    <SourceLine>model.Position.Y = y1 + midY</SourceLine>
@@ -1824,32 +1824,19 @@
    <SourceLine></SourceLine>
    <SourceLine>// add vertices </SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>mappedWidth = x2 - x1</SourceLine>
-   <SourceLine>mappedHeight = y2 - y1</SourceLine>
-   <SourceLine>j = 0</SourceLine>
-   <SourceLine>while j &lt;= (yrepeat + 1)</SourceLine>
-   <SourceLine>i = 0</SourceLine>
-   <SourceLine>while i &lt;= (xrepeat + 1)</SourceLine>
-   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1 + (mappedWidth * i), y1 + (mappedHeight * j), 0)</SourceLine>
-   <SourceLine>i = i + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine>j = j + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y1, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y1, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y2, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y2, 0)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>// create polygons</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>j = 0</SourceLine>
-   <SourceLine>while j &lt;= yrepeat</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>i = 0</SourceLine>
-   <SourceLine>while i &lt;= xrepeat</SourceLine>
+   <SourceLine>// create polygon</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly = new X3Core.X3Polygon()</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.VIndex.Append j * (xrepeat + 2) + i</SourceLine>
-   <SourceLine>poly.VIndex.Append (j + 1) * (xrepeat + 2) + i</SourceLine>
-   <SourceLine>poly.VIndex.Append (j + 1) * (xrepeat + 2) + 1 + i</SourceLine>
-   <SourceLine>poly.VIndex.Append j * (xrepeat + 2) + 1 + i</SourceLine>
+   <SourceLine>poly.VIndex.Append 0</SourceLine>
+   <SourceLine>poly.VIndex.Append 2</SourceLine>
+   <SourceLine>poly.VIndex.Append 3</SourceLine>
+   <SourceLine>poly.VIndex.Append 1</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly.TIndex = 0 // point to image texture</SourceLine>
    <SourceLine>poly.UVIndex.Append 0</SourceLine>
@@ -1859,12 +1846,6 @@
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>i = i + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>j = j + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
    <SourceLine></SourceLine>
@@ -1876,7 +1857,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0</ItemParams>
+  <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000</ItemParams>
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Method>
@@ -2246,54 +2227,6 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False</ItemParams>
-  <ItemResult>X3Core.X3Model</ItemResult>
- </Method>
- <Method>
-  <ItemName>DrawTiles</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub DrawTiles(image As Picture, x As Integer, y As Integer, cols As Integer, rows As Integer)</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = DrawPicture(image, x, y, image.Width, image.Height, 0, 0, image.Width, image.Height, cols - 1, rows - 1)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Sub</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>image As Picture, x As Integer, y As Integer, cols As Integer, rows As Integer</ItemParams>
-  <ItemResult></ItemResult>
- </Method>
- <Method>
-  <ItemName>DrawTiles</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function DrawTiles(image As Picture, x As Integer, y As Integer, cols As Integer, rows As Integer) As X3Core.X3Model</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = DrawPicture(image, x, y, image.Width, image.Height, 0, 0, image.Width, image.Height, cols - 1, rows - 1)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return model</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>image As Picture, x As Integer, y As Integer, cols As Integer, rows As Integer</ItemParams>
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Method>
@@ -2974,9 +2907,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="27351039">
+<block type="Module" ID="142950399">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3933,9 +3866,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1190103039">
+<block type="Module" ID="1447567359">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4089,9 +4022,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1640714239">
+<block type="Module" ID="1028638719">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4760,9 +4693,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="276848639">
+<block type="Module" ID="1543223295">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5041,9 +4974,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="299622399">
+<block type="Module" ID="352178175">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5172,9 +5105,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1016014847">
+<block type="Module" ID="1067063295">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5714,9 +5647,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1121894399">
+<block type="Module" ID="1938208767">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6367,9 +6300,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1926143999">
+<block type="Module" ID="1588701183">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6525,9 +6458,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1663854591">
+<block type="Module" ID="748462079">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6722,9 +6655,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2086213631">
+<block type="Module" ID="302919679">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6892,9 +6825,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="372830207">
+<block type="Module" ID="582590463">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9333,9 +9266,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="104695807">
+<block type="Module" ID="1275346943">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>1785589759</ObjContainerID>
+ <ObjContainerID>1329229823</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9646,7 +9579,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1785589759">
+<block type="Module" ID="1329229823">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
