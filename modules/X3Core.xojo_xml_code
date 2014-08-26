@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1184202751">
+<block type="Module" ID="2069358591">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -701,9 +701,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1938982911">
+<block type="Module" ID="1950806015">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -965,9 +965,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1719728127">
+<block type="Module" ID="1347772415">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1358,9 +1358,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="91873279">
+<block type="Module" ID="1970100223">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1588,9 +1588,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1581864959">
+<block type="Module" ID="1009254399">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1755,10 +1755,6 @@
    <SourceLine>Dim v1 As Double</SourceLine>
    <SourceLine>Dim u2 As Double</SourceLine>
    <SourceLine>Dim v2 As Double</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim j As Integer</SourceLine>
-   <SourceLine>Dim mappedWidth As Double</SourceLine>
-   <SourceLine>Dim mappedHeight As Double</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// calculate xy coordinates</SourceLine>
    <SourceLine></SourceLine>
@@ -2907,9 +2903,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="142950399">
+<block type="Module" ID="904687615">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2936,16 +2932,25 @@
    <SourceLine>Dim cpZ As Double ' cross product z</SourceLine>
    <SourceLine>Dim m As Double ' magnitude of vector</SourceLine>
    <SourceLine>Dim n As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim pmv0 As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim pmv1 As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim pmv2 As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// derefence vertices (for faster calculations)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pmv0 = ParentModel.Vertex(VIndex(0))</SourceLine>
+   <SourceLine>pmv1 = ParentModel.Vertex(VIndex(1))</SourceLine>
+   <SourceLine>pmv2 = ParentModel.Vertex(VIndex(2))</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' calculate polygon surface vectors</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>v1X = ParentModel.Vertex(VIndex(1)).X - ParentModel.Vertex(VIndex(0)).X</SourceLine>
-   <SourceLine>v1Y = ParentModel.Vertex(VIndex(1)).Y - ParentModel.Vertex(VIndex(0)).Y</SourceLine>
-   <SourceLine>v1Z = ParentModel.Vertex(VIndex(1)).Z - ParentModel.Vertex(VIndex(0)).Z</SourceLine>
+   <SourceLine>v1X = pmv1.X - pmv0.X</SourceLine>
+   <SourceLine>v1Y = pmv1.Y - pmv0.Y</SourceLine>
+   <SourceLine>v1Z = pmv1.Z - pmv0.Z</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>v2X = ParentModel.Vertex(VIndex(2)).X - ParentModel.Vertex(VIndex(1)).X</SourceLine>
-   <SourceLine>v2Y = ParentModel.Vertex(VIndex(2)).Y - ParentModel.Vertex(VIndex(1)).Y</SourceLine>
-   <SourceLine>v2Z = ParentModel.Vertex(VIndex(2)).Z - ParentModel.Vertex(VIndex(1)).Z</SourceLine>
+   <SourceLine>v2X = pmv2.X - pmv1.X</SourceLine>
+   <SourceLine>v2Y = pmv2.Y - pmv1.Y</SourceLine>
+   <SourceLine>v2Z = pmv2.Z - pmv1.Z</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' calculate cross product</SourceLine>
    <SourceLine></SourceLine>
@@ -3399,16 +3404,25 @@
    <SourceLine>Dim cpZ As Double ' cross product z</SourceLine>
    <SourceLine>Dim m As Double ' magnitude of vector</SourceLine>
    <SourceLine>Dim n As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim pmv0 As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim pmv1 As X3Core.X3Vector</SourceLine>
+   <SourceLine>Dim pmv2 As X3Core.X3Vector</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// derefence vertices (for faster calculations)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>pmv0 = ParentModel.Vertex(VIndex(0))</SourceLine>
+   <SourceLine>pmv1 = ParentModel.Vertex(VIndex(1))</SourceLine>
+   <SourceLine>pmv2 = ParentModel.Vertex(VIndex(2))</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' calculate polygon surface vectors</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>v1X = ParentModel.Vertex(VIndex(1)).X - ParentModel.Vertex(VIndex(0)).X</SourceLine>
-   <SourceLine>v1Y = ParentModel.Vertex(VIndex(1)).Y - ParentModel.Vertex(VIndex(0)).Y</SourceLine>
-   <SourceLine>v1Z = ParentModel.Vertex(VIndex(1)).Z - ParentModel.Vertex(VIndex(0)).Z</SourceLine>
+   <SourceLine>v1X = pmv1.X - pmv0.X</SourceLine>
+   <SourceLine>v1Y = pmv1.Y - pmv0.Y</SourceLine>
+   <SourceLine>v1Z = pmv1.Z - pmv0.Z</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>v2X = ParentModel.Vertex(VIndex(2)).X - ParentModel.Vertex(VIndex(1)).X</SourceLine>
-   <SourceLine>v2Y = ParentModel.Vertex(VIndex(2)).Y - ParentModel.Vertex(VIndex(1)).Y</SourceLine>
-   <SourceLine>v2Z = ParentModel.Vertex(VIndex(2)).Z - ParentModel.Vertex(VIndex(1)).Z</SourceLine>
+   <SourceLine>v2X = pmv2.X - pmv1.X</SourceLine>
+   <SourceLine>v2Y = pmv2.Y - pmv1.Y</SourceLine>
+   <SourceLine>v2Z = pmv2.Z - pmv1.Z</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' calculate cross product</SourceLine>
    <SourceLine></SourceLine>
@@ -3866,9 +3880,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1447567359">
+<block type="Module" ID="1095393279">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4022,9 +4036,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1028638719">
+<block type="Module" ID="1016115199">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4693,9 +4707,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1543223295">
+<block type="Module" ID="605081599">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4974,9 +4988,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="352178175">
+<block type="Module" ID="879960063">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5105,9 +5119,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1067063295">
+<block type="Module" ID="1625733119">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5647,9 +5661,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1938208767">
+<block type="Module" ID="1534744575">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6300,9 +6314,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1588701183">
+<block type="Module" ID="1381580799">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6458,9 +6472,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="748462079">
+<block type="Module" ID="339875839">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6655,9 +6669,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="302919679">
+<block type="Module" ID="1013825535">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6825,9 +6839,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="582590463">
+<block type="Module" ID="1050583039">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9266,9 +9280,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1275346943">
+<block type="Module" ID="414513151">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>1329229823</ObjContainerID>
+ <ObjContainerID>1281677311</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9579,7 +9593,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1329229823">
+<block type="Module" ID="1281677311">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
