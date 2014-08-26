@@ -2231,7 +2231,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function DrawTexture(texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function DrawTexture(texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000) As X3Core.X3Model</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -2248,28 +2248,49 @@
    <SourceLine>Dim v1 As Double</SourceLine>
    <SourceLine>Dim u2 As Double</SourceLine>
    <SourceLine>Dim v2 As Double</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim j As Integer</SourceLine>
-   <SourceLine>Dim mappedWidth As Double</SourceLine>
-   <SourceLine>Dim mappedHeight As Double</SourceLine>
+   <SourceLine>Dim tWidth As Double</SourceLine>
+   <SourceLine>Dim tHeight As Double</SourceLine>
+   <SourceLine>Dim w As Double</SourceLine>
+   <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// do integer to double conversion once</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>tWidth = texture.Width</SourceLine>
+   <SourceLine>tHeight = texture.Height</SourceLine>
+   <SourceLine>w = Width</SourceLine>
+   <SourceLine>h = Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// calculate xy coordinates</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>x1 = MapX(x)</SourceLine>
-   <SourceLine>y1 = MapY(y)</SourceLine>
+   <SourceLine>' mapX(x)</SourceLine>
+   <SourceLine>x1 = x - (w / 2)</SourceLine>
+   <SourceLine>x1 = x1 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' mapY(y)</SourceLine>
+   <SourceLine>y1 = (h / 2) - y</SourceLine>
+   <SourceLine>y1 = y1 / h</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>if w1 &gt; 0 Then</SourceLine>
-   <SourceLine>x2 = MapX(x + w1)</SourceLine>
+   <SourceLine>' mapX(x + w1)</SourceLine>
+   <SourceLine>x2 = x + w1 - (w / 2)</SourceLine>
+   <SourceLine>x2 = x2 / h</SourceLine>
    <SourceLine>else</SourceLine>
-   <SourceLine>x2 = MapX(x + texture.Width)</SourceLine>
+   <SourceLine>' mapX(x + texture.Width)</SourceLine>
+   <SourceLine>x2 = x + tWidth - (w / 2)</SourceLine>
+   <SourceLine>x2 = x2 / h</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine>if h1 &gt; 0 Then</SourceLine>
-   <SourceLine>y2 = MapY(y + h1)</SourceLine>
+   <SourceLine>' mapY(y + h1)</SourceLine>
+   <SourceLine>y2 = (h / 2) - y - h1</SourceLine>
+   <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine>else</SourceLine>
-   <SourceLine>y2 = MapY(y + texture.Height)</SourceLine>
+   <SourceLine>' mapY(y + texture.Height)</SourceLine>
+   <SourceLine>y2 = (h / 2) - y - tHeight</SourceLine>
+   <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>midX = (x2 - x1) * (xrepeat + 1) / 2</SourceLine>
-   <SourceLine>midY = (y2 - y1) * (yrepeat + 1) / 2</SourceLine>
+   <SourceLine>midX = (x2 - x1) / 2</SourceLine>
+   <SourceLine>midY = (y2 - y1) / 2</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Position.X = x1 + midX</SourceLine>
    <SourceLine>model.Position.Y = y1 + midY</SourceLine>
@@ -2282,23 +2303,23 @@
    <SourceLine></SourceLine>
    <SourceLine>// calculate uv coordinates</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>u1 = sx / texture.Width</SourceLine>
+   <SourceLine>u1 = sx / tWidth</SourceLine>
    <SourceLine>if w2 &gt; 0 then</SourceLine>
-   <SourceLine>u2 = (sx + w2) / texture.Width</SourceLine>
+   <SourceLine>u2 = (sx + w2) / tWidth</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>if w1 &gt; 0 Then</SourceLine>
-   <SourceLine>u2 = (sx + w1) / texture.Width</SourceLine>
+   <SourceLine>u2 = (sx + w1) / tWidth</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>u2 = 1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>v1 =  sy / texture.Width</SourceLine>
+   <SourceLine>v1 =  sy / tWidth</SourceLine>
    <SourceLine>if h2 &gt; 0 then</SourceLine>
-   <SourceLine>v2 = (sy + h2) / texture.Height</SourceLine>
+   <SourceLine>v2 = (sy + h2) / tHeight</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>if h1 &gt; 0 Then</SourceLine>
-   <SourceLine>v2 = (sy + h1) / texture.Height</SourceLine>
+   <SourceLine>v2 = (sy + h1) / tHeight</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>v2 = 1</SourceLine>
    <SourceLine>end if</SourceLine>
@@ -2317,32 +2338,19 @@
    <SourceLine></SourceLine>
    <SourceLine>// add vertices </SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>mappedWidth = x2 - x1</SourceLine>
-   <SourceLine>mappedHeight = y2 - y1</SourceLine>
-   <SourceLine>j = 0</SourceLine>
-   <SourceLine>while j &lt;= (yrepeat + 1)</SourceLine>
-   <SourceLine>i = 0</SourceLine>
-   <SourceLine>while i &lt;= (xrepeat + 1)</SourceLine>
-   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1 + (mappedWidth * i), y1 + (mappedHeight * j), 0)</SourceLine>
-   <SourceLine>i = i + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine>j = j + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y1, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y1, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y2, 0)</SourceLine>
+   <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y2, 0)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>// create polygons</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>j = 0</SourceLine>
-   <SourceLine>while j &lt;= yrepeat</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>i = 0</SourceLine>
-   <SourceLine>while i &lt;= xrepeat</SourceLine>
+   <SourceLine>// create polygon</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly = new X3Core.X3Polygon()</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.VIndex.Append j * (xrepeat + 2) + i</SourceLine>
-   <SourceLine>poly.VIndex.Append (j + 1) * (xrepeat + 2) + i</SourceLine>
-   <SourceLine>poly.VIndex.Append (j + 1) * (xrepeat + 2) + 1 + i</SourceLine>
-   <SourceLine>poly.VIndex.Append j * (xrepeat + 2) + 1 + i</SourceLine>
+   <SourceLine>poly.VIndex.Append 0</SourceLine>
+   <SourceLine>poly.VIndex.Append 2</SourceLine>
+   <SourceLine>poly.VIndex.Append 3</SourceLine>
+   <SourceLine>poly.VIndex.Append 1</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly.TIndex = 0 // point to image texture</SourceLine>
    <SourceLine>poly.UVIndex.Append 0</SourceLine>
@@ -2352,12 +2360,6 @@
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>i = i + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>j = j + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
    <SourceLine></SourceLine>
@@ -2369,7 +2371,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0</ItemParams>
+  <ItemParams>texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000</ItemParams>
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Method>
@@ -2378,14 +2380,14 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub DrawTexture(texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0)</SourceLine>
+   <SourceLine>Sub DrawTexture(texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000)</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim model As X3Core.X3Model</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = DrawTexture(texture, x, y, w1, h1, sx, sy, w2, h2, xrepeat, yrepeat)</SourceLine>
+   <SourceLine>model = DrawTexture(texture, x, y, w1, h1, sx, sy, w2, h2)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -2393,7 +2395,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000, xrepeat As Integer = 0, yrepeat As Integer = 0</ItemParams>
+  <ItemParams>texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
