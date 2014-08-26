@@ -4166,7 +4166,7 @@
    <SourceLine>Position = new X3Core.X3Vector(0, 0, 0) ' instantiate the default position at the origin</SourceLine>
    <SourceLine>Rotation = new X3Core.X3Quaternion() ' instantiate a default rotation quaternion</SourceLine>
    <SourceLine>Scale = new X3Core.X3Vector(1, 1, 1) ' instantiate the default scale</SourceLine>
-   <SourceLine>BoundingBox = new X3Core.X3BoundingBox() ' instantiate the bounding box object of the model</SourceLine>
+   <SourceLine>//BoundingBox = new X3Core.X3BoundingBox() ' instantiate the bounding box object of the model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
@@ -4362,6 +4362,8 @@
    <SourceLine></SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>if BoundingBox &lt;&gt; nil then</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>if Vertex.Ubound &gt;= 0 then</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>BoundingBox.ApplyVertex Vertex(0)</SourceLine>
@@ -4381,7 +4383,7 @@
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
