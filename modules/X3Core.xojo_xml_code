@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="2069358591">
+<block type="Module" ID="306823167">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -701,9 +701,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1950806015">
+<block type="Module" ID="37292031">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -965,9 +965,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1347772415">
+<block type="Module" ID="1353144319">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1358,9 +1358,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1970100223">
+<block type="Module" ID="409196543">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1588,9 +1588,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1009254399">
+<block type="Module" ID="1958471679">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1755,20 +1755,43 @@
    <SourceLine>Dim v1 As Double</SourceLine>
    <SourceLine>Dim u2 As Double</SourceLine>
    <SourceLine>Dim v2 As Double</SourceLine>
+   <SourceLine>Dim w As Double</SourceLine>
+   <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine>Dim iWidth As Double</SourceLine>
+   <SourceLine>Dim iHeight As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>iWidth = image.Width</SourceLine>
+   <SourceLine>iHeight = image.Height</SourceLine>
+   <SourceLine>w = Width</SourceLine>
+   <SourceLine>h = Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// calculate xy coordinates</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>x1 = MapX(x)</SourceLine>
-   <SourceLine>y1 = MapY(y)</SourceLine>
+   <SourceLine>' mapX(x)</SourceLine>
+   <SourceLine>x1 = x - (w / 2)</SourceLine>
+   <SourceLine>x1 = x1 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' mapY(y)</SourceLine>
+   <SourceLine>y1 = (h / 2) - y</SourceLine>
+   <SourceLine>y1 = y1 / h</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>if w1 &gt; 0 Then</SourceLine>
-   <SourceLine>x2 = MapX(x + w1)</SourceLine>
+   <SourceLine>' mapX(x + w1)</SourceLine>
+   <SourceLine>x2 = x + w1 - (w / 2)</SourceLine>
+   <SourceLine>x2 = x2 / h</SourceLine>
    <SourceLine>else</SourceLine>
-   <SourceLine>x2 = MapX(x + image.Width)</SourceLine>
+   <SourceLine>' mapX(x + texture.Width)</SourceLine>
+   <SourceLine>x2 = x + iWidth - (w / 2)</SourceLine>
+   <SourceLine>x2 = x2 / h</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine>if h1 &gt; 0 Then</SourceLine>
-   <SourceLine>y2 = MapY(y + h1)</SourceLine>
+   <SourceLine>' mapY(y + h1)</SourceLine>
+   <SourceLine>y2 = (h / 2) - y - h1</SourceLine>
+   <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine>else</SourceLine>
-   <SourceLine>y2 = MapY(y + image.Height)</SourceLine>
+   <SourceLine>' mapY(y + texture.Height)</SourceLine>
+   <SourceLine>y2 = (h / 2) - y - iHeight</SourceLine>
+   <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>midX = (x2 - x1) / 2</SourceLine>
@@ -1787,10 +1810,10 @@
    <SourceLine></SourceLine>
    <SourceLine>u1 = sx / image.Width</SourceLine>
    <SourceLine>if w2 &gt; 0 then</SourceLine>
-   <SourceLine>u2 = (sx + w2) / image.Width</SourceLine>
+   <SourceLine>u2 = (sx + w2) / iWidth</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>if w1 &gt; 0 Then</SourceLine>
-   <SourceLine>u2 = (sx + w1) / image.Width</SourceLine>
+   <SourceLine>u2 = (sx + w1) / iWidth</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>u2 = 1</SourceLine>
    <SourceLine>end if</SourceLine>
@@ -1798,10 +1821,10 @@
    <SourceLine></SourceLine>
    <SourceLine>v1 =  sy / image.Width</SourceLine>
    <SourceLine>if h2 &gt; 0 then</SourceLine>
-   <SourceLine>v2 = (sy + h2) / image.Height</SourceLine>
+   <SourceLine>v2 = (sy + h2) / iHeight</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>if h1 &gt; 0 Then</SourceLine>
-   <SourceLine>v2 = (sy + h1) / image.Height</SourceLine>
+   <SourceLine>v2 = (sy + h1) / iHeight</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>v2 = 1</SourceLine>
    <SourceLine>end if</SourceLine>
@@ -2905,9 +2928,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="904687615">
+<block type="Module" ID="1515536383">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3882,9 +3905,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1095393279">
+<block type="Module" ID="865802239">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4038,9 +4061,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1016115199">
+<block type="Module" ID="1052819455">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4711,9 +4734,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="605081599">
+<block type="Module" ID="814573567">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4992,9 +5015,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="879960063">
+<block type="Module" ID="1560838143">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5123,9 +5146,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1625733119">
+<block type="Module" ID="1381695487">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5665,9 +5688,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1534744575">
+<block type="Module" ID="1568595967">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6318,9 +6341,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1381580799">
+<block type="Module" ID="656605183">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6476,9 +6499,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="339875839">
+<block type="Module" ID="1592143871">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6673,9 +6696,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1013825535">
+<block type="Module" ID="1501579263">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6843,9 +6866,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1050583039">
+<block type="Module" ID="189126655">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9284,9 +9307,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="414513151">
+<block type="Module" ID="1533073407">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>1281677311</ObjContainerID>
+ <ObjContainerID>526495743</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9597,7 +9620,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1281677311">
+<block type="Module" ID="526495743">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
