@@ -2006,6 +2006,13 @@
    <SourceLine>Dim midX As Double</SourceLine>
    <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine>Dim totVerts As Integer</SourceLine>
+   <SourceLine>Dim w As Double</SourceLine>
+   <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// do integer to double conversion once</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>w = Width</SourceLine>
+   <SourceLine>h = Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// add color</SourceLine>
    <SourceLine></SourceLine>
@@ -2018,8 +2025,13 @@
    <SourceLine>xSum = 0</SourceLine>
    <SourceLine>ySum = 0</SourceLine>
    <SourceLine>while i &lt; pointCount</SourceLine>
-   <SourceLine>x = mapX(points(1 + i * 2))</SourceLine>
-   <SourceLine>y = mapY(points(2 + i * 2))</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>x = points(1 + i * 2) - (w / 2)</SourceLine>
+   <SourceLine>x = x / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>y = (h / 2) - points(2 + i * 2)</SourceLine>
+   <SourceLine>y = y / h</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>xSum = xSum + x</SourceLine>
    <SourceLine>ySum = ySum + y</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x, y, 0)</SourceLine>
@@ -2063,8 +2075,12 @@
    <SourceLine>xSum = 0</SourceLine>
    <SourceLine>ySum = 0</SourceLine>
    <SourceLine>while i &gt;= 0</SourceLine>
-   <SourceLine>x = mapX(points(1 + i * 2))</SourceLine>
-   <SourceLine>y = mapY(points(2 + i * 2))</SourceLine>
+   <SourceLine>x = points(1 + i * 2) - (w / 2)</SourceLine>
+   <SourceLine>x = x / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>y = (h / 2) - points(2 + i * 2)</SourceLine>
+   <SourceLine>y = y / h</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>xSum = xSum + x</SourceLine>
    <SourceLine>ySum = ySum + y</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x, y, 0)</SourceLine>
