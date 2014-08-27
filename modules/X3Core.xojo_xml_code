@@ -2154,7 +2154,16 @@
    <SourceLine>Dim y2 As Double</SourceLine>
    <SourceLine>Dim midX As Double</SourceLine>
    <SourceLine>Dim midY As Double</SourceLine>
+   <SourceLine>Dim w As Double</SourceLine>
+   <SourceLine>Dim h As Double</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// do integer to double conversion once</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>w = Me.Width</SourceLine>
+   <SourceLine>h = Me.Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// init picture calculator </SourceLine>
    <SourceLine>calcPic.Graphics.Bold = Bold</SourceLine>
    <SourceLine>calcPic.Graphics.Italic = Italic</SourceLine>
    <SourceLine>calcPic.Graphics.TextFont = TextFont</SourceLine>
@@ -2202,10 +2211,17 @@
    <SourceLine></SourceLine>
    <SourceLine>// add vertices</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>x1 = MapX(x)</SourceLine>
-   <SourceLine>y1 = MapY(y - calcPic.Graphics.TextAscent)</SourceLine>
-   <SourceLine>x2 = MapX(x + image.Width)</SourceLine>
-   <SourceLine>y2 = MapY(y - calcPic.Graphics.TextAscent + image.Height)</SourceLine>
+   <SourceLine>x1 = x - (w / 2)</SourceLine>
+   <SourceLine>x1 = x1 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>y1 = (h / 2) - (y - calcPic.Graphics.TextAscent)</SourceLine>
+   <SourceLine>y1 = y1 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>x2 = (x + image.Width) - (w / 2)</SourceLine>
+   <SourceLine>x2 = x2 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>y2 = (h / 2) - (y - calcPic.Graphics.TextAscent + image.Height)</SourceLine>
+   <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>midX = (x2 - x1) / 2</SourceLine>
    <SourceLine>midY = (y2 - y1) / 2</SourceLine>
