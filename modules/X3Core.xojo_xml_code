@@ -1656,60 +1656,6 @@
   <ItemResult></ItemResult>
  </Method>
  <Method>
-  <ItemName>mapX</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function mapX(x As Integer) As Double</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Double</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = x - (Width / 2)</SourceLine>
-   <SourceLine>result = result / Height</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>x As Integer</ItemParams>
-  <ItemResult>Double</ItemResult>
- </Method>
- <Method>
-  <ItemName>mapY</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function mapY(y As Integer) As Double</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim result As Double</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>result = (Height / 2) - y</SourceLine>
-   <SourceLine>result = result / Height</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return result</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>33</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>y As Integer</ItemParams>
-  <ItemResult>Double</ItemResult>
- </Method>
- <Method>
   <ItemName>FillRect</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
@@ -1759,6 +1705,8 @@
    <SourceLine>Dim h As Double</SourceLine>
    <SourceLine>Dim iWidth As Double</SourceLine>
    <SourceLine>Dim iHeight As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>iWidth = image.Width</SourceLine>
    <SourceLine>iHeight = image.Height</SourceLine>
@@ -1898,6 +1846,13 @@
    <SourceLine>Dim y2 As Double</SourceLine>
    <SourceLine>Dim midX As Double</SourceLine>
    <SourceLine>Dim midY As Double</SourceLine>
+   <SourceLine>Dim w As Double</SourceLine>
+   <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// do integer to double conversion once</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>w = Width</SourceLine>
+   <SourceLine>h = Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// add color</SourceLine>
    <SourceLine></SourceLine>
@@ -1905,11 +1860,27 @@
    <SourceLine></SourceLine>
    <SourceLine>// add vertices</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>x1 = MapX(x)</SourceLine>
-   <SourceLine>y1 = MapY(y)</SourceLine>
+   <SourceLine>' mapX(x)</SourceLine>
+   <SourceLine>x1 = x - (w / 2)</SourceLine>
+   <SourceLine>x1 = x1 / h</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>x2 = MapX(x + width)</SourceLine>
-   <SourceLine>y2 = MapY(y +height)</SourceLine>
+   <SourceLine>' mapY(y)</SourceLine>
+   <SourceLine>y1 = (h / 2) - y</SourceLine>
+   <SourceLine>y1 = y1 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' mapX(x + width)</SourceLine>
+   <SourceLine>x2 = (x + width) - (w / 2)</SourceLine>
+   <SourceLine>x2 = x2 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' mapY(y +height)</SourceLine>
+   <SourceLine>y2 = (h / 2) - (y +height)</SourceLine>
+   <SourceLine>y2 = y2 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>'x1 = MapX(x)</SourceLine>
+   <SourceLine>'y1 = MapY(y)</SourceLine>
+   <SourceLine>'</SourceLine>
+   <SourceLine>'x2 = MapX(x + width)</SourceLine>
+   <SourceLine>'y2 = MapY(y +height)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>midX = (x2 - x1) / 2</SourceLine>
    <SourceLine>midY = (y2 - y1) / 2</SourceLine>
@@ -9911,6 +9882,7 @@
    <SourceLine>OpenGL.glLoadIdentity()</SourceLine>
    <SourceLine>OpenGL.glScalef(1.0, -1.0, 1.0)</SourceLine>
    <SourceLine>OpenGL.glMatrixMode(OpenGL.GL_MODELVIEW)</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
