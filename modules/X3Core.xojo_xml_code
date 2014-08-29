@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="306823167">
+<block type="Module" ID="1973708799">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -483,6 +483,32 @@
   <ItemParams>angle As Double, Optional lockCamera As Boolean = True</ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>Constructor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Constructor(xPos As Double, yPos As Double, zPos As Double)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>' initialize camera with default values</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>DollyPosition = new X3Core.X3Vector(xPos, yPos, zPos)</SourceLine>
+   <SourceLine>DollyRotation = new X3Core.X3Quaternion()</SourceLine>
+   <SourceLine>CameraRotation = new X3Core.X3Quaternion()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>xPos As Double, yPos As Double, zPos As Double</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
  <Property>
   <ItemName>DollyPosition</ItemName>
   <Compatibility></Compatibility>
@@ -701,9 +727,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="37292031">
+<block type="Module" ID="522209279">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -965,9 +991,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1353144319">
+<block type="Module" ID="288178175">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1358,9 +1384,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="409196543">
+<block type="Module" ID="1771393023">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1588,9 +1614,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1958471679">
+<block type="Module" ID="1945233407">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -2931,9 +2957,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1515536383">
+<block type="Module" ID="133738495">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3908,9 +3934,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="865802239">
+<block type="Module" ID="702015487">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4064,9 +4090,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1052819455">
+<block type="Module" ID="1768617983">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4737,9 +4763,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="814573567">
+<block type="Module" ID="1495889919">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4983,9 +5009,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1560838143">
+<block type="Module" ID="216926207">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5114,9 +5140,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1381695487">
+<block type="Module" ID="1133940735">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5656,9 +5682,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1568595967">
+<block type="Module" ID="1053237247">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6200,11 +6226,12 @@
    <SourceLine>Set</SourceLine>
    <SourceLine>mCameraIndex = value</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>if mCameraIndex &gt;= 0 and mCameraIndex &lt;= Camera.Ubound then</SourceLine>
+   <SourceLine>if (mCameraIndex &gt;= 0) and (mCameraIndex &lt;= Camera.Ubound) then</SourceLine>
    <SourceLine>mActiveCamera = Camera(mCameraIndex)</SourceLine>
    <SourceLine>else</SourceLine>
    <SourceLine>mActiveCamera = nil</SourceLine>
    <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Set</SourceLine>
   </SetAccessor>
   <GetAccessor>
@@ -6309,9 +6336,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="656605183">
+<block type="Module" ID="1041352703">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6467,9 +6494,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1592143871">
+<block type="Module" ID="1604759551">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6664,9 +6691,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1501579263">
+<block type="Module" ID="1888217087">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6834,9 +6861,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="189126655">
+<block type="Module" ID="355676159">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9275,9 +9302,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1533073407">
+<block type="Module" ID="162605055">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>526495743</ObjContainerID>
+ <ObjContainerID>1113044991</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9588,7 +9615,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="526495743">
+<block type="Module" ID="1113044991">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -10957,7 +10984,6 @@
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim activeCam As X3Core.X3Camera</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPushMatrix ' save matrix</SourceLine>
    <SourceLine></SourceLine>
@@ -10987,14 +11013,17 @@
    <SourceLine></SourceLine>
    <SourceLine>' select the active camera</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>activeCam = scene.Camera(scene.CameraIndex)</SourceLine>
-   <SourceLine>X3_SetCamera activeCam</SourceLine>
+   <SourceLine>if scene.ActiveCamera &lt;&gt; nil then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>X3_SetCamera scene.ActiveCamera</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// render all the models in the scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>for i = 0 to scene.Model.Ubound</SourceLine>
    <SourceLine>X3_RenderModel(scene.Model(i))</SourceLine>
    <SourceLine>next i </SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
    <SourceLine></SourceLine>
