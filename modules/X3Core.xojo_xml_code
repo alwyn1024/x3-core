@@ -750,7 +750,6 @@
    <SourceLine></SourceLine>
    <SourceLine>X3_Initialize</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Graphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -772,7 +771,7 @@
    <SourceLine></SourceLine>
    <SourceLine>s = Graphics.Scene</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glClearColor(s.Backcolor.Red, s.Backcolor.Green, s.Backcolor.Blue, s.Backcolor.Alpha) ' set the background color</SourceLine>
+   <SourceLine>OpenGL.glClearColor(s.BackColor.Red, s.BackColor.Green, s.BackColor.Blue, s.BackColor.Alpha) ' set the background color</SourceLine>
    <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>X3_RenderScene s</SourceLine>
@@ -793,6 +792,9 @@
    <SourceLine></SourceLine>
    <SourceLine>Graphics.Width = Me.Width</SourceLine>
    <SourceLine>Graphics.Height = Me.Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Graphics.Scene.SetViewport 0, 0, Me.Width, Me.Height</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -6206,7 +6208,7 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Backcolor =new X3Core.X3Color(1, 1, 1)</SourceLine>
+   <SourceLine>BackColor =new X3Core.X3Color(1, 1, 1)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -6347,16 +6349,16 @@
   <IsShared>0</IsShared>
  </Property>
  <Property>
-  <ItemName>Backcolor</ItemName>
+  <ItemName>BackColor</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Backcolor As X3Core.X3Color</SourceLine>
+   <SourceLine>BackColor As X3Core.X3Color</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
-  <ItemDeclaration>Backcolor As X3Core.X3Color</ItemDeclaration>
+  <ItemDeclaration>BackColor As X3Core.X3Color</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -8275,6 +8277,7 @@
    <SourceLine>Dim tmpCamera As X3Core.X3Camera</SourceLine>
    <SourceLine>Dim tmpLight As X3Core.X3Light</SourceLine>
    <SourceLine>Dim defaultCam As Integer = -1</SourceLine>
+   <SourceLine>Dim tmpColor As X3Core.X3Color</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>scene = new X3Core.X3Scene</SourceLine>
    <SourceLine></SourceLine>
@@ -8315,6 +8318,12 @@
    <SourceLine>skipWhitespace mp, pos</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>select case tmpStr</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>case "backcolor"</SourceLine>
+   <SourceLine>result = matchColor(mp, pos, tmpColor)</SourceLine>
+   <SourceLine>if result then</SourceLine>
+   <SourceLine>scene.BackColor = tmpColor</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>case "cameras"</SourceLine>
    <SourceLine></SourceLine>
