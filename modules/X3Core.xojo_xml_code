@@ -766,12 +766,16 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Me.MakeCurrent()</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>OpenGL.glClearColor(1, 1, 1, 1) ' set the background color</SourceLine>
+   <SourceLine>s = Graphics.Scene</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>OpenGL.glClearColor(s.Backcolor.Red, s.Backcolor.Green, s.Backcolor.Blue, s.Backcolor.Alpha) ' set the background color</SourceLine>
    <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>X3_RenderScene Graphics.Scene</SourceLine>
+   <SourceLine>X3_RenderScene s</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -1500,6 +1504,31 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>initColor As Color</ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Assign</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Assign(red As Double, green As Double, blue As Double, alpha As Double = 1)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Me.Red = red</SourceLine>
+   <SourceLine>Me.Green = green</SourceLine>
+   <SourceLine>Me.Blue = blue</SourceLine>
+   <SourceLine>Me.Alpha = alpha</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>red As Double, green As Double, blue As Double, alpha As Double = 1</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Property>
@@ -6166,6 +6195,28 @@
   <ItemParams>angle As Double</ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <Method>
+  <ItemName>Constructor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub Constructor()</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Backcolor =new X3Core.X3Color(1, 1, 1)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Method>
  <Property>
   <ItemName>Model()</ItemName>
   <Compatibility></Compatibility>
@@ -6292,6 +6343,20 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <ItemDeclaration>Light() As X3Core.X3Light</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>Backcolor</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Backcolor As X3Core.X3Color</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>Backcolor As X3Core.X3Color</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
