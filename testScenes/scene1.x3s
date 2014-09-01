@@ -1,5 +1,6 @@
 {
 	"x3scene":{
+		"backcolor":[0.2, 0.2, 0.2, 1],
 		"cameras":[
 			{
 				"crot":[1, 0, 0, 0],
