@@ -11253,6 +11253,9 @@
    <SourceLine>Dim h As Integer</SourceLine>
    <SourceLine>Dim w As Integer</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>w = text.Width</SourceLine>
+   <SourceLine>h = text.Height</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>pixIndex = 0</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>j = 0</SourceLine>
