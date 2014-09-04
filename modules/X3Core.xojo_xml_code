@@ -807,12 +807,18 @@
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Function MouseDown(x as Integer, y as Integer) As Boolean</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Dim model As X3Core.X3Model</SourceLine>
    <SourceLine>Dim modelIndex As Integer</SourceLine>
+   <SourceLine>Dim polygonIndex As Integer</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = X3_PickModel(Me, Me.Graphics.Scene, x, y, modelIndex)</SourceLine>
+   <SourceLine>model = X3_PickModel(Me, Me.Graphics.Scene, x, y, modelIndex, polygonIndex)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if model &lt;&gt; nil then</SourceLine>
+   <SourceLine>RaiseEvent PolygonMouseDown x, y, model.Polygon(polygonIndex), polygonIndex</SourceLine>
    <SourceLine>RaiseEvent ModelMouseDown x, y, model, modelIndex</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
@@ -861,6 +867,14 @@
   <SystemFlags>0</SystemFlags>
   <ItemParams>x As Integer, y As Integer</ItemParams>
   <ItemResult>Boolean</ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>PolygonMouseDown</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer, polygon As X3Core.X3Polygon, polygonIndex As Integer</ItemParams>
+  <ItemResult></ItemResult>
  </Hook>
  <Property>
   <ItemName>Graphics</ItemName>
@@ -10659,7 +10673,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function X3_PickPolygon(surface As OpenGLSurface, model As X3Core.X3Model, x As Integer, y As Integer) As X3Core.X3Polygon</SourceLine>
+   <SourceLine>Function X3_PickPolygon(surface As OpenGLSurface, model As X3Core.X3Model, x As Integer, y As Integer, ByRef polygonIndex As Integer) As X3Core.X3Polygon</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -10676,6 +10690,7 @@
    <SourceLine></SourceLine>
    <SourceLine>surface.MakeCurrent()</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>polygonIndex = -1</SourceLine>
    <SourceLine>result = nil</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glDisable OpenGL.GL_LIGHTING ' disable lighting</SourceLine>
@@ -10757,7 +10772,8 @@
    <SourceLine></SourceLine>
    <SourceLine>' did we get a pixel at (x, y) other than black?</SourceLine>
    <SourceLine>if pickIndex &gt; 0 then</SourceLine>
-   <SourceLine>result = model.Polygon(pickIndex - 1)</SourceLine>
+   <SourceLine>polygonIndex = pickIndex - 1</SourceLine>
+   <SourceLine>result = model.Polygon(polygonIndex)</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>OpenGL.glPopMatrix ' restore matrix</SourceLine>
@@ -10772,7 +10788,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>surface As OpenGLSurface, model As X3Core.X3Model, x As Integer, y As Integer</ItemParams>
+  <ItemParams>surface As OpenGLSurface, model As X3Core.X3Model, x As Integer, y As Integer, ByRef polygonIndex As Integer</ItemParams>
   <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
@@ -11371,7 +11387,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function X3_PickModel(surface As OpenGLSurface, scene As X3Core.X3Scene, x As Integer, y As Integer, ByRef modelIndex As Integer) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function X3_PickModel(surface As OpenGLSurface, scene As X3Core.X3Scene, x As Integer, y As Integer, ByRef modelIndex As Integer, ByRef polygonIndex As Integer) As X3Core.X3Model</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -11394,7 +11410,7 @@
    <SourceLine></SourceLine>
    <SourceLine>i = scene.Model.Ubound</SourceLine>
    <SourceLine>while (i &gt;= 0) and (result = nil)</SourceLine>
-   <SourceLine>poly = X3_PickPolygon(surface, scene.Model(i), x, y)</SourceLine>
+   <SourceLine>poly = X3_PickPolygon(surface, scene.Model(i), x, y, polygonIndex)</SourceLine>
    <SourceLine>if poly&lt;&gt; nil then</SourceLine>
    <SourceLine>result = poly.ParentModel</SourceLine>
    <SourceLine>modelIndex = i</SourceLine>
@@ -11414,7 +11430,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>surface As OpenGLSurface, scene As X3Core.X3Scene, x As Integer, y As Integer, ByRef modelIndex As Integer</ItemParams>
+  <ItemParams>surface As OpenGLSurface, scene As X3Core.X3Scene, x As Integer, y As Integer, ByRef modelIndex As Integer, ByRef polygonIndex As Integer</ItemParams>
   <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <ViewBehavior>
