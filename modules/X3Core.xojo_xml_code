@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="806735871">
+<block type="Module" ID="453705727">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -727,9 +727,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1284775935">
+<block type="Module" ID="1657380863">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -1049,9 +1049,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1033656319">
+<block type="Module" ID="981565439">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1442,9 +1442,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1240909823">
+<block type="Module" ID="2115106815">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1697,9 +1697,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1487306751">
+<block type="Module" ID="938588159">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3040,9 +3040,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1130825727">
+<block type="Module" ID="290222079">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4017,9 +4017,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1152534527">
+<block type="Module" ID="1263355903">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4173,9 +4173,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1098958847">
+<block type="Module" ID="2005524479">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4846,9 +4846,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1514360831">
+<block type="Module" ID="314040319">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5162,9 +5162,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1767608319">
+<block type="Module" ID="277493759">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5293,9 +5293,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="337115135">
+<block type="Module" ID="1180553215">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5835,9 +5835,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1822048255">
+<block type="Module" ID="1562535935">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6525,9 +6525,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1898821631">
+<block type="Module" ID="1903542271">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6683,9 +6683,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1485748223">
+<block type="Module" ID="1639383039">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6880,9 +6880,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1164486655">
+<block type="Module" ID="156469247">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -7050,9 +7050,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1404710911">
+<block type="Module" ID="1838661631">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9498,9 +9498,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="367112191">
+<block type="Module" ID="1115195391">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>286164991</ObjContainerID>
+ <ObjContainerID>51726335</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9811,7 +9811,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="286164991">
+<block type="Module" ID="51726335">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -11099,8 +11099,7 @@
    <SourceLine>modelJSON.Append ","</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>pic = X3_PictureFromTexture(text)</SourceLine>
-   <SourceLine>modelJSON.Append """" + EncodeBase64(pic.GetData(Picture.FormatPNG), 0) + """"</SourceLine>
+   <SourceLine>modelJSON.Append """" + EncodeBase64(text.TextureImage.GetData(Picture.FormatPNG), 0) + """"</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>next i</SourceLine>
    <SourceLine></SourceLine>
@@ -11301,56 +11300,6 @@
   <IsShared>0</IsShared>
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
- </Method>
- <Method>
-  <ItemName>X3_PictureFromTexture</ItemName>
-  <Compatibility></Compatibility>
-  <Visible>1</Visible>
-  <ItemSource>
-   <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function X3_PictureFromTexture(text As X3Core.X3Texture) As Picture</SourceLine>
-   <SourceLine>' www.Xojo3D.com</SourceLine>
-   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
-   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>Dim pic as new Picture(text.Width, text.height, 32)</SourceLine>
-   <SourceLine>Dim i As Integer</SourceLine>
-   <SourceLine>Dim j As Integer</SourceLine>
-   <SourceLine>Dim pixIndex As Integer</SourceLine>
-   <SourceLine>Dim h As Integer</SourceLine>
-   <SourceLine>Dim w As Integer</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>w = text.Width</SourceLine>
-   <SourceLine>h = text.Height</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pixIndex = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>j = 0</SourceLine>
-   <SourceLine>while j &lt; h</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>i = 0</SourceLine>
-   <SourceLine>while i &lt; w</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pic.RGBSurface.Pixel(i, j) = RGB(text.BGRABitmap.UInt8Value(pixIndex), text.BGRABitmap.UInt8Value(pixIndex + 1), text.BGRABitmap.UInt8Value(pixIndex + 2), text.BGRABitmap.UInt8Value(pixIndex + 3))</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>pixIndex = pixIndex + 4</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>i = i + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>j = j + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return pic</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>End Function</SourceLine>
-  </ItemSource>
-  <TextEncoding>134217984</TextEncoding>
-  <AliasName></AliasName>
-  <ItemFlags>0</ItemFlags>
-  <IsShared>0</IsShared>
-  <ItemParams>text As X3Core.X3Texture</ItemParams>
-  <ItemResult>Picture</ItemResult>
  </Method>
  <Method>
   <ItemName>X3_AppFolder</ItemName>
