@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1336002559">
+<block type="Module" ID="1501521919">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -727,9 +727,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="984074239">
+<block type="Module" ID="1290962943">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -1049,9 +1049,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="321550335">
+<block type="Module" ID="1243088895">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1442,9 +1442,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2098327551">
+<block type="Module" ID="1975027711">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1697,9 +1697,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="93458431">
+<block type="Module" ID="2046089215">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1715,8 +1715,8 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = DrawPicture(image, x, y, w1, h1, sx, sy, w2, h2)</SourceLine>
+   <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
+   <SourceLine>poly = DrawPicture(image, x, y, w1, h1, sx, sy, w2, h2)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1738,6 +1738,10 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>' Recommendation to increase rendering speed by using a single display list courtesy of Will Shank from ezgl.</SourceLine>
+   <SourceLine>' ezgl.tumblr.com/</SourceLine>
+   <SourceLine>' Graphics, audio, vectors and moving stuff.</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Height = canvas.Height</SourceLine>
    <SourceLine>Width = canvas.Width</SourceLine>
    <SourceLine></SourceLine>
@@ -1750,6 +1754,8 @@
    <SourceLine>Scene.Camera.Append new X3Camera()</SourceLine>
    <SourceLine>Scene.CameraIndex = 0</SourceLine>
    <SourceLine>Scene.ActiveCamera.DollyOut 1.2 // dolly the camare out a bit so that we can see the drawing</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Scene.Model.Append new X3Core.X3Model()</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// Instantiate picture object used for calculations</SourceLine>
    <SourceLine></SourceLine>
@@ -1793,19 +1799,17 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function DrawPicture(image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000) As X3Core.X3Polygon</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
    <SourceLine>Dim x1 As Double</SourceLine>
    <SourceLine>Dim y1 As Double</SourceLine>
    <SourceLine>Dim x2 As Double</SourceLine>
    <SourceLine>Dim y2 As Double</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine>Dim u1 As Double</SourceLine>
    <SourceLine>Dim v1 As Double</SourceLine>
    <SourceLine>Dim u2 As Double</SourceLine>
@@ -1814,6 +1818,10 @@
    <SourceLine>Dim h As Double</SourceLine>
    <SourceLine>Dim iWidth As Double</SourceLine>
    <SourceLine>Dim iHeight As Double</SourceLine>
+   <SourceLine>Dim tIdx As Integer</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -1821,6 +1829,23 @@
    <SourceLine>iHeight = image.Height</SourceLine>
    <SourceLine>w = Width</SourceLine>
    <SourceLine>h = Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// see if this images was used before?</SourceLine>
+   <SourceLine>tIdx = -1</SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while (i &lt;= model.Texture.Ubound) and (tIdx &lt; 0)</SourceLine>
+   <SourceLine>if model.Texture(i).TextureImage Is image then</SourceLine>
+   <SourceLine>tIdx = i</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if tIdx &lt; 0 then</SourceLine>
+   <SourceLine>// texture wasn't used previously so add it to the model</SourceLine>
+   <SourceLine>model.Texture.Append new X3Core.X3Texture(image)</SourceLine>
+   <SourceLine>tIdx = model.Texture.Ubound</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// calculate xy coordinates</SourceLine>
    <SourceLine></SourceLine>
@@ -1851,18 +1876,6 @@
    <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>midX = (x2 - x1) / 2</SourceLine>
-   <SourceLine>midY = (y2 - y1) / 2</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Position.X = x1 + midX</SourceLine>
-   <SourceLine>model.Position.Y = y1 + midY</SourceLine>
-   <SourceLine>model.Position.Z = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>x1 = x1 - model.Position.X</SourceLine>
-   <SourceLine>y1 = y1 - model.Position.Y</SourceLine>
-   <SourceLine>x2 = x2 - model.Position.X</SourceLine>
-   <SourceLine>y2 = y2 - model.Position.Y</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>// calculate uv coordinates</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>u1 = sx / image.Width</SourceLine>
@@ -1887,10 +1900,6 @@
    <SourceLine>end if</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>// add texture (created from image)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Texture.Append new X3Core.X3Texture(image)</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>// add uv-coordinates</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.UVMap.Append new X3Core.X3UVCoordinate(u1, v1)</SourceLine>
@@ -1909,23 +1918,21 @@
    <SourceLine></SourceLine>
    <SourceLine>poly = new X3Core.X3Polygon()</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.VIndex.Append 0</SourceLine>
-   <SourceLine>poly.VIndex.Append 2</SourceLine>
-   <SourceLine>poly.VIndex.Append 3</SourceLine>
-   <SourceLine>poly.VIndex.Append 1</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 3)</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 1)</SourceLine>
+   <SourceLine>poly.VIndex.Append model.Vertex.Ubound</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 2)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.TIndex = 0 // point to image texture</SourceLine>
-   <SourceLine>poly.UVIndex.Append 0</SourceLine>
-   <SourceLine>poly.UVIndex.Append 1</SourceLine>
-   <SourceLine>poly.UVIndex.Append 2</SourceLine>
-   <SourceLine>poly.UVIndex.Append 3</SourceLine>
+   <SourceLine>poly.TIndex = tIdx // point to image texture</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 3)</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 2)</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 1)</SourceLine>
+   <SourceLine>poly.UVIndex.Append model.UVMap.Ubound</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return model</SourceLine>
+   <SourceLine>return poly</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -1934,7 +1941,7 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>image As Picture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000</ItemParams>
-  <ItemResult>X3Core.X3Model</ItemResult>
+  <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
   <ItemName>FillRect</ItemName>
@@ -2052,8 +2059,9 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = FillPolygon(points)</SourceLine>
+   <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly = FillPolygon(points)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -2070,24 +2078,21 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function FillPolygon(points() As Integer) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function FillPolygon(points() As Integer) As X3Core.X3Polygon</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
    <SourceLine>Dim poly As new X3Core.X3Polygon</SourceLine>
    <SourceLine>Dim x As Double</SourceLine>
    <SourceLine>Dim y As Double</SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
    <SourceLine>Dim pointCount As Integer</SourceLine>
-   <SourceLine>Dim xSum As Double</SourceLine>
-   <SourceLine>Dim ySum As Double</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
-   <SourceLine>Dim totVerts As Integer</SourceLine>
    <SourceLine>Dim w As Double</SourceLine>
    <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -2102,8 +2107,6 @@
    <SourceLine></SourceLine>
    <SourceLine>pointCount = (points.Ubound \ 2)</SourceLine>
    <SourceLine>i = 0</SourceLine>
-   <SourceLine>xSum = 0</SourceLine>
-   <SourceLine>ySum = 0</SourceLine>
    <SourceLine>while i &lt; pointCount</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>x = points(1 + i * 2) - (w / 2)</SourceLine>
@@ -2112,27 +2115,12 @@
    <SourceLine>y = (h / 2) - points(2 + i * 2)</SourceLine>
    <SourceLine>y = y / h</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>xSum = xSum + x</SourceLine>
-   <SourceLine>ySum = ySum + y</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x, y, 0)</SourceLine>
-   <SourceLine>poly.VIndex.Append i</SourceLine>
+   <SourceLine>poly.VIndex.Append model.Vertex.Ubound</SourceLine>
    <SourceLine>i = i + 1</SourceLine>
    <SourceLine>wend</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>// center polygon</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>totVerts = model.Vertex.Ubound + 1</SourceLine>
-   <SourceLine>midX = xSum / totVerts</SourceLine>
-   <SourceLine>midY = ySum / totVerts</SourceLine>
-   <SourceLine>for i = 0 to model.Vertex.Ubound</SourceLine>
-   <SourceLine>model.Vertex(i).X = model.Vertex(i).X - midX</SourceLine>
-   <SourceLine>model.Vertex(i).Y = model.Vertex(i).Y - midY</SourceLine>
-   <SourceLine>next  i</SourceLine>
-   <SourceLine>model.Position.X = midX</SourceLine>
-   <SourceLine>model.Position.Y = midY</SourceLine>
-   <SourceLine>model.Position.Z = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>poly.CIndex = 0 // point to color</SourceLine>
+   <SourceLine>poly.CIndex = model.ColorPal.Ubound // point to color</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
@@ -2142,18 +2130,13 @@
    <SourceLine>if model.Normal(poly.NIndex).Z &lt; 0 then</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' first remove the existing vertices</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>i = 0</SourceLine>
-   <SourceLine>while i &lt; pointCount</SourceLine>
+   <SourceLine>for i = 1 to pointCount</SourceLine>
    <SourceLine>model.Vertex.Remove(model.Vertex.Ubound)</SourceLine>
-   <SourceLine>i = i + 1</SourceLine>
-   <SourceLine>wend</SourceLine>
+   <SourceLine>next i </SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>' add the vertices in reversed order</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>i = pointCount - 1</SourceLine>
-   <SourceLine>xSum = 0</SourceLine>
-   <SourceLine>ySum = 0</SourceLine>
    <SourceLine>while i &gt;= 0</SourceLine>
    <SourceLine>x = points(1 + i * 2) - (w / 2)</SourceLine>
    <SourceLine>x = x / h</SourceLine>
@@ -2161,30 +2144,17 @@
    <SourceLine>y = (h / 2) - points(2 + i * 2)</SourceLine>
    <SourceLine>y = y / h</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>xSum = xSum + x</SourceLine>
-   <SourceLine>ySum = ySum + y</SourceLine>
+   <SourceLine>'xSum = xSum + x</SourceLine>
+   <SourceLine>'ySum = ySum + y</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x, y, 0)</SourceLine>
    <SourceLine>i = i - 1</SourceLine>
    <SourceLine>wend</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>// center polygon</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>midX = xSum / totVerts</SourceLine>
-   <SourceLine>midY = ySum / totVerts</SourceLine>
-   <SourceLine>for i = 0 to model.Vertex.Ubound</SourceLine>
-   <SourceLine>model.Vertex(i).X = model.Vertex(i).X - midX</SourceLine>
-   <SourceLine>model.Vertex(i).Y = model.Vertex(i).Y - midY</SourceLine>
-   <SourceLine>next  i</SourceLine>
-   <SourceLine>model.Position.X = midX</SourceLine>
-   <SourceLine>model.Position.Y = midY</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>poly.CalculateNormal() ' calculate the normal of the polygon</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return model</SourceLine>
+   <SourceLine>return poly</SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
@@ -2192,7 +2162,7 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>points() As Integer</ItemParams>
-  <ItemResult>X3Core.X3Model</ItemResult>
+  <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
   <ItemName>DrawString</ItemName>
@@ -2366,19 +2336,17 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function DrawTexture(texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function DrawTexture(texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000) As X3Core.X3Polygon</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
    <SourceLine>Dim x1 As Double</SourceLine>
    <SourceLine>Dim y1 As Double</SourceLine>
    <SourceLine>Dim x2 As Double</SourceLine>
    <SourceLine>Dim y2 As Double</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine>Dim u1 As Double</SourceLine>
    <SourceLine>Dim v1 As Double</SourceLine>
    <SourceLine>Dim u2 As Double</SourceLine>
@@ -2387,6 +2355,10 @@
    <SourceLine>Dim tHeight As Double</SourceLine>
    <SourceLine>Dim w As Double</SourceLine>
    <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine>Dim tIdx As Integer</SourceLine>
+   <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -2394,6 +2366,23 @@
    <SourceLine>tHeight = texture.Height</SourceLine>
    <SourceLine>w = Width</SourceLine>
    <SourceLine>h = Height</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// see if this texture was used before?</SourceLine>
+   <SourceLine>tIdx = -1</SourceLine>
+   <SourceLine>i = 0 </SourceLine>
+   <SourceLine>while (i &lt;= model.Texture.Ubound) and (tIdx &lt; 0)</SourceLine>
+   <SourceLine>if model.Texture(i) Is texture then</SourceLine>
+   <SourceLine>tIdx = i</SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>wend</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if tIdx &lt; 0 then</SourceLine>
+   <SourceLine>// texture wasn't used previously so add it to the model</SourceLine>
+   <SourceLine>model.Texture.Append texture</SourceLine>
+   <SourceLine>tIdx = model.Texture.Ubound</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// calculate xy coordinates</SourceLine>
    <SourceLine></SourceLine>
@@ -2424,18 +2413,6 @@
    <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>midX = (x2 - x1) / 2</SourceLine>
-   <SourceLine>midY = (y2 - y1) / 2</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Position.X = x1 + midX</SourceLine>
-   <SourceLine>model.Position.Y = y1 + midY</SourceLine>
-   <SourceLine>model.Position.Z = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>x1 = x1 - model.Position.X</SourceLine>
-   <SourceLine>y1 = y1 - model.Position.Y</SourceLine>
-   <SourceLine>x2 = x2 - model.Position.X</SourceLine>
-   <SourceLine>y2 = y2 - model.Position.Y</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>// calculate uv coordinates</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>u1 = sx / tWidth</SourceLine>
@@ -2460,10 +2437,6 @@
    <SourceLine>end if</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>// add texture (created from image)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Texture.Append texture</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>// add uv-coordinates</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.UVMap.Append new X3Core.X3UVCoordinate(u1, v1)</SourceLine>
@@ -2482,23 +2455,21 @@
    <SourceLine></SourceLine>
    <SourceLine>poly = new X3Core.X3Polygon()</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.VIndex.Append 0</SourceLine>
-   <SourceLine>poly.VIndex.Append 2</SourceLine>
-   <SourceLine>poly.VIndex.Append 3</SourceLine>
-   <SourceLine>poly.VIndex.Append 1</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 3)</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 1)</SourceLine>
+   <SourceLine>poly.VIndex.Append model.Vertex.Ubound</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 2)</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.TIndex = 0 // point to image texture</SourceLine>
-   <SourceLine>poly.UVIndex.Append 0</SourceLine>
-   <SourceLine>poly.UVIndex.Append 1</SourceLine>
-   <SourceLine>poly.UVIndex.Append 2</SourceLine>
-   <SourceLine>poly.UVIndex.Append 3</SourceLine>
+   <SourceLine>poly.TIndex = tIdx // point to image texture</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 3)</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 2)</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 1)</SourceLine>
+   <SourceLine>poly.UVIndex.Append model.UVMap.Ubound</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>return model</SourceLine>
+   <SourceLine>return poly</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -2507,7 +2478,7 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000</ItemParams>
-  <ItemResult>X3Core.X3Model</ItemResult>
+  <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
   <ItemName>DrawTexture</ItemName>
@@ -2520,9 +2491,9 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
+   <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = DrawTexture(texture, x, y, w1, h1, sx, sy, w2, h2)</SourceLine>
+   <SourceLine>poly = DrawTexture(texture, x, y, w1, h1, sx, sy, w2, h2)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -3040,9 +3011,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1219856383">
+<block type="Module" ID="1667162111">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4017,9 +3988,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="581799935">
+<block type="Module" ID="911263743">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4173,9 +4144,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2142519295">
+<block type="Module" ID="1129136127">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4846,9 +4817,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2077513727">
+<block type="Module" ID="635449343">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5102,9 +5073,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="958248959">
+<block type="Module" ID="1935947775">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5233,9 +5204,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="549373951">
+<block type="Module" ID="418101247">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5775,9 +5746,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="834844671">
+<block type="Module" ID="1835880447">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6465,9 +6436,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1295349759">
+<block type="Module" ID="976025599">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6623,9 +6594,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1139888127">
+<block type="Module" ID="1886271487">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6820,9 +6791,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2007128063">
+<block type="Module" ID="1887684607">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6990,9 +6961,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1913999359">
+<block type="Module" ID="1370331135">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9438,9 +9409,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="746754047">
+<block type="Module" ID="1764593663">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>1118447615</ObjContainerID>
+ <ObjContainerID>1620389887</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9751,7 +9722,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1118447615">
+<block type="Module" ID="1620389887">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -10756,7 +10727,6 @@
    <SourceLine>Dim j As Integer</SourceLine>
    <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
    <SourceLine>Dim text As X3Core.X3Texture</SourceLine>
-   <SourceLine>Dim pic As Picture</SourceLine>
    <SourceLine>Dim firstValue As Boolean</SourceLine>
    <SourceLine>Dim modelJSON() As String</SourceLine>
    <SourceLine></SourceLine>
