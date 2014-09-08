@@ -1781,8 +1781,9 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = FillRect(x, y, width, height)</SourceLine>
+   <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly = FillRect(x, y, width, height)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1932,6 +1933,8 @@
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>model.Invalidate = true</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>return poly</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
@@ -1949,21 +1952,21 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function FillRect(x As Integer, y As Integer, width As Integer, height As Integer) As X3Core.X3Model</SourceLine>
+   <SourceLine>Function FillRect(x As Integer, y As Integer, width As Integer, height As Integer) As X3Core.X3Polygon</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
    <SourceLine>Dim poly As new X3Core.X3Polygon</SourceLine>
    <SourceLine>Dim x1 As Double</SourceLine>
    <SourceLine>Dim y1 As Double</SourceLine>
    <SourceLine>Dim x2 As Double</SourceLine>
    <SourceLine>Dim y2 As Double</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine>Dim w As Double</SourceLine>
    <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -1992,24 +1995,6 @@
    <SourceLine>y2 = (h / 2) - (y +height)</SourceLine>
    <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>'x1 = MapX(x)</SourceLine>
-   <SourceLine>'y1 = MapY(y)</SourceLine>
-   <SourceLine>'</SourceLine>
-   <SourceLine>'x2 = MapX(x + width)</SourceLine>
-   <SourceLine>'y2 = MapY(y +height)</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>midX = (x2 - x1) / 2</SourceLine>
-   <SourceLine>midY = (y2 - y1) / 2</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Position.X = x1 + midX</SourceLine>
-   <SourceLine>model.Position.Y = y1 + midY</SourceLine>
-   <SourceLine>model.Position.Z = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>x1 = x1 - model.Position.X</SourceLine>
-   <SourceLine>y1 = y1 - model.Position.Y</SourceLine>
-   <SourceLine>x2 = x2 - model.Position.X</SourceLine>
-   <SourceLine>y2 = y2 - model.Position.Y</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y1, 0)</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y2, 0)</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y2, 0)</SourceLine>
@@ -2017,26 +2002,19 @@
    <SourceLine></SourceLine>
    <SourceLine>// create polygon</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.VIndex.Append 0</SourceLine>
-   <SourceLine>poly.VIndex.Append 1</SourceLine>
-   <SourceLine>poly.VIndex.Append 2</SourceLine>
-   <SourceLine>poly.VIndex.Append 3</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 3)</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 2)</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 1)</SourceLine>
+   <SourceLine>poly.VIndex.Append model.Vertex.Ubound</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.CIndex = 0 // point to color</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>// set UV coordinates</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>poly.UVIndex.Append 0</SourceLine>
-   <SourceLine>poly.UVIndex.Append 1</SourceLine>
-   <SourceLine>poly.UVIndex.Append 2</SourceLine>
-   <SourceLine>poly.UVIndex.Append 3</SourceLine>
+   <SourceLine>poly.CIndex = model.ColorPal.Ubound // point to color</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
+   <SourceLine>model.Invalidate = true</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>return model</SourceLine>
+   <SourceLine>return poly</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
@@ -2046,7 +2024,7 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>x As Integer, y As Integer, width As Integer, height As Integer</ItemParams>
-  <ItemResult>X3Core.X3Model</ItemResult>
+  <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
   <ItemName>FillPolygon</ItemName>
@@ -2144,8 +2122,6 @@
    <SourceLine>y = (h / 2) - points(2 + i * 2)</SourceLine>
    <SourceLine>y = y / h</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>'xSum = xSum + x</SourceLine>
-   <SourceLine>'ySum = ySum + y</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x, y, 0)</SourceLine>
    <SourceLine>i = i - 1</SourceLine>
    <SourceLine>wend</SourceLine>
@@ -2153,6 +2129,8 @@
    <SourceLine>poly.CalculateNormal() ' calculate the normal of the polygon</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Invalidate = true</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return poly</SourceLine>
    <SourceLine>End Function</SourceLine>
@@ -2175,8 +2153,9 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
-   <SourceLine>model = DrawString(str, x, y, width, condense)</SourceLine>
+   <SourceLine>Dim poly As X3Core.X3Polygon</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>poly = DrawString(str, x, y, width, condense)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -2193,8 +2172,8 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function DrawString(str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False) As X3Core.X3Model</SourceLine>
-   <SourceLine>Dim model As new X3Core.X3Model</SourceLine>
+   <SourceLine>Function DrawString(str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False) As X3Core.X3Polygon</SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
    <SourceLine>Dim poly As new X3Core.X3Polygon</SourceLine>
    <SourceLine>Dim image As Picture</SourceLine>
    <SourceLine>Dim mask As Picture</SourceLine>
@@ -2202,11 +2181,10 @@
    <SourceLine>Dim y1 As Double</SourceLine>
    <SourceLine>Dim x2 As Double</SourceLine>
    <SourceLine>Dim y2 As Double</SourceLine>
-   <SourceLine>Dim midX As Double</SourceLine>
-   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine>Dim w As Double</SourceLine>
    <SourceLine>Dim h As Double</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -2273,18 +2251,6 @@
    <SourceLine>y2 = (h / 2) - (y - calcPic.Graphics.TextAscent + image.Height)</SourceLine>
    <SourceLine>y2 = y2 / h</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>midX = (x2 - x1) / 2</SourceLine>
-   <SourceLine>midY = (y2 - y1) / 2</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>model.Position.X = x1 + midX</SourceLine>
-   <SourceLine>model.Position.Y = y1 + midY</SourceLine>
-   <SourceLine>model.Position.Z = 0</SourceLine>
-   <SourceLine></SourceLine>
-   <SourceLine>x1 = x1 - model.Position.X</SourceLine>
-   <SourceLine>y1 = y1 - model.Position.Y</SourceLine>
-   <SourceLine>x2 = x2 - model.Position.X</SourceLine>
-   <SourceLine>y2 = y2 - model.Position.Y</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y1, 0)</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y2, 0)</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x2, y2, 0)</SourceLine>
@@ -2303,23 +2269,23 @@
    <SourceLine></SourceLine>
    <SourceLine>// create polygon</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.VIndex.Append 0</SourceLine>
-   <SourceLine>poly.VIndex.Append 1</SourceLine>
-   <SourceLine>poly.VIndex.Append 2</SourceLine>
-   <SourceLine>poly.VIndex.Append 3</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 3)</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 2)</SourceLine>
+   <SourceLine>poly.VIndex.Append (model.Vertex.Ubound - 1)</SourceLine>
+   <SourceLine>poly.VIndex.Append model.Vertex.Ubound </SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>poly.TIndex = 0 // point to image texture</SourceLine>
-   <SourceLine>poly.UVIndex.Append 0</SourceLine>
-   <SourceLine>poly.UVIndex.Append 1</SourceLine>
-   <SourceLine>poly.UVIndex.Append 2</SourceLine>
-   <SourceLine>poly.UVIndex.Append 3</SourceLine>
+   <SourceLine>poly.TIndex = model.Texture.Ubound // point to image texture</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 3)</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 2)</SourceLine>
+   <SourceLine>poly.UVIndex.Append (model.UVMap.Ubound - 1)</SourceLine>
+   <SourceLine>poly.UVIndex.Append model.UVMap.Ubound </SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Scene.Model.Append model // add model to scene</SourceLine>
+   <SourceLine>model.Invalidate = true</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>return model</SourceLine>
+   <SourceLine>return poly</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -2328,7 +2294,7 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>str As String, x As Integer, y As Integer, width As Integer = 0, condense As Boolean = False</ItemParams>
-  <ItemResult>X3Core.X3Model</ItemResult>
+  <ItemResult>X3Core.X3Polygon</ItemResult>
  </Method>
  <Method>
   <ItemName>DrawTexture</ItemName>
@@ -2468,6 +2434,8 @@
    <SourceLine></SourceLine>
    <SourceLine>model.AppendPolygon poly</SourceLine>
    <SourceLine>poly.CalculateNormal() // update polygon normal</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model.Invalidate = true</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>return poly</SourceLine>
    <SourceLine></SourceLine>
