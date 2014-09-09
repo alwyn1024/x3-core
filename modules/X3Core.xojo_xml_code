@@ -1985,8 +1985,8 @@
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>w = Width</SourceLine>
-   <SourceLine>h = Height</SourceLine>
+   <SourceLine>w = Me.Width</SourceLine>
+   <SourceLine>h = Me.Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// add color</SourceLine>
    <SourceLine></SourceLine>
