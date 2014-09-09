@@ -841,7 +841,7 @@
    <SourceLine>// Calling the overridden superclass constructor.</SourceLine>
    <SourceLine>Super.Constructor</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Graphics = new X3Core.X3Graphics(Me)</SourceLine>
+   <SourceLine>Graphics = new X3Core.X3Graphics(Me.Width, Me.Height)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
@@ -1733,7 +1733,7 @@
   <Visible>1</Visible>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Sub Constructor(canvas As X3Canvas)</SourceLine>
+   <SourceLine>Sub Constructor(width As Integer, height As Integer)</SourceLine>
    <SourceLine>' www.Xojo3D.com</SourceLine>
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
@@ -1742,8 +1742,8 @@
    <SourceLine>' ezgl.tumblr.com/</SourceLine>
    <SourceLine>' Graphics, audio, vectors and moving stuff.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Height = canvas.Height</SourceLine>
-   <SourceLine>Width = canvas.Width</SourceLine>
+   <SourceLine>Me.Width = Width</SourceLine>
+   <SourceLine>Me.Height = Height</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// intialize scene object</SourceLine>
    <SourceLine></SourceLine>
@@ -1755,8 +1755,6 @@
    <SourceLine>Scene.CameraIndex = 0</SourceLine>
    <SourceLine>Scene.ActiveCamera.DollyOut 1.2 // dolly the camare out a bit so that we can see the drawing</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Scene.Model.Append new X3Core.X3Model()</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>// Instantiate picture object used for calculations</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>calcPic = new Picture(1, 1, 24) </SourceLine>
@@ -1767,7 +1765,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>canvas As X3Canvas</ItemParams>
+  <ItemParams>width As Integer, height As Integer</ItemParams>
   <ItemResult></ItemResult>
  </Method>
  <Method>
@@ -1821,8 +1819,10 @@
    <SourceLine>Dim iHeight As Double</SourceLine>
    <SourceLine>Dim tIdx As Integer</SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
+   <SourceLine>model = obtainModel() // get scene model to use for rendering</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -1875,6 +1875,19 @@
    <SourceLine>' mapY(y + texture.Height)</SourceLine>
    <SourceLine>y2 = (h / 2) - y - iHeight</SourceLine>
    <SourceLine>y2 = y2 / h</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// center model if we are rendering drawing to a seperate model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not RenderSingleModel then</SourceLine>
+   <SourceLine>midX = (x1 + x2) / 2</SourceLine>
+   <SourceLine>midY = (y1 + y2) / 2</SourceLine>
+   <SourceLine>model.Position.X = midX</SourceLine>
+   <SourceLine>model.Position.Y = midY</SourceLine>
+   <SourceLine>x1 = x1 - midX</SourceLine>
+   <SourceLine>x2 = x2 - midX</SourceLine>
+   <SourceLine>y1 = y1 - midY</SourceLine>
+   <SourceLine>y2 = y2 - midY</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// calculate uv coordinates</SourceLine>
@@ -1965,8 +1978,10 @@
    <SourceLine>Dim y2 As Double</SourceLine>
    <SourceLine>Dim w As Double</SourceLine>
    <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
+   <SourceLine>model = obtainModel() // get scene model to use for rendering</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -1994,6 +2009,19 @@
    <SourceLine>' mapY(y +height)</SourceLine>
    <SourceLine>y2 = (h / 2) - (y +height)</SourceLine>
    <SourceLine>y2 = y2 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// center model if we are rendering drawing to a seperate model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not RenderSingleModel then</SourceLine>
+   <SourceLine>midX = (x1 + x2) / 2</SourceLine>
+   <SourceLine>midY = (y1 + y2) / 2</SourceLine>
+   <SourceLine>model.Position.X = midX</SourceLine>
+   <SourceLine>model.Position.Y = midY</SourceLine>
+   <SourceLine>x1 = x1 - midX</SourceLine>
+   <SourceLine>x2 = x2 - midX</SourceLine>
+   <SourceLine>y1 = y1 - midY</SourceLine>
+   <SourceLine>y2 = y2 - midY</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y1, 0)</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y2, 0)</SourceLine>
@@ -2069,8 +2097,12 @@
    <SourceLine>Dim pointCount As Integer</SourceLine>
    <SourceLine>Dim w As Double</SourceLine>
    <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine>Dim totX As Double</SourceLine>
+   <SourceLine>Dim totY As Double</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
+   <SourceLine>model = obtainModel() // get scene model to use for rendering</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -2085,6 +2117,8 @@
    <SourceLine></SourceLine>
    <SourceLine>pointCount = (points.Ubound \ 2)</SourceLine>
    <SourceLine>i = 0</SourceLine>
+   <SourceLine>totX = 0</SourceLine>
+   <SourceLine>totY = 0</SourceLine>
    <SourceLine>while i &lt; pointCount</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>x = points(1 + i * 2) - (w / 2)</SourceLine>
@@ -2092,6 +2126,9 @@
    <SourceLine></SourceLine>
    <SourceLine>y = (h / 2) - points(2 + i * 2)</SourceLine>
    <SourceLine>y = y / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>totX = totX + x</SourceLine>
+   <SourceLine>totY = totY + y</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x, y, 0)</SourceLine>
    <SourceLine>poly.VIndex.Append model.Vertex.Ubound</SourceLine>
@@ -2128,6 +2165,21 @@
    <SourceLine></SourceLine>
    <SourceLine>poly.CalculateNormal() ' calculate the normal of the polygon</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// center model if we are rendering drawing to a seperate model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not RenderSingleModel then</SourceLine>
+   <SourceLine>midX = totX / (model.Vertex.Ubound + 1)</SourceLine>
+   <SourceLine>midY = totY / (model.Vertex.Ubound + 1)</SourceLine>
+   <SourceLine>model.Position.X = midX</SourceLine>
+   <SourceLine>model.Position.Y = midY</SourceLine>
+   <SourceLine>i = 0</SourceLine>
+   <SourceLine>while i &lt;= model.Vertex.Ubound</SourceLine>
+   <SourceLine>model.Vertex(i).X = model.Vertex(i).X - midX</SourceLine>
+   <SourceLine>model.Vertex(i).Y = model.Vertex(i).Y - midY</SourceLine>
+   <SourceLine>i = i + 1</SourceLine>
+   <SourceLine>wend</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Invalidate = true</SourceLine>
@@ -2183,8 +2235,10 @@
    <SourceLine>Dim y2 As Double</SourceLine>
    <SourceLine>Dim w As Double</SourceLine>
    <SourceLine>Dim h As Double</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
+   <SourceLine>model = obtainModel() // get scene model to use for rendering</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -2250,6 +2304,19 @@
    <SourceLine></SourceLine>
    <SourceLine>y2 = (h / 2) - (y - calcPic.Graphics.TextAscent + image.Height)</SourceLine>
    <SourceLine>y2 = y2 / h</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// center model if we are rendering drawing to a seperate model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not RenderSingleModel then</SourceLine>
+   <SourceLine>midX = (x1 + x2) / 2</SourceLine>
+   <SourceLine>midY = (y1 + y2) / 2</SourceLine>
+   <SourceLine>model.Position.X = midX</SourceLine>
+   <SourceLine>model.Position.Y = midY</SourceLine>
+   <SourceLine>x1 = x1 - midX</SourceLine>
+   <SourceLine>x2 = x2 - midX</SourceLine>
+   <SourceLine>y1 = y1 - midY</SourceLine>
+   <SourceLine>y2 = y2 - midY</SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y1, 0)</SourceLine>
    <SourceLine>model.Vertex.Append new X3Core.X3Vector(x1, y2, 0)</SourceLine>
@@ -2323,8 +2390,10 @@
    <SourceLine>Dim h As Double</SourceLine>
    <SourceLine>Dim tIdx As Integer</SourceLine>
    <SourceLine>Dim i As Integer</SourceLine>
+   <SourceLine>Dim midX As Double</SourceLine>
+   <SourceLine>Dim midY As Double</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>model = Scene.Model(0) // get default canvas model</SourceLine>
+   <SourceLine>model = obtainModel() // get scene model to use for rendering</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// do integer to double conversion once</SourceLine>
    <SourceLine></SourceLine>
@@ -2377,6 +2446,19 @@
    <SourceLine>' mapY(y + texture.Height)</SourceLine>
    <SourceLine>y2 = (h / 2) - y - tHeight</SourceLine>
    <SourceLine>y2 = y2 / h</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// center model if we are rendering drawing to a seperate model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if not RenderSingleModel then</SourceLine>
+   <SourceLine>midX = (x1 + x2) / 2</SourceLine>
+   <SourceLine>midY = (y1 + y2) / 2</SourceLine>
+   <SourceLine>model.Position.X = midX</SourceLine>
+   <SourceLine>model.Position.Y = midY</SourceLine>
+   <SourceLine>x1 = x1 - midX</SourceLine>
+   <SourceLine>x2 = x2 - midX</SourceLine>
+   <SourceLine>y1 = y1 - midY</SourceLine>
+   <SourceLine>y2 = y2 - midY</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>// calculate uv coordinates</SourceLine>
@@ -2471,6 +2553,48 @@
   <IsShared>0</IsShared>
   <ItemParams>texture As X3Core.X3Texture, x As Integer, y As Integer, w1 As Integer = -10000, h1 As Integer = -10000, sx As Integer = 0, sy As Integer = 0, w2 As Integer = -10000, h2 As Integer = -10000</ItemParams>
   <ItemResult></ItemResult>
+ </Method>
+ <Method>
+  <ItemName>obtainModel</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function obtainModel() As X3Core.X3Model</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if RenderSingleModel then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// get default canvas model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if Scene.Model.Ubound &lt; 0 then</SourceLine>
+   <SourceLine>Scene.Model.Append new X3Core.X3Model()</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine>model = Scene.Model(0)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// create new model for rendering</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Scene.Model.Append new X3Core.X3Model()</SourceLine>
+   <SourceLine>model = Scene.Model(Scene.Model.Ubound)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>return model</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>33</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult>X3Core.X3Model</ItemResult>
  </Method>
  <Property>
   <ItemName>Scene</ItemName>
@@ -2850,6 +2974,20 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
+ <Property>
+  <ItemName>RenderSingleModel</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>RenderSingleModel As Boolean</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>RenderSingleModel As Boolean = True</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
  <ViewBehavior>
   <ViewProperty>
    <ObjName>Name</ObjName>
@@ -2976,6 +3114,12 @@
    <ObjName>TextHeight</ObjName>
    <PropertyGroup>Behavior</PropertyGroup>
    <ItemType>Integer</ItemType>
+  </ViewProperty>
+  <ViewProperty>
+   <ObjName>RenderSingleModel</ObjName>
+   <PropertyGroup>Behavior</PropertyGroup>
+   <PropertyValue>True</PropertyValue>
+   <ItemType>Boolean</ItemType>
   </ViewProperty>
  </ViewBehavior>
 </block>
