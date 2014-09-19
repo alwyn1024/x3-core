@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RBProject version="2014r2.1" FormatVersion="2" MinIDEVersion="20070100">
-<block type="Module" ID="1760681983">
+<block type="Module" ID="685447167">
  <ObjName>X3Camera</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -727,9 +727,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1500327935">
+<block type="Module" ID="809416703">
  <ObjName>X3Canvas</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <Superclass>OpenGLSurface</Superclass>
  <ItemFlags>1</ItemFlags>
@@ -750,6 +750,9 @@
    <SourceLine></SourceLine>
    <SourceLine>X3_Initialize</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>RaiseEvent Open()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>End Sub</SourceLine>
   </ItemSource>
  </HookInstance>
@@ -764,9 +767,16 @@
    <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
    <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
-   <SourceLine></SourceLine>
    <SourceLine>Me.MakeCurrent()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// did the user of X3Canvas override the default rendernig routine?</SourceLine>
+   <SourceLine>if RenderMethod &lt;&gt; nil then</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>RenderMethod.Invoke()</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>else</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim s As X3Core.X3Scene</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>s = Graphics.Scene</SourceLine>
    <SourceLine></SourceLine>
@@ -774,6 +784,8 @@
    <SourceLine>OpenGL.glClear(OpenGL.GL_COLOR_BUFFER_BIT + OpenGL.GL_DEPTH_BUFFER_BIT)</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>X3_RenderScene s</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -827,6 +839,33 @@
    <SourceLine>End Function</SourceLine>
   </ItemSource>
  </HookInstance>
+ <HookInstance>
+  <ItemName>MouseUp</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Sub MouseUp(x as Integer, y as Integer)</SourceLine>
+   <SourceLine>' www.Xojo3D.com</SourceLine>
+   <SourceLine>' X3 is a {Zoclee}™ initiative.</SourceLine>
+   <SourceLine>' All X3 code is donated to the public domain and can be used freely in commercial and non-commercial applications.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Dim model As X3Core.X3Model</SourceLine>
+   <SourceLine>Dim modelIndex As Integer</SourceLine>
+   <SourceLine>Dim polygonIndex As Integer</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>model = X3_PickModel(Me, Me.Graphics.Scene, x, y, modelIndex, polygonIndex)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>if model &lt;&gt; nil then</SourceLine>
+   <SourceLine>RaiseEvent PolygonMouseUp x, y, model.Polygon(polygonIndex), polygonIndex</SourceLine>
+   <SourceLine>RaiseEvent ModelMouseUp x, y, model, modelIndex</SourceLine>
+   <SourceLine>end if</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>RaiseEvent MouseUp(x, y)</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Sub</SourceLine>
+  </ItemSource>
+ </HookInstance>
  <Method>
   <ItemName>Constructor</ItemName>
   <Compatibility></Compatibility>
@@ -852,6 +891,21 @@
   <ItemParams></ItemParams>
   <ItemResult></ItemResult>
  </Method>
+ <DelegateDeclaration>
+  <ItemName>RenderMethodDelegate</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Delegate Sub RenderMethodDelegate()</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </DelegateDeclaration>
  <Hook>
   <ItemName>ModelMouseDown</ItemName>
   <TextEncoding>134217984</TextEncoding>
@@ -876,6 +930,38 @@
   <ItemParams>x As Integer, y As Integer, polygon As X3Core.X3Polygon, polygonIndex As Integer</ItemParams>
   <ItemResult></ItemResult>
  </Hook>
+ <Hook>
+  <ItemName>Open</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams></ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>PolygonMouseUp</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer, polygon As X3Core.X3Polygon, polygonIndex As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>MouseUp</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
+ <Hook>
+  <ItemName>ModelMouseUp</ItemName>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemFlags>33</ItemFlags>
+  <SystemFlags>0</SystemFlags>
+  <ItemParams>x As Integer, y As Integer, model As X3Core.X3Model, modelIndex As Integer</ItemParams>
+  <ItemResult></ItemResult>
+ </Hook>
  <Property>
   <ItemName>Graphics</ItemName>
   <Compatibility></Compatibility>
@@ -887,6 +973,20 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <ItemDeclaration>Graphics As X3Core.X3Graphics</ItemDeclaration>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+ </Property>
+ <Property>
+  <ItemName>RenderMethod</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>RenderMethod As RenderMethodDelegate</SourceLine>
+   <SourceLine></SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <ItemDeclaration>RenderMethod As RenderMethodDelegate</ItemDeclaration>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
  </Property>
@@ -1049,9 +1149,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1331734527">
+<block type="Module" ID="1199761407">
  <ObjName>X3Vector</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1442,9 +1542,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="499281919">
+<block type="Module" ID="2012588031">
  <ObjName>X3Color</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -1697,9 +1797,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1796734975">
+<block type="Module" ID="1742422015">
  <ObjName>X3Graphics</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -3123,9 +3223,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="312190975">
+<block type="Module" ID="1160194047">
  <ObjName>X3Polygon</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4100,9 +4200,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1428948991">
+<block type="Module" ID="1298827263">
  <ObjName>X3Light</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4256,9 +4356,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1441341439">
+<block type="Module" ID="1763082239">
  <ObjName>X3Model</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -4929,9 +5029,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="162766847">
+<block type="Module" ID="1438887935">
  <ObjName>X3Texture</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5185,9 +5285,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1401839615">
+<block type="Module" ID="189396991">
  <ObjName>X3UVCoordinate</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5316,9 +5416,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1964292095">
+<block type="Module" ID="84860927">
  <ObjName>X3Quaternion</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -5858,9 +5958,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="134248447">
+<block type="Module" ID="1619632127">
  <ObjName>X3Scene</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6548,9 +6648,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="2022135807">
+<block type="Module" ID="1640120319">
  <ObjName>X3Material</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6706,9 +6806,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="47241215">
+<block type="Module" ID="1170065407">
  <ObjName>X3Sprite</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -6903,9 +7003,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1824937983">
+<block type="Module" ID="2030501887">
  <ObjName>X3SpriteCoordinate</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -7073,9 +7173,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="518217727">
+<block type="Module" ID="57780223">
  <ObjName>X3IO</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9521,9 +9621,9 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="1328236543">
+<block type="Module" ID="1523539967">
  <ObjName>X3BoundingBox</ObjName>
- <ObjContainerID>644063231</ObjContainerID>
+ <ObjContainerID>2142396415</ObjContainerID>
  <IsClass>1</IsClass>
  <ItemFlags>1</ItemFlags>
  <IsInterface>0</IsInterface>
@@ -9834,7 +9934,7 @@
   </ViewProperty>
  </ViewBehavior>
 </block>
-<block type="Module" ID="644063231">
+<block type="Module" ID="2142396415">
  <ObjName>X3Core</ObjName>
  <ObjContainerID>0</ObjContainerID>
  <IsClass>0</IsClass>
@@ -9945,7 +10045,7 @@
    <SourceLine>currIndex = -1</SourceLine>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>if currIndex &lt;&gt; poly.CIndex then ' still using same RGBA color?</SourceLine>
+   <SourceLine>if (currIndex &lt;&gt; poly.CIndex) or (currIndex &lt; 0) then ' still using same RGBA color?</SourceLine>
    <SourceLine>' no, so set new RGBA color</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>if poly.CIndex &gt;= 0 then ' is the color index pointing to a color?</SourceLine>
@@ -10381,6 +10481,7 @@
    <SourceLine></SourceLine>
    <SourceLine>X3_SetMaterial new X3Core.X3Material ' reset OpenGL's material settings</SourceLine>
    <SourceLine>OpenGL.glColor4d(1, 1, 1, 1) ' reset color to pure white</SourceLine>
+   <SourceLineBreakpoint>194</SourceLineBreakpoint>
    <SourceLine></SourceLine>
    <SourceLine>currMat = 1</SourceLine>
    <SourceLine>currIndex = -1</SourceLine>
@@ -10466,6 +10567,7 @@
    <SourceLine></SourceLine>
    <SourceLine>X3_SetMaterial new X3Core.X3Material ' reset OpenGL's material settings</SourceLine>
    <SourceLine>OpenGL.glColor4d(1, 1, 1, 1) ' reset color to pure white</SourceLine>
+   <SourceLineBreakpoint>279</SourceLineBreakpoint>
    <SourceLine>end if</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>prevSIndex = -1</SourceLine>
